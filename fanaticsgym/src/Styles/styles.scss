@@ -1,0 +1,303 @@
+.App{
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+// footer
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    border: solid 5px black;
+    // background: rgb(100,200,50,1);
+    background: black;
+    color: white;
+    text-decoration: none;
+    height: 50px;
+    position: bottom;
+    width: 100%;
+}
+
+@media screen and (max-width: 500px){
+    .footer{
+        position: bottom;
+
+    }
+}
+
+@media screen and (min-width: 500px){
+    .footer{
+        position: bottom;
+        bottom: 0px;
+    }
+}
+
+
+
+@media screen and (max-width: 750px){
+    .navLogo{
+        img {max-width: 75%;}
+    }
+}
+
+
+
+
+
+
+.footLinks{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    width: 100%;
+}
+
+.footerLinks {
+    text-decoration: none;
+    color: white;
+}
+
+// nav
+.nav {
+display: flex;
+justify-content: center;
+flex-flow: row nowrap;
+align-items: baseline;
+border: solid 5px black;
+// background: rgb(100,200,50,1);
+background: black;
+color:white;
+width: 100%;
+    .navLogo{
+        width: 50%;
+        img {max-width: 35%;}
+        h1{
+            font-size: 1.5rem;
+            border-top: 3px white solid;
+            border-bottom: 3px white solid;
+            width: 20%;
+            text-align: center;
+        }
+    }
+    .navLinks{
+        width: 50%;
+        margin: auto;
+        text-align: center;
+        display: flex;
+        justify-content: flex-end;
+
+
+    }
+
+    @media screen and (max-width: 500px) {
+        .navLogo{
+            h1{
+                font-size: 1rem;;
+                width: 65%;
+            }
+        }
+        
+    }
+
+}
+
+
+
+//header
+
+
+
+
+.headerContainer{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    .headerLogo{
+        width: 50%;
+        .logo{max-width: 100%;
+        margin-bottom: 5%}
+
+    }
+    .headerContent{
+        width: 50%;
+        margin: 2%;
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: column;
+    }
+}
+@media screen and (max-width: 500px){
+    .headerContainer{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+        .headerLogo{
+            width: 100%;
+            .logo{max-width: 100%;
+            margin-bottom: 5%}
+    
+        }
+        .headerContent{
+            width: 100%;
+            margin: 2%;
+            display: flex;
+            justify-content: space-evenly;
+            flex-direction: column;
+            p{
+                margin: 5%;
+            }
+        }
+    }
+}
+
+.subtitle{
+    margin-left: 5%;
+}
+
+.foot{
+    align-items: flex-end;
+}
+
+
+.loginForm{
+    // border: solid 5px rgb(70, 158, 25)  ;
+    border: solid 5px black ;
+
+    width: 70%;
+    margin: 5% auto;
+    padding: 5%;
+    border-radius: 15px;
+    background: #f0cf85 ;
+    form{
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        button{
+            border-radius:25px;
+            border: none;
+            display: block;
+            text-align: center;
+            cursor: pointer;
+            text-transform: uppercase;
+            outline: none;
+            overflow: hidden;
+            color: #fff;
+            font-weight: 700;
+            font-size: 15px;
+            background-color: #222;
+            padding: 17px 60px;
+            margin: 0 auto;
+            margin-top:5%;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.20);
+        }
+    }
+
+}
+
+@media screen and (max-width: 500px) {
+    .loginForm{
+        margin: 30% auto;
+    }
+}
+
+input,
+textarea {
+  padding: 2%;
+  font-size: 16px;
+  width: 100%;
+  display: block;
+  color: black;
+  border: 2px solid #A9A9A9;
+}
+.links {
+            margin: 0 4%;
+            text-decoration: none;
+            color: white;
+        }
+
+// about us page
+
+.about{
+    .header{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        margin: 0 5%;
+        img{
+            width: 20%;
+            height: auto;
+            margin: 2% auto;
+            padding: 0;
+            
+        }        
+        h1{
+            border-bottom: black solid 5px;
+    
+            
+        }
+        h3 {
+            padding: 0;
+            margin: 0;
+        }
+
+
+    }
+    .aboutContext {
+        display: flex;
+        flex-direction: column;
+        h1{
+            border-bottom: black solid 5px;
+            width: 25%;
+            margin: 5% auto;
+            text-align: center;
+        }
+        .aboutGoals{
+            h2{
+                margin: 0 5%;
+            }
+            p {
+                margin: 3%;
+            }
+        }
+    }
+    .aboutFounder{
+        display: flex;
+        flex-direction: column;
+        h1{
+            border-bottom: black solid 5px;
+            width: 40%;
+            margin: 5% auto;
+            text-align: center;
+        }
+        img {
+            width: 50%;
+            height: auto;
+            margin: auto;
+            border: black solid 5px;
+        }
+        p{
+            margin: 5%
+        }
+    }
+
+    
+}
+@media screen and (min-width: 500px){
+        .about{
+            display: flex;
+            flex-flow: row wrap;
+            width: 100%;
+            .header{
+                width: 45%;
+
+            }
+            .aboutContext{
+                width: 45%;
+            }
+            
+        }
+
+    }        
