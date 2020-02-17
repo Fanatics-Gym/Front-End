@@ -17,12 +17,12 @@ const Header = () => {
                 </div>
             </div>
             <div className='headerContent'>
-                <div classname='coreValues'>
+                <div className='coreValues'>
                     <h1>Our Mission</h1>
                     <p>Our Mission as a brand and community is to bring the people of the world together in a way where
                         they can connect and appreciate one another with the association of our brand, products, and services. </p>
                 </div>
-                <div classname='coreValues'>
+                <div className='coreValues'>
                     <h2>Core values</h2>
                     <h3>These core values will help maintain a healthy community and bring value to our brand:</h3>
                 </div>
@@ -32,7 +32,7 @@ const Header = () => {
                         When interacting with someone who is not part of our family yet, we engage and value them as if they were one of our own.
                     </p>
                 </div>
-                <div classname='coreValues'>
+                <div className='coreValues'>
                 <h2>-Integrity</h2>
                 <p>As Fanatics members, we are truthful, honest, and clear. We say what we mean, mean what we say, and always do the right thing
                     (Even when no one is looking).
@@ -43,7 +43,7 @@ const Header = () => {
                     interest of each other
                 </p>
                 </div>
-                <div classname='coreValues'>
+                <div className='coreValues'>
                     <h2>-Inspire</h2>
                     <p> 
                         As a fanatics gym member, it's important to motivate and inspire those around you. Let people know they CAN,

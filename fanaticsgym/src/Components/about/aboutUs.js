@@ -1,5 +1,4 @@
 import React from "react"
-import united from '../../imgs/united.JPG'
 import joggin from '../../imgs/jogging.png'
 import jake from '../../imgs/owner.jpg'
 

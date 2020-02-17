@@ -1,6 +1,6 @@
 import React from "react"
 import {Link} from 'react-router-dom'
-import label from '../../imgs/label.JPG'
+
 
 
 
@@ -15,6 +15,7 @@ const NavBar = () => {
                     <Link className='links' to='/home'>Home</Link>
                     <Link className='links' to='/about'>About us</Link>
                     <Link className='links' to='/login'>Login</Link>
+                    <Link className='links' to='/user'>User</Link>
                 </div>
             </nav>
     )
