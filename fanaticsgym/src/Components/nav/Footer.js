@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <footer className="footer">
       <div className="footLinks">
-        <Link className="footerLinks" to="/">
+        <Link className="footerLinks" to="/home">
           Home
         </Link>
         <Link className="footerLinks" to="about">
