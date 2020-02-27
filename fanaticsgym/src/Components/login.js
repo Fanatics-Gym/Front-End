@@ -17,7 +17,7 @@ const LoginForm = props => {
     const onSubmit = e => {
         e.preventDefault();
         axios
-        .post('http://localhost:7000/user/login', userCredentials)
+        .post('https://fanatics-gym.herokuapp.com/user/login', userCredentials)
         .then(res => {
           localStorage.setItem('token', res.data.payload)
           props.history.push('/user')
