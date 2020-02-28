@@ -4,17 +4,14 @@ import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import { BrowserRouter as Router } from "react-router-dom";
-import { createBrowserHistory } from "history";
+import { initGA } from "./analyicts";
 
-const history = createBrowserHistory();
-
-history.listen(location => {
-  ReactGA.set({ page: location.pathname }); // Update the user's current page
-  ReactGA.pageview(location.pathname); // Record a pageview for the given page
-});
+(function initAnalytics() {
+  initGA("UA-159198142-1");
+})();
 
 ReactDOM.render(
-  <Router history={history}>
+  <Router>
     <App />
   </Router>,
   document.getElementById("root")

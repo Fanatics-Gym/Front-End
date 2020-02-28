@@ -10,17 +10,21 @@ import aboutUs from "./Components/about/aboutUs";
 import PrivateRoute from "./Components/Auth/PrivateRoute";
 import userPage from "./Components/user/userPage";
 import ReactGa from "react-ga";
+import { initGA, PageView } from "./analyicts";
+import { createBrowserHistory } from "history";
 
 function App() {
-  useEffect(() => {
-    ReactGa.initialize("UA-159198142-1");
+  const history = createBrowserHistory();
 
-    ReactGa.pageview(window.location.pathname + window.location.search);
-  }, []);
+  // Initialize google analytics page view tracking
+  history.listen(location => {
+    ReactGA.set({ page: location.pathname }); // Update the user's current page
+    ReactGA.pageview(location.pathname); // Record a pageview for the given page
+  });
 
   return (
     <div className="App">
-      <Router>
+      <Router history={history}>
         <NavBar />
         <PrivateRoute path="/user" component={userPage} />
         <Route path="/home" component={Header} />

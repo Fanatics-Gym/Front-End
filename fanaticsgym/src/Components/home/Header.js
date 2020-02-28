@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Logo from "../../imgs/Logo.JPG";
 import "../../Styles/styles.scss";
+import { PageView } from "../../analyicts";
 
 const Header = () => {
+  useEffect(() => {
+    PageView();
+  }, []);
   return (
     <div className="headerContainer">
       <div className="headerLogo">
