@@ -1,9 +1,8 @@
-import React, { useEffect } from "react";
 import joggin from "../../imgs/jogging.png";
 import jake from "../../imgs/owner.jpg";
-import { PageView } from "../../analyicts";
+import React from "react";
 
-const aboutUs = () => {
+function adminInfo() {
   return (
     <div className="about">
       <div className="header">
@@ -58,6 +57,6 @@ const aboutUs = () => {
       </div>
     </div>
   );
-};
+}
 
-export default aboutUs;
+export default adminInfo;
