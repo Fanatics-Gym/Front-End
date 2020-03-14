@@ -61,10 +61,10 @@
   align-items: baseline;
   border: solid 5px black;
   position: fixed;
-  opacity: 70%;
   background: black;
   color: white;
   width: 100%;
+  opacity: 90%;
   .navLogo {
     width: 50%;
     img {
@@ -249,6 +249,8 @@ textarea {
   .aboutFounder {
     display: flex;
     flex-direction: column;
+    width: 50%;
+    margin: auto;
     h1 {
       border-bottom: black solid 5px;
       width: 40%;
