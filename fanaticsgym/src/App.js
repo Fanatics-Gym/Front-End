@@ -22,7 +22,7 @@ function App() {
       <Router>
         <NavBar />
         <div className="spacing">
-          <PrivateRoute path="/user" component={userPage} />
+          <PrivateRoute exact path="/user" component={userPage} />
           <Route exact path="/" component={Header} />
           <Route path="/login" component={LoginForm} />
           <Route path="/about" component={aboutUs} />
