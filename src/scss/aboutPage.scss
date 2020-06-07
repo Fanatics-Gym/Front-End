@@ -39,7 +39,6 @@
   .aboutFounder {
     display: flex;
     flex-direction: column;
-    width: 50%;
     margin: auto;
     h1 {
       border-bottom: black solid 5px;
@@ -72,6 +71,8 @@
 
     .aboutFounder {
       display: flex;
+      margin: 0 auto;
+      width: 50%;
       img {
         width: 250px;
         height: auto;
