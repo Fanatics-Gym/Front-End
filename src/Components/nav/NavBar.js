@@ -1,5 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, Router } from "react-router-dom";
+import "../../scss/nav.scss";
 
 const NavBar = () => {
   return (
@@ -13,7 +14,7 @@ const NavBar = () => {
           Home
         </Link>
         <Link className="links" to="/about">
-          About us
+          About
         </Link>
         <Link className="links" to="/login">
           Login

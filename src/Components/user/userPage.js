@@ -1,5 +1,5 @@
 import React from "react";
-import "../../Styles/userPage.scss";
+import "../../scss/userPage.scss";
 const userPage = () => {
   return (
     <div className="userStyles">

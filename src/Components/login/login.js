@@ -1,32 +1,33 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { PageView } from "../../analyicts";
+import "../../scss/loginPage.scss";
 
-const LoginForm = props => {
+const LoginForm = (props) => {
   const [userCredentials, setUserCredentials] = useState({
     username: "",
-    password: ""
+    password: "",
   });
   useEffect(() => {
     PageView();
   }, []);
 
-  const handleChange = e => {
+  const handleChange = (e) => {
     setUserCredentials({
       ...userCredentials,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
-  const onSubmit = e => {
+  const onSubmit = (e) => {
     e.preventDefault();
     axios
       .post("https://fanatics-gym-be.herokuapp.com/user/login", userCredentials)
-      .then(res => {
+      .then((res) => {
         localStorage.setItem("token", res.data.payload);
         props.history.push("/user");
       })
-      .catch(err => console.error(err));
+      .catch((err) => console.error(err));
   };
 
   return (

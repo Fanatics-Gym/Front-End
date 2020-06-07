@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import Logo from "../../imgs/Logo.JPG";
-import "../../Styles/styles.scss";
+import "../../scss/home.scss";
 import { PageView } from "../../analyicts";
 
-const Header = () => {
+const HomePage = () => {
   useEffect(() => {
     PageView();
   }, []);
@@ -71,4 +71,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default HomePage;
