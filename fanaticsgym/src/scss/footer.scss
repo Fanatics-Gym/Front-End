@@ -1,0 +1,46 @@
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  border: solid 5px black;
+  // background: rgb(100,200,50,1);
+  background: black;
+  color: white;
+  text-decoration: none;
+  height: 50px;
+  position: bottom;
+  width: 100%;
+}
+
+@media screen and (max-width: 500px) {
+  .footer {
+    position: bottom;
+  }
+}
+
+@media screen and (min-width: 500px) {
+  .footer {
+    position: bottom;
+    bottom: 0px;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .navLogo {
+    img {
+      max-width: 75%;
+    }
+  }
+}
+
+.footLinks {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+  width: 100%;
+}
+
+.footerLinks {
+  text-decoration: none;
+  color: white;
+}

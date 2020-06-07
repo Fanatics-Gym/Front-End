@@ -1,0 +1,83 @@
+.about {
+  .header {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 0 5%;
+    img {
+      width: 20%;
+      height: auto;
+      margin: 2% auto;
+      padding: 0;
+    }
+    h1 {
+      border-bottom: black solid 5px;
+    }
+    h3 {
+      padding: 0;
+      margin: 0;
+    }
+  }
+  .aboutContext {
+    display: flex;
+    flex-direction: column;
+    h1 {
+      border-bottom: black solid 5px;
+      width: 25%;
+      margin: 5% auto;
+      text-align: center;
+    }
+    .aboutGoals {
+      h2 {
+        margin: 0 5%;
+      }
+      p {
+        margin: 3%;
+      }
+    }
+  }
+  .aboutFounder {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: auto;
+    h1 {
+      border-bottom: black solid 5px;
+      width: 40%;
+      margin: 5% auto;
+      text-align: center;
+    }
+    img {
+      width: 250px;
+      height: 250px;
+      margin: auto;
+      border: black solid 5px;
+    }
+    p {
+      margin: 5%;
+    }
+  }
+}
+@media screen and (min-width: 500px) {
+  .about {
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+    .header {
+      width: 45%;
+    }
+    .aboutContext {
+      width: 45%;
+    }
+
+    .aboutFounder {
+      display: flex;
+      img {
+        width: 250px;
+        height: auto;
+        margin: auto;
+        border: black solid 5px;
+      }
+    }
+  }
+}

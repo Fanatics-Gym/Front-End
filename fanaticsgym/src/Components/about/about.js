@@ -1,6 +1,7 @@
 import joggin from "../../imgs/jogging.png";
 import jake from "../../imgs/owner.jpg";
 import React from "react";
+import "../../scss/aboutPage.scss";
 
 function adminInfo() {
   return (
