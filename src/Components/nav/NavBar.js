@@ -10,7 +10,6 @@ const NavBar = () => {
         <h1>Fanatics Gym</h1>
       </div>
       <div className="navLinks">
-        {/* <div className="linksInNav"> */}
         <Link className="links" to="/">
           Home
         </Link>
@@ -23,7 +22,6 @@ const NavBar = () => {
         {/* <Link className="links" to="/user">
           User
         </Link> */}
-        {/* </div> */}
       </div>
     </nav>
   );

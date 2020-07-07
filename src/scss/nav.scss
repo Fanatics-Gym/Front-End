@@ -27,6 +27,11 @@
     display: flex;
     justify-content: flex-end;
   }
+  // .linksInNav {
+  //   width: 100;
+  //   display: flex;
+  //   justify-content: space-between;
+  // }
 
   @media screen and (max-width: 500px) {
     .navLogo {
@@ -39,7 +44,7 @@
 }
 
 .links {
-  padding: 0 4%;
+  margin: 0 5%;
   text-decoration: none;
   color: white;
 }
