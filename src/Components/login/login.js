@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+import { BaseUrl } from "../Auth/axios";
 import { PageView } from "../../analyicts";
 import "../../scss/loginPage.scss";
+import axiosWithAuth from "../Auth/axiosWithAuth";
+import axios from "axios";
+
+console.log(BaseUrl());
 
 const LoginForm = (props) => {
   const [userCredentials, setUserCredentials] = useState({
@@ -21,8 +25,8 @@ const LoginForm = (props) => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    axios
-      .post("https://fanatics-gym-be.herokuapp.com/user/login", userCredentials)
+    BaseUrl()
+      .post(`http://localhost:7000/user/login`, userCredentials)
       .then((res) => {
         localStorage.setItem("token", res.data.payload);
         props.history.push("/user");
