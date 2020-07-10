@@ -2,8 +2,6 @@ import React, { useState, useEffect } from "react";
 import { BaseUrl } from "../Auth/axios";
 import { PageView } from "../../analyicts";
 import "../../scss/loginPage.scss";
-import axiosWithAuth from "../Auth/axiosWithAuth";
-import axios from "axios";
 
 const LoginForm = (props) => {
   const [userCredentials, setUserCredentials] = useState({

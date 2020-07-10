@@ -1,12 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getItems, addItem } from "../Redux/thunks/itemThunk";
+import { getItems } from "../Redux/thunks/itemThunk";
 import Item from "./item";
-import { BaseUrl } from "../Auth/axios";
+
 import AddItem from "./addItem";
 
 const Shop = () => {
-  const [shop, setShop] = useState([]);
   // useEffect(() => {
   //   BaseUrl()
   //     .get("items")

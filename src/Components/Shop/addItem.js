@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useSelector, useDispatch, connect } from "react-redux";
+import { connect } from "react-redux";
 import { addItem } from "../Redux/thunks/itemThunk";
 
 const mapDispatch = { addItem };
@@ -11,7 +11,7 @@ const AddItem = ({ addItem }) => {
     size: "",
     stock: 0,
   });
-  const dispatch = useDispatch();
+
   const handleChange = (e) => {
     if (e.target.name === "name" || e.target.name === "size") {
       setItem({ ...item, [e.target.name]: e.target.value });
@@ -26,7 +26,7 @@ const AddItem = ({ addItem }) => {
   //     console.log(e);
   //     setItem(dispatch(addItem(e)));
   //   };
-  console.log(item);
+
   return (
     <div>
       <form
