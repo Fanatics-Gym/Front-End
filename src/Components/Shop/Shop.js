@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getItems } from "../Redux/thunks/itemThunk";
+import { getItems, addItem } from "../Redux/thunks/itemThunk";
 import Item from "./item";
 import { BaseUrl } from "../Auth/axios";
+import AddItem from "./addItem";
 
 const Shop = () => {
   const [shop, setShop] = useState([]);
@@ -14,6 +15,12 @@ const Shop = () => {
   //       setShop(res.data);
   //     });
   // }, []);
+  const token = localStorage.getItem("token");
+  const userAdd = () => {
+    if (token) {
+      return <AddItem />;
+    }
+  };
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getItems());
@@ -22,6 +29,7 @@ const Shop = () => {
   return (
     <div>
       <h2>Items</h2>
+      {userAdd()}
       {itemsArray.itemArr.map((item) => (
         <Item key={item.id} item={item} />
       ))}

@@ -17,6 +17,9 @@ export const itemSlice = createSlice({
     setSelectedItem(state, action) {
       state.selectedItem = action.payload;
     },
+    setAddItem(state, action) {
+      state.itemArr.push(action.payload);
+    },
   },
 });
 
@@ -24,5 +27,6 @@ export const {
   setItemArray,
   setItemError,
   setSelectedItem,
+  setAddItem,
 } = itemSlice.actions;
 export default itemSlice.reducer;

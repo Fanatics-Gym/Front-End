@@ -5,8 +5,6 @@ import "../../scss/loginPage.scss";
 import axiosWithAuth from "../Auth/axiosWithAuth";
 import axios from "axios";
 
-console.log(BaseUrl());
-
 const LoginForm = (props) => {
   const [userCredentials, setUserCredentials] = useState({
     username: "",
