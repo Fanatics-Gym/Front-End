@@ -6,24 +6,23 @@ import { BaseUrl } from "../Auth/axios";
 
 const Shop = () => {
   const [shop, setShop] = useState([]);
-  useEffect(() => {
-    BaseUrl()
-      .get("items")
-      .then((res) => {
-        console.log(res);
-        setShop(res.data);
-      });
-  }, []);
-  console.log(shop);
-  // const dispatch = useDispatch();
   // useEffect(() => {
-  //   dispatch(getItems());
-  // }, [dispatch]);
-  // const { itemsArray } = useSelector((state) => state.item);
+  //   BaseUrl()
+  //     .get("items")
+  //     .then((res) => {
+  //       console.log(res.data);
+  //       setShop(res.data);
+  //     });
+  // }, []);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getItems());
+  }, [dispatch]);
+  const itemsArray = useSelector((state) => state.item);
   return (
     <div>
       <h2>Items</h2>
-      {shop.map((item) => (
+      {itemsArray.itemArr.map((item) => (
         <Item key={item.id} item={item} />
       ))}
     </div>
