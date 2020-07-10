@@ -1,8 +1,9 @@
 import React from "react";
+import "../../scss/item.scss";
 
 const Item = ({ item }) => {
   return (
-    <div>
+    <div className="itemCard">
       <h3>{item.name}</h3>
       <p>{item.price}</p>
       <p>{item.size}</p>

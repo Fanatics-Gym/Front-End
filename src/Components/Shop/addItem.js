@@ -1,15 +1,16 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
 import { addItem } from "../Redux/thunks/itemThunk";
+import "../../scss/addItem.scss";
 
 const mapDispatch = { addItem };
 
 const AddItem = ({ addItem }) => {
   const [item, setItem] = useState({
     name: "",
-    price: 0,
+    price: null,
     size: "",
-    stock: 0,
+    stock: null,
   });
 
   const handleChange = (e) => {
@@ -28,9 +29,10 @@ const AddItem = ({ addItem }) => {
   //   };
 
   return (
-    <div>
+    <div className="addItems">
+      <h3>Add items</h3>
       <form
-        className="itemList"
+        className="itemInputs"
         onSubmit={(e) => {
           addItem(item);
         }}

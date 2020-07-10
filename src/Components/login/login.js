@@ -36,6 +36,7 @@ const LoginForm = (props) => {
       <form>
         <h3>Username/Email</h3>
         <input
+          className="loginInputs"
           type="text"
           placeholder="Insert Username or Email"
           name="username"
@@ -44,6 +45,7 @@ const LoginForm = (props) => {
         />
         <h3>Password</h3>
         <input
+          className="loginInputs"
           type="password"
           name="password"
           placeholder="Insert Password"

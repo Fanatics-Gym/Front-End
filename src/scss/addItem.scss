@@ -1,0 +1,25 @@
+.addItems {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 40%;
+  text-align: center;
+}
+
+.itemInputs {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  span {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+  }
+  input {
+    width: 150px;
+  }
+  button {
+    width: 100px;
+    margin: 10px auto;
+  }
+}
