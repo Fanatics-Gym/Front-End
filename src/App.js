@@ -10,6 +10,7 @@ import aboutUs from "./Components/about/about";
 import PrivateRoute from "./Components/Auth/PrivateRoute";
 import userPage from "./Components/user/userPage";
 import { initGA, PageView } from "./analyicts";
+import Shop from "./Components/Shop/Shop";
 
 function App() {
   useEffect(() => {
@@ -26,6 +27,7 @@ function App() {
           <Route exact path="/" component={HomePage} />
           <Route path="/login" component={LoginForm} />
           <Route path="/about" component={aboutUs} />
+          <Route path="/shop" component={Shop} />
           {/* <Footer className="foot" /> */}
         </div>
       </Router>
