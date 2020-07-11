@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import "../../scss/nav.scss";
+import cart from "../../imgs/cart.png";
 
 const NavBar = () => {
   return (
@@ -21,6 +22,9 @@ const NavBar = () => {
         </Link>
         <Link className="links" to="/shop">
           Shop
+        </Link>
+        <Link className="links" to="/checkout">
+          <img src={cart} />
         </Link>
       </div>
     </nav>
