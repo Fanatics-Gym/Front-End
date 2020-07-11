@@ -1,5 +1,5 @@
-import React from "react";
-import { Link, Router } from "react-router-dom";
+import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
 import "../../scss/nav.scss";
 
 const NavBar = () => {
@@ -19,9 +19,9 @@ const NavBar = () => {
         <Link className="links" to="/login">
           Login
         </Link>
-        {/* <Link className="links" to="/user">
-          User
-        </Link> */}
+        <Link className="links" to="/shop">
+          Shop
+        </Link>
       </div>
     </nav>
   );

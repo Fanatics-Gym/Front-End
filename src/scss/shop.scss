@@ -1,0 +1,19 @@
+.itemList {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.shopHeader {
+  margin-left: 5%;
+  border-bottom: 3px solid black;
+  width: 75px;
+  text-align: center;
+}
+
+.itemsHeader {
+  text-align: center;
+  border-bottom: 3px solid black;
+  width: 75px;
+  margin: 2% auto;
+}

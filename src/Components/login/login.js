@@ -2,10 +2,6 @@ import React, { useState, useEffect } from "react";
 import { BaseUrl } from "../Auth/axios";
 import { PageView } from "../../analyicts";
 import "../../scss/loginPage.scss";
-import axiosWithAuth from "../Auth/axiosWithAuth";
-import axios from "axios";
-
-console.log(BaseUrl());
 
 const LoginForm = (props) => {
   const [userCredentials, setUserCredentials] = useState({
@@ -40,6 +36,7 @@ const LoginForm = (props) => {
       <form>
         <h3>Username/Email</h3>
         <input
+          className="loginInputs"
           type="text"
           placeholder="Insert Username or Email"
           name="username"
@@ -48,6 +45,7 @@ const LoginForm = (props) => {
         />
         <h3>Password</h3>
         <input
+          className="loginInputs"
           type="password"
           name="password"
           placeholder="Insert Password"
