@@ -26,6 +26,7 @@ const LoginForm = (props) => {
       .then((res) => {
         localStorage.setItem("token", res.data.payload);
         props.history.push("/user");
+        window.location.reload();
       })
       .catch((err) => console.error(err));
   };

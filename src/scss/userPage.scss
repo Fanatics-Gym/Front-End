@@ -1,7 +1,19 @@
 .userStyles {
   display: flex;
+  justify-content: center;
   flex-direction: column;
   border: black 1px solid;
-  margin: 5%;
   text-align: center;
+  margin: 5%;
+
+  .logoutButton {
+    width: 75px;
+    margin: 25px auto;
+    justify-content: center;
+    border: solid 3px black;
+  }
+  .logoutButton:hover {
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+      0 17px 50px 0 rgba(0, 0, 0, 0.19);
+  }
 }

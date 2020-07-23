@@ -12,6 +12,7 @@ import userPage from "./Components/user/userPage";
 import { initGA, PageView } from "./analyicts";
 import Shop from "./Components/Shop/Shop";
 import Checkout from "./Components/Shop/checkout";
+import UserAddItem from "./Components/user/userAddItem";
 
 function App() {
   useEffect(() => {
@@ -29,6 +30,7 @@ function App() {
           <Route path="/login" component={LoginForm} />
           <Route path="/about" component={aboutUs} />
           <Route path="/shop" component={Shop} />
+          <PrivateRoute exact path="/additem" component={UserAddItem} />
           <Route path="/checkout" component={Checkout} />
           {/* <Footer className="foot" /> */}
         </div>
