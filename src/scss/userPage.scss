@@ -1,5 +1,7 @@
 .userStyles {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  border: black 1px solid;
   margin: 5%;
+  text-align: center;
 }
