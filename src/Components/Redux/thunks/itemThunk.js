@@ -1,9 +1,4 @@
-import {
-  setItemArray,
-  setItemError,
-  setAddItem,
-  setCheckout,
-} from "../slices/itemSlice";
+import { setItemArray, setItemError, setAddItem } from "../slices/itemSlice";
 import { BaseUrl } from "../../Auth/axios";
 
 export const getItems = () => async (dispatch) => {
@@ -26,14 +21,5 @@ export const addItem = ({ name, price, size, stock }) => async (dispatch) => {
       stock,
     });
     dispatch(setAddItem(data));
-  } catch (e) {}
-};
-
-export const addToCheckout = ({ name, price, size, stock }) => async (
-  dispatch
-) => {
-  try {
-    const { data } = await { name, price, size, stock };
-    dispatch(setCheckout(data));
   } catch (e) {}
 };

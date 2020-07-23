@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useReducer } from "react";
+import { useSelector } from "react-redux";
 
-const checkout = () => {
+const Checkout = () => {
+  const checkoutArray = useSelector((state) => state.checkout);
+  console.log(checkoutArray);
   return <div></div>;
 };
 
-export default checkout;
+export default Checkout;
