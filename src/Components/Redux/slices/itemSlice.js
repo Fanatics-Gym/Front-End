@@ -20,6 +20,9 @@ export const itemSlice = createSlice({
     setAddItem(state, action) {
       state.itemArr.push(action.payload);
     },
+    setDeleteItem(state, action) {
+      state.itemArr.remove(action.payload);
+    },
   },
 });
 
@@ -28,5 +31,6 @@ export const {
   setItemError,
   setSelectedItem,
   setAddItem,
+  setDeleteItem,
 } = itemSlice.actions;
 export default itemSlice.reducer;

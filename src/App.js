@@ -30,7 +30,7 @@ function App() {
           <Route path="/login" component={LoginForm} />
           <Route path="/about" component={aboutUs} />
           <Route path="/shop" component={Shop} />
-          <PrivateRoute exact path="/additem" component={UserAddItem} />
+          <PrivateRoute exact path="/add" component={UserAddItem} />
           <Route path="/checkout" component={Checkout} />
           {/* <Footer className="foot" /> */}
         </div>
