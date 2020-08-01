@@ -1,0 +1,13 @@
+.userAddItem {
+  display: flex;
+  flex-direction: row;
+  .addItem {
+    width: 50%;
+  }
+  .items {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    width: 50%;
+  }
+}

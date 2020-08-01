@@ -11,7 +11,7 @@ const userPage = (props) => {
   return (
     <div className="userStyles">
       <h1>You've successfully logged in!!!</h1>
-      <Link to="/additems">Add items</Link>
+      <Link to="/add">Add items</Link>
       <button className="logoutButton" onClick={logout}>
         Logout
       </button>

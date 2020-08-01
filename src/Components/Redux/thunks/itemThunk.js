@@ -1,4 +1,9 @@
-import { setItemArray, setItemError, setAddItem } from "../slices/itemSlice";
+import {
+  setItemArray,
+  setItemError,
+  setAddItem,
+  setDeleteItem,
+} from "../slices/itemSlice";
 import { BaseUrl } from "../../Auth/axios";
 
 export const getItems = () => async (dispatch) => {
@@ -21,5 +26,14 @@ export const addItem = ({ name, price, size, stock }) => async (dispatch) => {
       stock,
     });
     dispatch(setAddItem(data));
+  } catch (e) {}
+};
+
+export const removeItem = (id) => async (dispatch) => {
+  try {
+    const { data } = await BaseUrl().delete(`items/${id}`, {
+      id,
+    });
+    window.location.reload();
   } catch (e) {}
 };
