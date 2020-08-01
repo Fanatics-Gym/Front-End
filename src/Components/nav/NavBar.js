@@ -1,13 +1,18 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "../../scss/nav.scss";
 import cart from "../../imgs/cart.png";
 
 const NavBar = () => {
+  const [navDrop, setNavDrop] = useState(false);
+  const adjust = () => {
+    if (window.screen.width <= 500) {
+      return <div></div>;
+    }
+  };
   return (
     <nav className="nav">
       <div className="navLogo">
-        {/* <img src={label}></img> */}
         <h1>Fanatics Gym</h1>
       </div>
       <div className="navLinks">
