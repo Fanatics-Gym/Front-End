@@ -19,8 +19,8 @@
     "yup": "^0.27.0"
   },
   "scripts": {
-    "start": "react-scripts start node index.js",
-    "build": "react-scripts build",
+    "start": "react-scripts start",
+    "build": "CI= react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "heroku-prebuild": "npm install --only=dev"
