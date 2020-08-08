@@ -6,6 +6,7 @@ export const itemSlice = createSlice({
     itemArr: [],
     itemError: null,
     selectedItem: {},
+    checkoutArr: [],
   },
   reducers: {
     setItemArray(state, action) {

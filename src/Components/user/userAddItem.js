@@ -10,7 +10,7 @@ const UserAddItem = () => {
   useEffect(() => {
     dispatch(getItems());
   }, [dispatch]);
-
+  console.log(itemsArray.itemArr);
   return (
     <div className="userAddItem">
       <div className="addItem">

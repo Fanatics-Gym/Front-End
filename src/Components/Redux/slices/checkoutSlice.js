@@ -2,14 +2,16 @@ import { createSlice } from "@reduxjs/toolkit";
 
 export const checkoutSlice = createSlice({
   name: "checkout",
-  initialState: [],
+  initialState: { checkoutArr: [], checkoutError: null, itemCheckout: {} },
   reducers: {
     setCheckout(state, action) {
-      const { item } = action.payload;
-      state.push({ item });
+      state = action.payload;
+    },
+    addCheckout(state, action) {
+      state.checkoutArr.push(action.payload);
     },
   },
 });
 
-export const { setCheckout } = checkoutSlice.actions;
+export const { setCheckout, addCheckout } = checkoutSlice.actions;
 export default checkoutSlice.reducer;
