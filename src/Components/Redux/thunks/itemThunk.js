@@ -25,6 +25,7 @@ export const addItem = ({ name, price, size, stock }) => async (dispatch) => {
       size,
       stock,
     });
+
     dispatch(setAddItem(data));
   } catch (e) {}
 };

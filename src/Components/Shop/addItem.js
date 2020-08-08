@@ -12,7 +12,6 @@ const AddItem = ({ addItem }) => {
     size: "",
     stock: null,
   });
-
   const handleChange = (e) => {
     if (e.target.name === "name" || e.target.name === "size") {
       setItem({ ...item, [e.target.name]: e.target.value });
@@ -20,13 +19,13 @@ const AddItem = ({ addItem }) => {
       setItem({ ...item, [e.target.name]: parseInt(e.target.value) });
     }
   };
-  //   const handleInt = (e) => {
-  //     setItem({ ...item, [e.target.name]: parseInt(e.target.value) });
-  //   };
-  //   const handleSubmit = (e) => {
-  //     console.log(e);
-  //     setItem(dispatch(addItem(e)));
-  //   };
+  const handleInt = (e) => {
+    setItem({ ...item, [e.target.name]: parseInt(e.target.value) });
+  };
+  // const handleSubmit = (e) => {
+  //   console.log(e);
+  //   setItem(dispatch(addItem(e)));
+  // };
 
   return (
     <div className="addItems">
