@@ -19,9 +19,9 @@ const AddItem = ({ addItem }) => {
       setItem({ ...item, [e.target.name]: parseInt(e.target.value) });
     }
   };
-  const handleInt = (e) => {
-    setItem({ ...item, [e.target.name]: parseInt(e.target.value) });
-  };
+  // const handleInt = (e) => {
+  //   setItem({ ...item, [e.target.name]: parseInt(e.target.value) });
+  // };
   // const handleSubmit = (e) => {
   //   console.log(e);
   //   setItem(dispatch(addItem(e)));
