@@ -5,6 +5,7 @@ export const addToCheckout = (item) => async (dispatch) => {
     console.log("hit");
     console.log(item);
     // const { data } = await { name, price, size, stock };
+    dispatch(setCheckout(item));
     dispatch(addCheckout(item));
   } catch (e) {}
 };
