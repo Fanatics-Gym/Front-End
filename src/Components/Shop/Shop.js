@@ -1,8 +1,8 @@
 import React from "react";
 import Item from "./item";
-import "../../scss/shop.scss";
 import { useRecoilValue } from "recoil";
 import ShopAtom from "../../Recoil/atom/shop";
+
 const Shop = () => {
   const shopItems = useRecoilValue(ShopAtom);
   return (

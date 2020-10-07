@@ -1,7 +1,6 @@
-import React, { useEffect } from "react";
+import React from "react";
 import AddItem from "../Shop/addItem";
 import Item from "../Shop/item";
-import "../../scss/userAddItem.scss";
 import { useRecoilValue } from "recoil";
 import ShopAtom from "../../Recoil/atom/shop";
 const UserAddItem = () => {

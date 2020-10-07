@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import Logo from "../../imgs/Logo.JPG";
-import "../../scss/home.scss";
 import { PageView } from "../../analyicts";
 
 const HomePage = () => {

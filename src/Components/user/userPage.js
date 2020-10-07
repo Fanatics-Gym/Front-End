@@ -1,5 +1,4 @@
 import React from "react";
-import "../../scss/userPage.scss";
 import { Link, Redirect } from "react-router-dom";
 
 const userPage = (props) => {

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { BaseUrl } from "../Auth/axios";
 import { PageView } from "../../analyicts";
-import "../../scss/loginPage.scss";
 import { useRecoilState } from "recoil";
 import UserInfo from "../../Recoil/atom/userData";
 
