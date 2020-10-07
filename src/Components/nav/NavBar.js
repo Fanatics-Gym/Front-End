@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import "../../scss/nav.scss";
 import cart from "../../imgs/cart.png";
 
 const NavBar = () => {

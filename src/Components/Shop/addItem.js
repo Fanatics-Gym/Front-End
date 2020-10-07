@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useSetRecoilState } from "recoil";
 import ShopAtom from "../../Recoil/atom/shop";
-import "../../scss/addItem.scss";
 
 const AddItem = () => {
   const [item, setItem] = useState({

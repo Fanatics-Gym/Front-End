@@ -1,6 +1,4 @@
 import React from "react";
-import "../../scss/item.scss";
-import { useDispatch } from "react-redux";
 
 const Item = ({ item }) => {
   const userEdit = () => {
