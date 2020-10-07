@@ -1,10 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Item from "./item";
-import { useRecoilValue } from "recoil";
+import { useRecoilState } from "recoil";
 import ShopAtom from "../../Recoil/atom/shop";
+import { BaseUrl } from "../Auth/axios";
 
 const Shop = () => {
-  const shopItems = useRecoilValue(ShopAtom);
+  const [shopItems, setShopItems] = useRecoilState(ShopAtom);
+  useEffect(() => {
+    BaseUrl()
+      .get(`items`)
+      .then((res) => {
+        setShopItems(res.data);
+      })
+      .catch((err) => console.log(err));
+  }, [setShopItems]);
   return (
     <div>
       <h2 className="shopHeader">Shop</h2>
