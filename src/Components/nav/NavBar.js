@@ -22,15 +22,6 @@ const NavBar = () => {
         <Link className="links" to="/about">
           About
         </Link>
-        {localStorage.getItem("token") ? (
-          <Link className="links" to="/user">
-            User
-          </Link>
-        ) : (
-          <Link className="links" to="/login">
-            Login
-          </Link>
-        )}
         <Link className="links" to="/shop">
           Shop
         </Link>

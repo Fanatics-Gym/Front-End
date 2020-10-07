@@ -1,7 +1,7 @@
 import React from "react";
 import "../../scss/userPage.scss";
 import { Link, Redirect } from "react-router-dom";
-import { prependOnceListener } from "process";
+
 const userPage = (props) => {
   const logout = () => {
     localStorage.removeItem("token");

@@ -1,17 +1,20 @@
 import React, { useState } from "react";
-import { connect } from "react-redux";
-import { addItem } from "../Redux/thunks/itemThunk";
+import { useSetRecoilState } from "recoil";
+import ShopAtom from "../../Recoil/atom/shop";
 import "../../scss/addItem.scss";
 
-const mapDispatch = { addItem };
-
-const AddItem = ({ addItem }) => {
+const AddItem = () => {
   const [item, setItem] = useState({
     name: "",
     price: null,
     size: "",
     stock: null,
   });
+
+  const shopState = useSetRecoilState(ShopAtom);
+  const addToAtom = (item) => {
+    shopState((old) => [...old, item]);
+  };
   const handleChange = (e) => {
     if (e.target.name === "name" || e.target.name === "size") {
       setItem({ ...item, [e.target.name]: e.target.value });
@@ -19,13 +22,6 @@ const AddItem = ({ addItem }) => {
       setItem({ ...item, [e.target.name]: parseInt(e.target.value) });
     }
   };
-  // const handleInt = (e) => {
-  //   setItem({ ...item, [e.target.name]: parseInt(e.target.value) });
-  // };
-  // const handleSubmit = (e) => {
-  //   console.log(e);
-  //   setItem(dispatch(addItem(e)));
-  // };
 
   return (
     <div className="addItems">
@@ -33,7 +29,8 @@ const AddItem = ({ addItem }) => {
       <form
         className="itemInputs"
         onSubmit={(e) => {
-          addItem(item);
+          e.preventDefault();
+          addToAtom(item);
         }}
       >
         <span>
@@ -77,4 +74,4 @@ const AddItem = ({ addItem }) => {
   );
 };
 
-export default connect(null, mapDispatch)(AddItem);
+export default AddItem;

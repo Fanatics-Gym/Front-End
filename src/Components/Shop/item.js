@@ -1,22 +1,18 @@
 import React from "react";
 import "../../scss/item.scss";
-import { connect, useDispatch } from "react-redux";
-import { setCheckout } from "../Redux/slices/checkoutSlice";
-import { addToCheckout } from "../Redux/thunks/checkoutThunk";
-import { removeItem } from "../Redux/thunks/itemThunk";
+import { useDispatch } from "react-redux";
 
 const Item = ({ item }) => {
-  const dispatch = useDispatch();
   const userEdit = () => {
     if (window.location.pathname === "/add") {
       return (
         <div>
           <button>edit</button>
-          <button onClick={removeItem(item.id)}>delete</button>
+          <button>delete</button>
         </div>
       );
     } else {
-      return <button onClick={addToCheckout(item)}>Checkout</button>;
+      return <button>Checkout</button>;
     }
   };
   return (

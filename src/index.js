@@ -7,17 +7,18 @@ import { BrowserRouter as Router } from "react-router-dom";
 import { initGA } from "./analyicts";
 import { Provider } from "react-redux";
 import store from "./Components/Redux/store";
+import { RecoilRoot } from "recoil";
 
 (function initAnalytics() {
   initGA("UA-159198142-1");
 })();
 
 ReactDOM.render(
-  <Provider store={store}>
+  <RecoilRoot>
     <Router>
       <App />
     </Router>
-  </Provider>,
+  </RecoilRoot>,
   document.getElementById("root")
 );
 
