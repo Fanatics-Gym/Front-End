@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useSetRecoilState } from "recoil";
 import ShopAtom from "../../Recoil/atom/shop";
+import { BaseUrl } from "../Auth/axios";
 
 const AddItem = () => {
   const [item, setItem] = useState({
@@ -22,6 +23,15 @@ const AddItem = () => {
     }
   };
 
+  const addItemApi = (item) => {
+    BaseUrl()
+      .post("items/add", item)
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => console.log(err));
+  };
+
   return (
     <div className="addItems">
       <h3>Add items</h3>
@@ -30,6 +40,7 @@ const AddItem = () => {
         onSubmit={(e) => {
           e.preventDefault();
           addToAtom(item);
+          addItemApi(item);
         }}
       >
         <span>
