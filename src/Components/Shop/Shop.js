@@ -1,20 +1,16 @@
-import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { getItems } from "../Redux/thunks/itemThunk";
+import React from "react";
 import Item from "./item";
 import "../../scss/shop.scss";
+import { useRecoilValue } from "recoil";
+import ShopAtom from "../../Recoil/atom/shop";
 const Shop = () => {
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(getItems());
-  }, [dispatch]);
-  const itemsArray = useSelector((state) => state.item);
+  const shopItems = useRecoilValue(ShopAtom);
   return (
     <div>
       <h2 className="shopHeader">Shop</h2>
       <h3 className="itemsHeader">Items</h3>
       <div className="itemList">
-        {itemsArray.itemArr.map((item) => (
+        {shopItems.map((item) => (
           <Item key={item.id} item={item} />
         ))}
       </div>
