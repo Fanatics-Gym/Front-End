@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { BaseUrl } from "../Auth/axios";
 import { PageView } from "../../analyicts";
 import "../../scss/loginPage.scss";
+import { useRecoilState } from "recoil";
+import UserInfo from "../../Recoil/atom/userData";
 
 const LoginForm = (props) => {
   const [userCredentials, setUserCredentials] = useState({
@@ -11,6 +13,8 @@ const LoginForm = (props) => {
   useEffect(() => {
     PageView();
   }, []);
+
+  const [userInfo, setUserInfo] = useRecoilState(UserInfo);
 
   const handleChange = (e) => {
     setUserCredentials({
@@ -24,13 +28,13 @@ const LoginForm = (props) => {
     BaseUrl()
       .post(`${process.env.REACT_APP_API_URL}user/login`, userCredentials)
       .then((res) => {
-        localStorage.setItem("token", res.data.payload);
+        setUserInfo(res.data);
         props.history.push("/user");
-        window.location.reload();
       })
       .catch((err) => console.error(err));
   };
 
+  console.log(userInfo);
   return (
     <div className="loginForm" onSubmit={onSubmit}>
       <h2>Login</h2>
