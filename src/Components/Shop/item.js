@@ -7,8 +7,12 @@ const Item = ({ item }) => {
 
   const deleteItem = () => {
     const itemIndex = shopState.indexOf(item);
-    console.log(shopState.slice(itemIndex, 1));
+    console.log(itemIndex);
+    const newShop = shopState.splice(itemIndex, 1);
+    console.log(newShop);
   };
+
+  console.log(shopState);
 
   const userEdit = () => {
     if (window.location.pathname === "/add") {
