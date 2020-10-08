@@ -6,14 +6,14 @@ import { BaseUrl } from "../Auth/axios";
 
 const Shop = () => {
   const [shopItems, setShopItems] = useRecoilState(ShopAtom);
-  useEffect(() => {
-    BaseUrl()
-      .get(`items`)
-      .then((res) => {
-        setShopItems(res.data);
-      })
-      .catch((err) => console.log(err));
-  }, [setShopItems]);
+  // useEffect(() => {
+  //   BaseUrl()
+  //     .get(`items`)
+  //     .then((res) => {
+  //       setShopItems(res.data);
+  //     })
+  //     .catch((err) => console.log(err));
+  // }, []);
   return (
     <div>
       <h2 className="shopHeader">Shop</h2>
