@@ -1,12 +1,22 @@
 import React from "react";
+import { useRecoilState } from "recoil";
+import ShopAtom from "../../Recoil/atom/shop";
 
 const Item = ({ item }) => {
+  const [shopState, setShopState] = useRecoilState(ShopAtom);
+
+  const deleteItem = () => {
+    const itemIndex = shopState.indexOf(item);
+    shopState.slice(itemIndex, 1);
+    console.log(shopState);
+  };
+
   const userEdit = () => {
     if (window.location.pathname === "/add") {
       return (
         <div>
           <button>edit</button>
-          <button>delete</button>
+          <button onClick={deleteItem}>delete</button>
         </div>
       );
     } else {
