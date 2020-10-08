@@ -1,6 +1,7 @@
 import joggin from "../../imgs/jogging.png";
 import jake from "../../imgs/owner.jpg";
 import React from "react";
+import { Link } from "react-router-dom";
 
 function adminInfo() {
   return (
@@ -45,7 +46,9 @@ function adminInfo() {
         </div>
       </div>
       <div className="aboutFounder">
-        <h1>Founder</h1>
+        <Link to="/add">
+          <h1>Founder</h1>
+        </Link>
         <img src={jake} alt="creator of the company" />
         <p>
           <b>Hello, I'm Jake Barbosa!</b> I created this brand to inspire others
