@@ -3,6 +3,7 @@ import AddItem from "../Shop/addItem";
 import Item from "../Shop/item";
 import { useRecoilValue } from "recoil";
 import ShopAtom from "../../Recoil/atom/shop";
+import Shop from "../Shop/Shop";
 const UserAddItem = () => {
   const shopAtom = useRecoilValue(ShopAtom);
   return (
@@ -11,9 +12,7 @@ const UserAddItem = () => {
         <AddItem />
       </div>
       <div className="items">
-        {shopAtom.map((item, index) => {
-          return <Item key={index} item={item} />;
-        })}
+        <Shop />
       </div>
     </div>
   );

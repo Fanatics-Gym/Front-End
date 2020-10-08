@@ -12,9 +12,9 @@ const AddItem = () => {
   });
 
   const shopState = useSetRecoilState(ShopAtom);
-  const addToAtom = (item) => {
-    shopState((old) => [...old, item]);
-  };
+  // const addToAtom = (item) => {
+  //   shopState((old) => [...old, item]);
+  // };
   const handleChange = (e) => {
     if (e.target.name === "name" || e.target.name === "size") {
       setItem({ ...item, [e.target.name]: e.target.value });
@@ -24,6 +24,7 @@ const AddItem = () => {
   };
 
   const addItemApi = (item) => {
+    shopState((old) => [...old, item]);
     BaseUrl()
       .post("items/add", item)
       .then((res) => {
@@ -32,6 +33,7 @@ const AddItem = () => {
       .catch((err) => console.log(err));
   };
 
+  console.log(shopState);
   return (
     <div className="addItems">
       <h3>Add items</h3>
@@ -39,7 +41,7 @@ const AddItem = () => {
         className="itemInputs"
         onSubmit={(e) => {
           e.preventDefault();
-          addToAtom(item);
+          // addToAtom(item);
           addItemApi(item);
         }}
       >
