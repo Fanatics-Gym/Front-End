@@ -7,8 +7,7 @@ const Item = ({ item }) => {
 
   const deleteItem = () => {
     const itemIndex = shopState.indexOf(item);
-    shopState.slice(itemIndex, 1);
-    console.log(shopState);
+    console.log(shopState.slice(itemIndex, 1));
   };
 
   const userEdit = () => {
