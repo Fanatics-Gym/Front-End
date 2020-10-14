@@ -33,7 +33,6 @@ const LoginForm = (props) => {
       .catch((err) => console.error(err));
   };
 
-  console.log(userInfo);
   return (
     <div className="loginForm" onSubmit={onSubmit}>
       <h2>Login</h2>

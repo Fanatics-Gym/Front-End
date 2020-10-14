@@ -1,6 +1,7 @@
 import React from "react";
 import { useRecoilState } from "recoil";
 import ShopAtom from "../../Recoil/atom/shop";
+import { BaseUrl } from "../Auth/axios";
 
 const Item = ({ item }) => {
   const [shopState, setShopState] = useRecoilState(ShopAtom);
@@ -10,6 +11,7 @@ const Item = ({ item }) => {
     const shopArray = [...shopState];
     shopArray.splice(itemIndex, 1);
     setShopState(shopArray);
+    BaseUrl().delete(`items/${item.id}`);
   };
 
   const userEdit = () => {
