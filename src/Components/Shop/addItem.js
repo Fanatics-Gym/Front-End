@@ -23,12 +23,12 @@ const AddItem = () => {
 
   const addItemApi = (item) => {
     shopState((old) => [...old, item]);
-    // BaseUrl()
-    //   .post("items/add", item)
-    //   .then((res) => {
-    //     console.log(res);
-    //   })
-    //   .catch((err) => console.log(err));
+    BaseUrl()
+      .post("items/add", item)
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => console.log(err));
   };
 
   return (
