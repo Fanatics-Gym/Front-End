@@ -39,6 +39,8 @@ const Item = ({ item }) => {
           <button onClick={deleteItem}>delete</button>
         </div>
       );
+    } else if (window.location.pathname === "/checkout") {
+      return;
     } else {
       return <button onClick={addToCheckout}>Checkout</button>;
     }
