@@ -1,18 +1,27 @@
 import React, { useState } from "react";
 import { useRecoilState } from "recoil";
+import CheckoutAtom from "../../Recoil/atom/checkout";
 import ShopAtom from "../../Recoil/atom/shop";
 import { BaseUrl } from "../Auth/axios";
 
 const Item = ({ item }) => {
   const [shopState, setShopState] = useRecoilState(ShopAtom);
   const [editItem, setEditItem] = useState(false);
+  const [checkout, setCheckout] = useRecoilState(CheckoutAtom);
 
   const deleteItem = () => {
-    const itemIndex = shopState.indexOf(item);
-    const shopArray = [...shopState];
-    shopArray.splice(itemIndex, 1);
-    setShopState(shopArray);
-    BaseUrl().delete(`items/${item.id}`);
+    if (window.location.pathname === "/checkout") {
+      const checkoutIndex = checkout.indexOf(item);
+      const checkoutArray = [...checkout];
+      checkoutArray.splice(checkoutIndex, 1);
+      setCheckout(checkoutArray);
+    } else if (window.location.pathname === "/add") {
+      const itemIndex = shopState.indexOf(item);
+      const shopArray = [...shopState];
+      shopArray.splice(itemIndex, 1);
+      setShopState(shopArray);
+      BaseUrl().delete(`items/${item.id}`);
+    }
   };
 
   const EditItem = () => {
@@ -25,6 +34,10 @@ const Item = ({ item }) => {
     );
   };
 
+  const addToCheckout = () => {
+    setCheckout((old) => [...old, item]);
+  };
+
   const userEdit = () => {
     if (window.location.pathname === "/add") {
       return (
@@ -33,8 +46,14 @@ const Item = ({ item }) => {
           <button onClick={deleteItem}>delete</button>
         </div>
       );
+    } else if (window.location.pathname === "/checkout") {
+      return (
+        <div>
+          <button onClick={deleteItem}>Remove</button>
+        </div>
+      );
     } else {
-      return <button>Checkout</button>;
+      return <button onClick={addToCheckout}>Checkout</button>;
     }
   };
   return (
