@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import { useRecoilState } from "recoil";
+import CheckoutAtom from "../../Recoil/atom/checkout";
 import ShopAtom from "../../Recoil/atom/shop";
 import { BaseUrl } from "../Auth/axios";
 
 const Item = ({ item }) => {
   const [shopState, setShopState] = useRecoilState(ShopAtom);
   const [editItem, setEditItem] = useState(false);
+  const [checkout, setCheckout] = useRecoilState(CheckoutAtom);
 
   const deleteItem = () => {
     const itemIndex = shopState.indexOf(item);
@@ -25,6 +27,10 @@ const Item = ({ item }) => {
     );
   };
 
+  const addToCheckout = () => {
+    setCheckout((old) => [...old, item]);
+  };
+
   const userEdit = () => {
     if (window.location.pathname === "/add") {
       return (
@@ -34,7 +40,7 @@ const Item = ({ item }) => {
         </div>
       );
     } else {
-      return <button>Checkout</button>;
+      return <button onClick={addToCheckout}>Checkout</button>;
     }
   };
   return (
