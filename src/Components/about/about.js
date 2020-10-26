@@ -46,7 +46,7 @@ function adminInfo() {
         </div>
       </div>
       <div className="aboutFounder">
-        <Link to="/add">
+        <Link className="secretLogin" to="/add">
           <h1>Founder</h1>
         </Link>
         <img src={jake} alt="creator of the company" />
