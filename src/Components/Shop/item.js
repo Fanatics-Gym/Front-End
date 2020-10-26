@@ -58,10 +58,14 @@ const Item = ({ item }) => {
   };
   return (
     <div className="itemCard">
-      <h3>{item.name}</h3>
-      <p>{item.price}</p>
+      <img classname="item_img" src={item.img} />
+      <div>
+        <h3 className="item_header">{item.name}</h3>
+        <p>{item.price}</p>
+      </div>
       <p>{item.size}</p>
       <p>{item.stock}</p>
+      <p>{item.description}</p>
       {userEdit()}
     </div>
   );

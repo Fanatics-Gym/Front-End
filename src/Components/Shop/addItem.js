@@ -9,12 +9,19 @@ const AddItem = () => {
     price: null,
     size: "",
     stock: null,
+    img: null,
+    description: "",
   });
 
   const shopState = useSetRecoilState(ShopAtom);
 
   const handleChange = (e) => {
-    if (e.target.name === "name" || e.target.name === "size") {
+    if (
+      e.target.name === "name" ||
+      e.target.name === "size" ||
+      e.target.name === "img" ||
+      e.target.name === "description"
+    ) {
       setItem({ ...item, [e.target.name]: e.target.value });
     } else {
       setItem({ ...item, [e.target.name]: parseInt(e.target.value) });
@@ -73,6 +80,22 @@ const AddItem = () => {
             name="stock"
             type="number"
             value={item.stock}
+            onChange={(e) => handleChange(e)}
+          />
+        </span>
+        <span>
+          Image:{" "}
+          <input
+            name="img"
+            value={item.img}
+            onChange={(e) => handleChange(e)}
+          />
+        </span>
+        <span>
+          Description:{" "}
+          <textarea
+            name="description"
+            value={item.description}
             onChange={(e) => handleChange(e)}
           />
         </span>
