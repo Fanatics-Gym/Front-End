@@ -53,20 +53,26 @@ const Item = ({ item }) => {
         </div>
       );
     } else {
-      return <button onClick={addToCheckout}>Checkout</button>;
+      return (
+        <button className="item_btn" onClick={addToCheckout}>
+          Checkout
+        </button>
+      );
     }
   };
   return (
     <div className="itemCard">
-      <img classname="item_img" src={item.img} />
-      <div>
-        <h3 className="item_header">{item.name}</h3>
-        <p>{item.price}</p>
+      <div className="item_content">
+        <img src={item.img} classname="item_img"></img>
+        <div className="item_name_price">
+          <h3 className="item_header">{item.name}</h3>
+          <p className="item_price">${item.price}</p>
+        </div>
+        <p>{item.size}</p>
+        <p>{item.stock}</p>
+        <p>{item.description}</p>
+        {userEdit()}
       </div>
-      <p>{item.size}</p>
-      <p>{item.stock}</p>
-      <p>{item.description}</p>
-      {userEdit()}
     </div>
   );
 };
