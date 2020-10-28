@@ -10,12 +10,18 @@
   img {
     max-width: 100%;
     height: 250px;
+    margin: auto;
   }
 }
 
 .itemCard:hover {
   transform: translateY(-0.5%);
   box-shadow: 0 4rem 8rem rgba(0, 0, 0, 0.2);
+}
+
+.addButtons {
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .item_name_price {

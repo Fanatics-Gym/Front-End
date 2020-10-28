@@ -41,7 +41,7 @@ const Item = ({ item }) => {
   const userEdit = () => {
     if (window.location.pathname === "/add") {
       return (
-        <div>
+        <div className="addButtons">
           <button>edit</button>
           <button onClick={deleteItem}>delete</button>
         </div>
@@ -68,9 +68,9 @@ const Item = ({ item }) => {
           <h3 className="item_header">{item.name}</h3>
           <p className="item_price">${item.price}</p>
         </div>
+        <p>{item.description}</p>
         <p>{item.size}</p>
         <p>{item.stock}</p>
-        <p>{item.description}</p>
         {userEdit()}
       </div>
     </div>
