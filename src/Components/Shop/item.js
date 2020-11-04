@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { useRecoilState } from "recoil";
 import CheckoutAtom from "../../Recoil/atom/checkout";
 import ShopAtom from "../../Recoil/atom/shop";
@@ -65,7 +66,9 @@ const Item = ({ item }) => {
       <div className="item_content">
         <img src={item.img} classname="item_img"></img>
         <div className="item_name_price">
-          <h3 className="item_header">{item.name}</h3>
+          <h3 className="item_header">
+            <Link to="/item">{item.name}</Link>
+          </h3>
           <p className="item_price">${item.price}</p>
         </div>
         <p>{item.description}</p>
