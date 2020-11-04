@@ -32,7 +32,6 @@ function App() {
           <Route path="/shop" component={Shop} />
           <PrivateRoute exact path="/add" component={UserAddItem} />
           <Route path="/checkout" component={Checkout} />
-          {/* <Footer className="foot" /> */}
         </div>
       </Router>
     </div>
