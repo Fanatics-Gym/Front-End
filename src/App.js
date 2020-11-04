@@ -13,6 +13,7 @@ import { initGA, PageView } from "./analyicts";
 import Shop from "./Components/Shop/Shop";
 import Checkout from "./Components/Shop/checkout";
 import UserAddItem from "./Components/user/userAddItem";
+import ItemPage from "./Components/Shop/itemPage";
 
 function App() {
   useEffect(() => {
@@ -32,7 +33,7 @@ function App() {
           <Route path="/shop" component={Shop} />
           <PrivateRoute exact path="/add" component={UserAddItem} />
           <Route path="/checkout" component={Checkout} />
-          {/* <Footer className="foot" /> */}
+          <Route path="/item" component={ItemPage} />
         </div>
       </Router>
     </div>
