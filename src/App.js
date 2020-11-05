@@ -3,8 +3,6 @@ import "./scss/app.scss";
 import NavBar from "./Components/nav/NavBar";
 import HomePage from "./Components/home/home";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import "./scss/styles.scss";
-import "./scss/app-styles.scss";
 import LoginForm from "./Components/login/login";
 import aboutUs from "./Components/about/about";
 import PrivateRoute from "./Components/Auth/PrivateRoute";
