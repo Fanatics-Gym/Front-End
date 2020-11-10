@@ -25,6 +25,7 @@ const Item = ({ item }) => {
     }
   };
 
+  //new, he saleem
   const EditItem = () => {
     console.log(item);
     return (
