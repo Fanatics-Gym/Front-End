@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useRecoilState } from "recoil";
 import CheckoutAtom from "../../Recoil/atom/checkout";
+import SelectedItem from "../../Recoil/atom/selectedItem";
 import ShopAtom from "../../Recoil/atom/shop";
 import { BaseUrl } from "../Auth/axios";
 
@@ -9,6 +10,7 @@ const Item = ({ item }) => {
   const [shopState, setShopState] = useRecoilState(ShopAtom);
   const [editItem, setEditItem] = useState(false);
   const [checkout, setCheckout] = useRecoilState(CheckoutAtom);
+  const [selectItem, setSelectItem] = useRecoilState(SelectedItem);
 
   const deleteItem = () => {
     if (window.location.pathname === "/checkout") {
@@ -61,14 +63,19 @@ const Item = ({ item }) => {
       );
     }
   };
+
+  const selectedItem = () => {
+    setSelectItem(item);
+  };
+
   return (
     <div className="itemCard">
       <div className="item_content">
         <img src={item.img} classname="item_img"></img>
         <div className="item_name_price">
-          <h3 className="item_header">
-            <Link to="/item">{item.name}</Link>
-          </h3>
+          <Link onClick={selectedItem} to="/item">
+            <h3 className="item_header">{item.name}</h3>
+          </Link>
           <p className="item_price">${item.price}</p>
         </div>
         <p>{item.description}</p>

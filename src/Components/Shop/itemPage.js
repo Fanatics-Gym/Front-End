@@ -1,11 +1,17 @@
 import React from "react";
+import { useRecoilValue } from "recoil";
+import SelectedItem from "../../Recoil/atom/selectedItem";
 import "../../scss/singleItem.scss";
 
-const ItemPage = ({ item }) => {
+const ItemPage = () => {
+  const Item = useRecoilValue(SelectedItem);
+  console.log(Item);
   return (
     <div className="singleItem">
-      <h1>Item Name</h1>
-      <h2>$$$</h2>
+      <div className="header">
+        <h1>{Item.name}</h1>
+        <h2>${Item.price}</h2>
+      </div>
     </div>
   );
 };
