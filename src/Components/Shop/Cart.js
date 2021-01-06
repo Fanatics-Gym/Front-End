@@ -6,8 +6,13 @@ import Item from "./item";
 const Cart = () => {
   const checkoutList = useRecoilValue(CheckoutAtom);
   return (
-    <div>
-      <h2 className="checkoutHeader">Cart</h2>
+    <div className="cart">
+      <div className="cartHeader">
+        <h2 className="cartTitle">Cart</h2>
+        <span>
+          <button className="toCheckout">Proceed To Checkout</button>
+        </span>
+      </div>
       <div className="itemList">
         {checkoutList.map((item) => (
           <Item key={item.id} item={item} />
