@@ -23,10 +23,7 @@ const ItemPage = () => {
       <div className="info">
         <div className="describe">
           <h3>Description</h3>
-          <p>
-            This is the new hat the best hat, it's so clean and so awesome! Made
-            with the best materials, silk, cotton
-          </p>
+          <p>{Item.description}</p>
         </div>
         <button className="item_btn" onClick={addToCheckout}>
           Checkout
