@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { useRecoilValue } from "recoil";
 import CheckoutAtom from "../../Recoil/atom/checkout";
 import Item from "./item";
@@ -10,7 +11,9 @@ const Cart = () => {
       <div className="cartHeader">
         <h2 className="cartTitle">Cart</h2>
         <span>
-          <button className="toCheckout">Proceed To Checkout</button>
+          <Link to="/checkout">
+            <button className="toCheckout">Proceed To Checkout</button>
+          </Link>
         </span>
       </div>
       <div className="itemList">

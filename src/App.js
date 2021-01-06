@@ -12,6 +12,7 @@ import Shop from "./Components/Shop/Shop";
 import Cart from "./Components/Shop/Cart";
 import UserAddItem from "./Components/user/userAddItem";
 import ItemPage from "./Components/Shop/itemPage";
+import Checkout from "./Components/Shop/Checkout";
 
 function App() {
   useEffect(() => {
@@ -32,6 +33,7 @@ function App() {
           <PrivateRoute exact path="/add" component={UserAddItem} />
           <Route path="/cart" component={Cart} />
           <Route path="/item" component={ItemPage} />
+          <Route path="/checkout" component={Checkout} />
         </div>
       </Router>
     </div>
