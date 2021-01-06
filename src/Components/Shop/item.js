@@ -13,7 +13,10 @@ const Item = ({ item }) => {
   const [selectItem, setSelectItem] = useRecoilState(SelectedItem);
 
   const deleteItem = () => {
-    if (window.location.pathname === "/checkout") {
+    if (
+      window.location.pathname === "/cart" ||
+      window.location.pathname === "/checkout"
+    ) {
       const checkoutIndex = checkout.indexOf(item);
       const checkoutArray = [...checkout];
       checkoutArray.splice(checkoutIndex, 1);
@@ -49,10 +52,15 @@ const Item = ({ item }) => {
           <button onClick={deleteItem}>delete</button>
         </div>
       );
-    } else if (window.location.pathname === "/checkout") {
+    } else if (
+      window.location.pathname === "/cart" ||
+      window.location.pathname === "/checkout"
+    ) {
       return (
         <div>
-          <button onClick={deleteItem}>Remove</button>
+          <button className="item_btn" onClick={deleteItem}>
+            Remove
+          </button>
         </div>
       );
     } else {

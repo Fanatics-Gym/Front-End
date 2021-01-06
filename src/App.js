@@ -9,9 +9,10 @@ import PrivateRoute from "./Components/Auth/PrivateRoute";
 import userPage from "./Components/user/userPage";
 import { initGA, PageView } from "./analyicts";
 import Shop from "./Components/Shop/Shop";
-import Checkout from "./Components/Shop/checkout";
+import Cart from "./Components/Shop/Cart";
 import UserAddItem from "./Components/user/userAddItem";
 import ItemPage from "./Components/Shop/itemPage";
+import Checkout from "./Components/Shop/Checkout";
 
 function App() {
   useEffect(() => {
@@ -30,8 +31,9 @@ function App() {
           <Route path="/about" component={aboutUs} />
           <Route path="/shop" component={Shop} />
           <PrivateRoute exact path="/add" component={UserAddItem} />
-          <Route path="/checkout" component={Checkout} />
+          <Route path="/cart" component={Cart} />
           <Route path="/item" component={ItemPage} />
+          <Route path="/checkout" component={Checkout} />
         </div>
       </Router>
     </div>
