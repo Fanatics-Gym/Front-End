@@ -5,6 +5,10 @@ import Item from "./item";
 
 const Checkout = () => {
   const checkoutList = useRecoilValue(CheckoutAtom);
+  const total = checkoutList
+    .map((item) => item.price)
+    .reduce((a, b) => a + b, 0);
+  console.log(total);
   return (
     <div className="checkout">
       <div className="checkoutHeader">
@@ -20,10 +24,10 @@ const Checkout = () => {
           <div className="checkoutInfo">
             <p>
               Number of Items:
-              <b>1</b>
+              <b>{checkoutList.length}</b>
             </p>
             <p>
-              SubTotal: <b>14</b>
+              SubTotal: <b>${total}</b>
             </p>
             <p>
               Estimated Sales Tax:<b>0</b>
