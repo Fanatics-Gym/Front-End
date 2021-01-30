@@ -2,9 +2,13 @@ import React from "react";
 import { useRecoilValue } from "recoil";
 import CheckoutAtom from "../../Recoil/atom/checkout";
 import Item from "./item";
+import { loadStripe } from "@stripe/stripe-js";
+import { Elements } from "@stripe/react-stripe-js";
+import { BaseUrl } from "../Auth/axios";
 
 const Checkout = () => {
   const checkoutList = useRecoilValue(CheckoutAtom);
+
   return (
     <div className="checkout">
       <div className="checkoutHeader">
@@ -15,26 +19,6 @@ const Checkout = () => {
           {checkoutList.map((item) => (
             <Item key={item.id} item={item} />
           ))}
-        </div>
-        <div className="checkoutInfoCont">
-          <div className="checkoutInfo">
-            <p>
-              Number of Items:
-              <b>1</b>
-            </p>
-            <p>
-              SubTotal: <b>14</b>
-            </p>
-            <p>
-              Estimated Sales Tax:<b>0</b>
-            </p>
-            <p>
-              Total:<b>14</b>
-            </p>
-          </div>
-          <span>
-            <button className="purchase">Purchase</button>
-          </span>
         </div>
       </div>
     </div>

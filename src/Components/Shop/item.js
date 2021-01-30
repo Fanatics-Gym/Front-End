@@ -66,7 +66,7 @@ const Item = ({ item }) => {
     } else {
       return (
         <button className="item_btn" onClick={addToCheckout}>
-          Checkout
+          Add to Cart
         </button>
       );
     }
