@@ -12,7 +12,7 @@ import Shop from "./Components/Shop/Shop";
 import Cart from "./Components/Shop/Cart";
 import UserAddItem from "./Components/user/userAddItem";
 import ItemPage from "./Components/Shop/itemPage";
-import Checkout from "./Components/Shop/Checkout";
+import Checkout from "./Components/Shop/checkout";
 
 function App() {
   useEffect(() => {

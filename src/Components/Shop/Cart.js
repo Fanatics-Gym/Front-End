@@ -34,11 +34,9 @@ const Cart = () => {
                 SubTotal: <b>${total}</b>
               </p>
             </div>
-            <span>
-              <Link to="/checkout">
-                <button className="toCheckout">Checkout</button>
-              </Link>
-            </span>
+            <Link to="/checkout" className="link">
+              <button className="toCheckout">Checkout</button>
+            </Link>
           </div>
         </div>
       </div>
