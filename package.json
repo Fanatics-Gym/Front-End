@@ -19,6 +19,7 @@
     "react-scripts": "^3.4.4",
     "reactstrap": "^8.8.1",
     "recoil": "0.0.13",
+    "stripe": "^8.132.0",
     "styled-components": "^4.4.1",
     "yup": "^0.27.0"
   },
