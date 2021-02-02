@@ -1,10 +1,10 @@
 import React from "react";
 
-const FormField = ({ placeholder, required }) => {
+const FormField = ({ label, type, placeholder, required }) => {
   return (
     <div className="formFieldContainer">
-      <label></label>
-      <input placeholder={placeholder} required />
+      <label>{label}</label>
+      <input type={type} placeholder={placeholder} required />
     </div>
   );
 };
