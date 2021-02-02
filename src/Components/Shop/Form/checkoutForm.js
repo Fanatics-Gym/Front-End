@@ -1,11 +1,14 @@
 import React, { useState } from "react";
 import FormField from "./formField";
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
+import { useRecoilValue } from "recoil";
+import CheckoutSelector from "../../../Recoil/selector/checkoutSelector";
 
-const CheckoutForm = ({ price }) => {
+const CheckoutForm = () => {
   const [processing, setProcessing] = useState(false);
   const stripe = useStripe();
   const elements = useElements();
+  const { listTotalPrice } = useRecoilValue(CheckoutSelector);
   return (
     <div className="checkoutForm">
       <FormField label="Name" type="text" placeholder="Tim Duncan" required />
@@ -29,7 +32,7 @@ const CheckoutForm = ({ price }) => {
       </div>
       <div className="buttonContainer">
         <button disabled={processing || !stripe} className="payButton">
-          {processing ? "Processing..." : `Pay $${price}`}
+          {processing ? "Processing..." : `Pay $${listTotalPrice}`}
         </button>
       </div>
     </div>
