@@ -13,7 +13,10 @@ import Cart from "./Components/Shop/Cart";
 import UserAddItem from "./Components/user/userAddItem";
 import ItemPage from "./Components/Shop/itemPage";
 import Checkout from "./Components/Shop/checkout";
+import { Elements } from "@stripe/react-stripe-js";
+import { loadStripe } from "@stripe/stripe-js";
 
+const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_KEY);
 function App() {
   useEffect(() => {
     initGA("UA-159198142-1");
@@ -33,7 +36,9 @@ function App() {
           <PrivateRoute exact path="/add" component={UserAddItem} />
           <Route path="/cart" component={Cart} />
           <Route path="/item" component={ItemPage} />
-          <Route path="/checkout" component={Checkout} />
+          <Elements stripe={stripePromise}>
+            <Route path="/checkout" component={Checkout} />
+          </Elements>
         </div>
       </Router>
     </div>

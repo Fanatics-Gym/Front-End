@@ -26,7 +26,7 @@ const ItemPage = () => {
           <p>{Item.description}</p>
         </div>
         <button className="item_btn" onClick={addToCheckout}>
-          Checkout
+          Add to Cart
         </button>
       </div>
     </div>

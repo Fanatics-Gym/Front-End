@@ -2,13 +2,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useRecoilValue } from "recoil";
 import CheckoutAtom from "../../Recoil/atom/checkout";
+import CheckoutSelector from "../../Recoil/selector/checkoutSelector";
 import Item from "./item";
 
 const Cart = () => {
   const checkoutList = useRecoilValue(CheckoutAtom);
-  const total = checkoutList
-    .map((item) => item.price)
-    .reduce((a, b) => a + b, 0);
+  const { listLength, listTotalPrice } = useRecoilValue(CheckoutSelector);
   return (
     <div className="cart">
       <div className="cartHeader">
@@ -28,10 +27,10 @@ const Cart = () => {
             <div className="checkoutInfo">
               <p>
                 Number of Items:
-                <b>{checkoutList.length}</b>
+                <b>{listLength}</b>
               </p>
               <p>
-                SubTotal: <b>${total}</b>
+                SubTotal: <b>${listTotalPrice}</b>
               </p>
             </div>
             <Link to="/checkout" className="link">
