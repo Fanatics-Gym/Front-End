@@ -11,10 +11,31 @@
     }
   }
 
-  .nameCont {
-    margin: 3% 0;
+  h2 {
+    text-align: center;
+  }
+
+  .formContainer {
+    width: 50%;
+    margin: auto;
     display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .formGroup {
+    display: flex;
+    flex-direction: column;
+    width: 49%;
+    margin-bottom: 20px;
+
+    input {
+      height: 2.3rem;
+      font-size: 1.6rem;
+      background: #f9f9f9;
+      border: none;
+      border-bottom: 1px solid #a1a1a1;
+      padding: 10px;
+    }
   }
 }

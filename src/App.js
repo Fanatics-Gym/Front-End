@@ -16,7 +16,7 @@ import Checkout from "./Components/Shop/checkout";
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
 import FootballPage from "./Components/application/FootballPage";
-import ApplicationForm from "./Components/application/applicationForm";
+import ApplicationForm from "./Components/application/applicationForm/applicationForm";
 
 const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_KEY);
 function App() {
