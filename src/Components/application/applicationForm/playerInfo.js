@@ -60,7 +60,7 @@ const DateOfBirth = ({ errors, touched }) => {
     <div className="formGroup">
       <input
         id="DOB"
-        name="date of birth"
+        name="DOB"
         placeholder="Date of Birth"
         autoComplete="DOB"
       />

@@ -6,7 +6,7 @@ const DriversLicense = ({ errors, touched }) => {
     <div className="formGroup">
       <input
         id="Drivers_license"
-        name="Drivers_licese"
+        name="Drivers_license"
         placeholder="Drivers licese #"
         autoComplete="DL"
       />
@@ -21,7 +21,7 @@ const DriversLicense = ({ errors, touched }) => {
 const DLState = ({ errors, touched }) => {
   return (
     <div className="formGroup">
-      <select id="state" name="state">
+      <select id="DL_state" name="DL_state">
         <option value="" disabled>
           State
         </option>

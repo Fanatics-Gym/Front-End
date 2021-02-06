@@ -12,6 +12,17 @@ const FormWrapper = ({ steps, activeStep, setActiveStep }) => {
   const applicationInfo = {
     first_name: "",
     last_name: "",
+    email: "",
+    phone: "",
+    DOB: "",
+    Altphone: "",
+    Drivers_license: "",
+    DLstate: "",
+    DL_Expiration: "",
+    address: "",
+    city: "",
+    address_state: "",
+    zip: "",
   };
 
   return (
