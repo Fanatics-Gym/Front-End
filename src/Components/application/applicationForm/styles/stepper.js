@@ -4,6 +4,16 @@ export const Flex = styled.div`
   flex-wrap: wrap;
 `;
 
+export const Btn = styled.button`
+  border: none;
+  border-radius: 4px;
+  font-size: 1.8rem;
+  height: 5.6rem;
+
+  &:hover {
+    cursor: pointer;
+  }
+`;
 export const FlexCenter = styled(Flex)`
   justify-content: center;
   align-items: center;

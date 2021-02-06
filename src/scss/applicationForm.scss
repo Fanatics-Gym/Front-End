@@ -1,4 +1,4 @@
-.applicationForm {
+.applicationFormContainer {
   display: flex;
   flex-direction: column;
 
@@ -9,6 +9,16 @@
       width: 150px;
       text-align: center;
     }
+  }
+
+  .applicationForm {
+    margin: 3% auto;
+    border-radius: 10px;
+    background: #fff;
+    min-height: 60vh;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(180, 180, 180, 0.2),
+      0 6px 20px 0 rgba(180, 180, 180, 0.19);
   }
 
   h2 {
