@@ -1,7 +1,7 @@
 export const theme = {
   palette: {
     primary: {
-      main: "#375762",
+      main: "#222831",
       light: "#517E92",
     },
     secondary: {

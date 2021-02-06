@@ -12,21 +12,21 @@ const ApplicationForm = () => {
   const steps = [
     "Player Info",
     "Verification Info",
-    "Review",
+    "Emergency Info",
     "Terms of Condition",
   ];
 
-  const handleNext = (activeStep, setActiveStep) => {
-    if (activeStep === 0) {
-      setActiveStep(activeStep + 1);
-    } else if (activeStep === 1) {
-      setActiveStep(activeStep + 1);
-    }
-  };
+  // const handleNext = (activeStep, setActiveStep) => {
+  //   if (activeStep === 0) {
+  //     setActiveStep(activeStep + 1);
+  //   } else if (activeStep === 1) {
+  //     setActiveStep(activeStep + 1);
+  //   }
+  // };
 
   return (
     <ThemeProvider theme={theme}>
-      <div onSubmit={handleNext} className="applicationFormContainer">
+      <div className="applicationFormContainer">
         <div className="applicationHeader">
           <h2>Application</h2>
         </div>
@@ -38,7 +38,7 @@ const ApplicationForm = () => {
             steps={steps}
             activeStep={activeStep}
             setActiveStep={setActiveStep}
-            handleNext={handleNext}
+            // handleNext={handleNext}
           />
         </div>
       </div>

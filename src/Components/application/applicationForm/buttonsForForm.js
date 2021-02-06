@@ -1,7 +1,7 @@
 import React from "react";
 import { BackBtn, BtnContainer, NextBtn } from "./styles/buttons";
 
-const Buttons = ({ steps, activeStep, setActiveStep, handleNext }) => {
+const Buttons = ({ steps, activeStep, setActiveStep }) => {
   return (
     <BtnContainer>
       {activeStep !== 0 && (
