@@ -1,10 +1,10 @@
 import { Form, Formik } from "formik";
 import React from "react";
 import { useHistory } from "react-router-dom";
-import Buttons from "./applicationForm/buttonsForForm";
-import PlayerInfo from "./applicationForm/playerInfo";
-import VerificationInfo from "./applicationForm/verificationInfo";
-import EmergencyInfo from "./applicationForm/emergencyInfo";
+import Buttons from "./buttonsForForm";
+import PlayerInfo from "./playerInfo";
+import VerificationInfo from "./verificationInfo";
+import EmergencyInfo from "./emergencyInfo";
 
 const FormWrapper = ({ steps, activeStep, setActiveStep }) => {
   const { push } = useHistory();

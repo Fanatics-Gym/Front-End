@@ -88,7 +88,7 @@ const CityInput = ({ handleChange, values, errors, touched }) => {
 const AddressState = ({ errors, touched }) => {
   return (
     <div className="formGroup">
-      <select id="state" name="state">
+      <select id="address_state" name="address_state">
         <option value="" disabled>
           State
         </option>

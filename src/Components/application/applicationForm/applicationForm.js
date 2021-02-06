@@ -1,18 +1,15 @@
 import React, { useState } from "react";
-import FormField from "../../Shop/Form/formField";
-import Buttons from "./buttonsForForm";
-import PlayerInfo from "./playerInfo";
 import StepperWrapper from "./stepperWrapper";
 import { ThemeProvider } from "styled-components";
 import { theme } from "./styles/theme";
-import FormWrapper from "../initalForm";
+import FormWrapper from "./initalForm";
 
 const ApplicationForm = () => {
   const [activeStep, setActiveStep] = useState(0);
   const steps = [
     "Player Info",
     "Verification Info",
-    "Emergency Info",
+    "Emergency Contact",
     "Terms of Condition",
   ];
 
