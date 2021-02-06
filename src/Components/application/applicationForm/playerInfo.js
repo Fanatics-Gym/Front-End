@@ -2,7 +2,7 @@ import React from "react";
 
 const FirstName = ({ errors, touched }) => {
   return (
-    <div className="formGroup" width="49%">
+    <div className="formGroup">
       <input
         id="first_name"
         name="first_name"
@@ -17,7 +17,7 @@ const FirstName = ({ errors, touched }) => {
 
 const LastName = ({ errors, touched }) => {
   return (
-    <div className="formGroup" width="49%">
+    <div className="formGroup">
       <input
         id="last_name"
         name="last_name"
@@ -32,7 +32,7 @@ const LastName = ({ errors, touched }) => {
 
 const Email = ({ errors, touched }) => {
   return (
-    <div className="formGroup" width="59%">
+    <div className="formGroup">
       <input id="Email" name="email" placeholder="Email" autoComplete="email" />
       <label htmlFor="email">Enter your email here</label>
       {errors?.email && touched?.email && <p>{errors?.email}</p>}
@@ -42,7 +42,7 @@ const Email = ({ errors, touched }) => {
 
 const Phone = ({ errors, touched }) => {
   return (
-    <div className="formGroup" width="39%">
+    <div className="formGroup">
       <input
         id="phone"
         name="phone"
@@ -57,7 +57,7 @@ const Phone = ({ errors, touched }) => {
 
 const DateOfBirth = ({ errors, touched }) => {
   return (
-    <div className="formGroup" width="39%">
+    <div className="formGroup">
       <input
         id="DOB"
         name="date of birth"
@@ -72,7 +72,7 @@ const DateOfBirth = ({ errors, touched }) => {
 
 const AltPhone = ({ errors, touched }) => {
   return (
-    <div className="formGroup" width="39%">
+    <div className="formGroup">
       <input
         id="Altphone"
         name="Altphone"
