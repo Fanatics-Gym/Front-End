@@ -13,7 +13,7 @@ const FootballPage = () => {
         <h3>{data[1]}</h3>
         <h3>{data[2]}</h3>
       </div>
-      <div className="applyButton">
+      <div className="applyButtonContainer">
         <button>Apply Now</button>
       </div>
     </div>
