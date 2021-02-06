@@ -15,6 +15,7 @@ import ItemPage from "./Components/Shop/itemPage";
 import Checkout from "./Components/Shop/checkout";
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
+import FootballPage from "./Components/application/FootballPage";
 
 const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_KEY);
 function App() {
@@ -36,6 +37,7 @@ function App() {
           <PrivateRoute exact path="/add" component={UserAddItem} />
           <Route path="/cart" component={Cart} />
           <Route path="/item" component={ItemPage} />
+          <Route path="/football" component={FootballPage} />
           <Elements stripe={stripePromise}>
             <Route path="/checkout" component={Checkout} />
           </Elements>

@@ -1,0 +1,5 @@
+export const data = [
+  "We are creating a league where you can play football and fill your desire of getting back on the field. The league will consist of many different players who come from all backgrounds.",
+  "After applying you will be assigned to a team where you can cordinate practices and work together to create a team that stands out from the rest. Each player will be given gear so they can play safely. Feel free to customize you gear to promote or advertise certain brands or organizations. Work hard and show good sportmanship and you might gather the attention from people watching who might take an interest in what you're promoting.",
+  "You can apply now! We will ask you to fill out a form regarrding some information that will help us get an idea of who you are and where you're coming from. All this information will be safe and stay within our records. We will only disclose information like your name, and contant info, so your team can get ahold of you and address you properly.",
+];

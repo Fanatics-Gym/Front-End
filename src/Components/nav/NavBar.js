@@ -24,6 +24,9 @@ const NavBar = () => {
         <Link className="links" to="/shop">
           Shop
         </Link>
+        <Link className="links" to="/football">
+          Football
+        </Link>
         <Link className="links" to="/cart">
           <img src={cart} />
         </Link>
