@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { data } from "./PageData";
 
 const FootballPage = () => {
@@ -14,7 +15,9 @@ const FootballPage = () => {
         <h3>{data[2]}</h3>
       </div>
       <div className="applyButtonContainer">
-        <button>Apply Now</button>
+        <Link to="/footballapply">
+          <button>Apply Now</button>
+        </Link>
       </div>
     </div>
   );

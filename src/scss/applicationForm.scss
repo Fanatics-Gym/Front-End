@@ -1,0 +1,64 @@
+.applicationFormContainer {
+  display: flex;
+  flex-direction: column;
+
+  .applicationHeader {
+    margin: 0 5%;
+    h2 {
+      border-bottom: solid black 3px;
+      width: 150px;
+      text-align: center;
+    }
+  }
+
+  .applicationForm {
+    margin: 3% auto;
+    padding: 3%;
+    border-radius: 10px;
+    background: #fff;
+    min-height: 60vh;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(180, 180, 180, 0.2),
+      0 6px 20px 0 rgba(180, 180, 180, 0.19);
+  }
+
+  h2 {
+    text-align: center;
+  }
+
+  .formContainer {
+    width: 50%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .formGroup {
+    display: flex;
+    flex-direction: column;
+    width: 49%;
+    margin-bottom: 20px;
+
+    input {
+      height: 2.3rem;
+      font-size: 1.6rem;
+      background: #f9f9f9;
+      border: none;
+      border-bottom: 1px solid #a1a1a1;
+      padding: 10px;
+    }
+  }
+
+  select {
+    height: 3.62rem;
+    font-size: 1.6rem;
+    background: #f9f9f9;
+    border: none;
+    border-bottom: 1px solid #a1a1a1;
+    padding: 10px;
+  }
+
+  option {
+  }
+}
