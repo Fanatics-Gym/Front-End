@@ -9,6 +9,7 @@ const DriversLicense = ({ errors, touched }) => {
         name="Drivers_license"
         placeholder="Drivers licese #"
         autoComplete="DL"
+        type="text"
       />
       <label htmlFor="Drivers_licese">What's Drivers license number?</label>
       {/* {errors?.Drivers_license && touched?.Drivers_license && (
@@ -43,6 +44,7 @@ const Expiration = ({ errors, touched }) => {
         name="DL_Expiration"
         placeholder="Drivers License Experation"
         autoComplete="email"
+        type="date"
       />
       <label htmlFor="DL_Expiration">Drivers License Experation</label>
       {/* {errors?.DL_Expiration && touched?.DL_Expiration && (
@@ -107,7 +109,7 @@ const AddressState = ({ errors, touched }) => {
 const ZipInput = ({ handleChange, values, errors, touched }) => {
   return (
     <div className="formGroup">
-      <input id="zip" name="zip" placeholder="Zip/Postal Code" />
+      <input id="zip" name="zip" type="number" placeholder="Zip/Postal Code" />
       <label htmlFor="zip">Enter your 5-digit postal code</label>
       {/* {errors.zip && touched.zip && <p>{errors.zip}</p>} */}
     </div>
