@@ -2,11 +2,11 @@ export const theme = {
   palette: {
     primary: {
       main: "#222831",
-      light: "#517E92",
+      light: "#ececec",
     },
     secondary: {
       main: "#222831",
-      light: "#F0B6A7",
+      light: "#30475e",
     },
   },
 };

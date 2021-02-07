@@ -10,7 +10,7 @@ const ApplicationForm = () => {
     "Player Info",
     "Verification Info",
     "Emergency Contact",
-    "Terms of Condition",
+    "Terms & Conditions",
   ];
 
   // const handleNext = (activeStep, setActiveStep) => {

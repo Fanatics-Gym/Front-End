@@ -5,6 +5,7 @@ import Buttons from "./buttonsForForm";
 import PlayerInfo from "./playerInfo";
 import VerificationInfo from "./verificationInfo";
 import EmergencyInfo from "./emergencyInfo";
+import TermsAndConditions from "./Terms";
 
 const FormWrapper = ({ steps, activeStep, setActiveStep }) => {
   const { push } = useHistory();
@@ -34,8 +35,10 @@ const FormWrapper = ({ steps, activeStep, setActiveStep }) => {
               <PlayerInfo />
             ) : activeStep === 1 ? (
               <VerificationInfo />
-            ) : (
+            ) : activeStep === 2 ? (
               <EmergencyInfo />
+            ) : (
+              <TermsAndConditions />
             )}
             <Buttons
               steps={steps}
