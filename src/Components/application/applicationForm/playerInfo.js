@@ -49,7 +49,6 @@ const Phone = ({ errors, touched }) => {
         placeholder="Phone Number"
         autoComplete="phone"
         type="number"
-        max="10"
       />
       <label htmlFor="phone">Your 10-digit phone number</label>
       {errors?.phone && touched?.phone && <p>{errors?.phone}</p>}

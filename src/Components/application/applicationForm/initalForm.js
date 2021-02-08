@@ -26,28 +26,40 @@ const FormWrapper = ({ steps, activeStep, setActiveStep }) => {
     zip: "",
   };
 
+  const handleNext = (applicationInfo, activeStep, setActiveStep, push) => {
+    if (activeStep === 0) {
+      setActiveStep(activeStep + 1);
+    } else if (activeStep === 1) {
+      setActiveStep(activeStep + 1);
+    } else if (activeStep === 2) {
+      setActiveStep(activeStep + 1);
+    }
+  };
+
+  console.log(applicationInfo);
   return (
-    <Formik initialValues={applicationInfo}>
-      <div>
-        {
-          <Form>
-            {activeStep === 0 ? (
-              <PlayerInfo />
-            ) : activeStep === 1 ? (
-              <VerificationInfo />
-            ) : activeStep === 2 ? (
-              <EmergencyInfo />
-            ) : (
-              <TermsAndConditions />
-            )}
-            <Buttons
-              steps={steps}
-              activeStep={activeStep}
-              setActiveStep={setActiveStep}
-            />
-          </Form>
-        }
-      </div>
+    <Formik
+      initialValues={applicationInfo}
+      onSubmit={(values) => handleNext(values, activeStep, setActiveStep)}
+    >
+      {(props) => (
+        <Form>
+          {activeStep === 0 ? (
+            <PlayerInfo {...props} />
+          ) : activeStep === 1 ? (
+            <VerificationInfo {...props} />
+          ) : activeStep === 2 ? (
+            <EmergencyInfo {...props} />
+          ) : (
+            <TermsAndConditions />
+          )}
+          <Buttons
+            steps={steps}
+            activeStep={activeStep}
+            setActiveStep={setActiveStep}
+          />
+        </Form>
+      )}
     </Formik>
   );
 };
