@@ -48,6 +48,7 @@ const Phone = ({ errors, touched }) => {
         name="phone"
         placeholder="Phone Number"
         autoComplete="phone"
+        type="number"
       />
       <label htmlFor="phone">Your 10-digit phone number</label>
       {errors?.phone && touched?.phone && <p>{errors?.phone}</p>}
@@ -60,9 +61,10 @@ const DateOfBirth = ({ errors, touched }) => {
     <div className="formGroup">
       <input
         id="DOB"
-        name="date of birth"
+        name="DOB"
         placeholder="Date of Birth"
         autoComplete="DOB"
+        type="date"
       />
       <label htmlFor="DOB">Your Date of Birth</label>
       {errors?.phone && touched?.phone && <p>{errors?.phone}</p>}
@@ -78,6 +80,7 @@ const AltPhone = ({ errors, touched }) => {
         name="Altphone"
         placeholder="Alt Phone Number"
         autoComplete="phone"
+        type="number"
       />
       <label htmlFor="Alt phone">Your 10-digit phone number</label>
       {errors?.phone && touched?.phone && <p>{errors?.phone}</p>}

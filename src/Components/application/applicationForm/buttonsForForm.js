@@ -9,7 +9,7 @@ const Buttons = ({ steps, activeStep, setActiveStep }) => {
           Back
         </BackBtn>
       )}
-      <NextBtn type="submit" onClick={() => setActiveStep(activeStep + 1)}>
+      <NextBtn type="submit">
         {activeStep === steps.length - 1 ? "Confirm" : "Next"}
       </NextBtn>
     </BtnContainer>

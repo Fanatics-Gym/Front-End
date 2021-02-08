@@ -1,0 +1,15 @@
+.termsContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  .termsAndConditions {
+    margin: auto;
+    border: solid 3px #222831;
+    overflow: auto;
+    width: 500px;
+    height: 300px;
+  }
+  .confirmRead {
+    margin: 3% auto;
+  }
+}
