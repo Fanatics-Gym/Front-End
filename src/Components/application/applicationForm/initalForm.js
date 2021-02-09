@@ -24,6 +24,11 @@ const FormWrapper = ({ steps, activeStep, setActiveStep }) => {
     city: "",
     address_state: "",
     zip: "",
+    Em_First: "",
+    Em_Last: "",
+    relation: "",
+    em_phone: "",
+    terms: false,
   };
 
   const handleNext = (applicationInfo, activeStep, setActiveStep, push) => {
