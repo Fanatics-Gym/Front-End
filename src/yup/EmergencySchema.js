@@ -8,3 +8,7 @@ export const EmergencySchema = Yup.object.shape({
     .matches(/^\d{10}$/, "Invalid phone number")
     .required("Phone number is required"),
 });
+
+export const TermsAndConditions = Yup.object.shape({
+  terms: Yup.boolean().isValid(true),
+});
