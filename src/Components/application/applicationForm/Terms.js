@@ -12,7 +12,7 @@ const TermsAndConditions = () => {
         <p>{lora[3]}</p>
       </div>
       <div className="confirmRead">
-        <input type="checkbox" />
+        <input type="checkbox" id="terms" name="terms" />
         <label>Check the box if you agree with the terms</label>
       </div>
     </div>
