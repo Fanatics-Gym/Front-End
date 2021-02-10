@@ -2,7 +2,7 @@ import React from "react";
 
 const ConfirmationPage = () => {
   return (
-    <div>
+    <div className="ConfirmationCont">
       <h2>Thanks for applying</h2>
       <h3>
         We will reach out to you shortly regarding your application. We will
