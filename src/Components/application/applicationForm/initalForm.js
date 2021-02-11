@@ -38,7 +38,7 @@ const FormWrapper = ({ steps, activeStep, setActiveStep }) => {
       setActiveStep(activeStep + 1);
     } else if (activeStep === 2) {
       setActiveStep(activeStep + 1);
-    } else if (activeStep === 3) {
+    } else if (activeStep === 4) {
       push("/confirmation");
     }
   };
