@@ -6,8 +6,6 @@ import {
   StepLabel,
   StepTitle,
 } from "./styles/stepper";
-import { ThemeProvider } from "styled-components";
-import { theme } from "./styles/theme";
 
 const StepperWrapper = ({ steps, activeStep }) => {
   return (
