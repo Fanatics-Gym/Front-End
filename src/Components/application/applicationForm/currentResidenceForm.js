@@ -70,15 +70,15 @@ const CurrentState = ({ errors, touched }) => {
 
 const CurrentResidence = ({ values, handleChange, errors, touched }) => {
   return (
-    <div>
-      <div>
+    <div className="currentResidenceCont">
+      <div className="residenceHeader">
         <h2>Current Residence</h2>
         <span>
           <label>Same As Driver's Licence Address</label>
           <input type="checkbox" />
         </span>
       </div>
-      <div className="formContainer">
+      <div className="formContainer2">
         <CurrentAddress
           value={values}
           touched={touched}
