@@ -83,7 +83,7 @@ const AddressState = ({ errors, touched }) => {
           </option>
         ))}
       </select>
-      <label>State of address</label>
+      <label>State</label>
       {/* {errors.state && touched.state && <p>{errors.state}</p>} */}
     </div>
   );
@@ -137,6 +137,13 @@ const VerificationInfo = ({ values, handleChange, errors, touched }) => (
       handleChange={handleChange}
       errors={errors}
     />
+    <div>
+      <h2>Current Residence</h2>
+      <span>
+        <label>Same As Driver's Licence Address</label>
+        <input type="checkbox" />
+      </span>
+    </div>
   </div>
 );
 
