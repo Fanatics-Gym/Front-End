@@ -1,4 +1,5 @@
 import React from "react";
+import CurrentResidence from "./currentResidenceForm";
 import { states } from "./states";
 
 const DriversLicense = ({ errors, touched }) => {
@@ -137,13 +138,12 @@ const VerificationInfo = ({ values, handleChange, errors, touched }) => (
       handleChange={handleChange}
       errors={errors}
     />
-    <div>
-      <h2>Current Residence</h2>
-      <span>
-        <label>Same As Driver's Licence Address</label>
-        <input type="checkbox" />
-      </span>
-    </div>
+    <CurrentResidence
+      value={values}
+      touched={touched}
+      handleChange={handleChange}
+      errors={errors}
+    />
   </div>
 );
 

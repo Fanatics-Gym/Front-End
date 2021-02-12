@@ -67,3 +67,45 @@ const CurrentState = ({ errors, touched }) => {
     </div>
   );
 };
+
+const CurrentResidence = ({ values, handleChange, errors, touched }) => {
+  return (
+    <div>
+      <div>
+        <h2>Current Residence</h2>
+        <span>
+          <label>Same As Driver's Licence Address</label>
+          <input type="checkbox" />
+        </span>
+      </div>
+      <div className="formContainer">
+        <CurrentAddress
+          value={values}
+          touched={touched}
+          handleChange={handleChange}
+          errors={errors}
+        />
+        <CurrentCity
+          value={values}
+          touched={touched}
+          handleChange={handleChange}
+          errors={errors}
+        />
+        <CurrentState
+          value={values}
+          touched={touched}
+          handleChange={handleChange}
+          errors={errors}
+        />
+        <CurrentZip
+          value={values}
+          touched={touched}
+          handleChange={handleChange}
+          errors={errors}
+        />
+      </div>
+    </div>
+  );
+};
+
+export default CurrentResidence;
