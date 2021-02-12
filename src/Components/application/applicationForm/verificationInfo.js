@@ -26,11 +26,11 @@ const Expiration = ({ errors, touched }) => {
       <input
         id="DL_Expiration"
         name="DL_Expiration"
-        placeholder="Driver's License Expiration"
+        placeholder="Driver's License Experation"
         autoComplete="email"
         type="date"
       />
-      <label htmlFor="DL_Expiration">Driver's License Expiration</label>
+      <label htmlFor="DL_Expiration">Experation Date</label>
       {/* {errors?.DL_Expiration && touched?.DL_Expiration && (
         <p>{errors?.DL_Expiration}</p> */}
       {/* )} */}
