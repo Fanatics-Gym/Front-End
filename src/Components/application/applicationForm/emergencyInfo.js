@@ -3,8 +3,10 @@ import React from "react";
 const EmergencyFirst = ({}) => {
   return (
     <div className="formGroup">
-      <input id="Em_First" name="Em_First" placeholder="First Name" />
-      <label htmlFor="firstName"> What's their first name?</label>
+      <input id="Em_First" name="Em_First" placeholder="First" />
+      <label htmlFor="firstName">
+        First Name<b className="inputRequired">*</b>
+      </label>
     </div>
   );
 };
@@ -12,8 +14,10 @@ const EmergencyFirst = ({}) => {
 const EmergencyLast = ({}) => {
   return (
     <div className="formGroup">
-      <input id="Em_Last" name="Em_Last" placeholder="Last Name" />
-      <label htmlFor="lastName"> What's their last name?</label>
+      <input id="Em_Last" name="Em_Last" placeholder="Last" />
+      <label htmlFor="lastName">
+        Last Name<b className="inputRequired">*</b>
+      </label>
     </div>
   );
 };
@@ -21,8 +25,10 @@ const EmergencyLast = ({}) => {
 const EmergencyRelation = ({}) => {
   return (
     <div className="formGroup">
-      <input id="relation" name="relation" placeholder="spouse/family/friend" />
-      <label htmlFor="relation">Relation</label>
+      <input id="relation" name="relation" placeholder="Family/Friend/Etc." />
+      <label htmlFor="relation">
+        Relation<b className="inputRequired">*</b>
+      </label>
     </div>
   );
 };
@@ -33,10 +39,12 @@ const EmergencyPhone = ({}) => {
       <input
         id="em_phone"
         name="em_phone"
-        placeholder="Phone Number"
+        placeholder="(xxx)-xxx-xxxx"
         type="number"
       />
-      <label>What's their phone number?</label>
+      <label>
+        Phone Number<b className="inputRequired">*</b>
+      </label>
     </div>
   );
 };

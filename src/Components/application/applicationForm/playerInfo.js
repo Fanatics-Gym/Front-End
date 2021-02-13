@@ -9,7 +9,9 @@ const FirstName = ({ errors, touched }) => {
         placeholder="First"
         autoComplete="fname"
       />
-      <label htmlFor="first_name">First name</label>
+      <label htmlFor="first_name">
+        First Name<b className="inputRequired">*</b>
+      </label>
       {errors?.first_name && touched?.first_name && <p>{errors?.first_name}</p>}
     </div>
   );
@@ -24,7 +26,9 @@ const LastName = ({ errors, touched }) => {
         placeholder="Last"
         autoComplete="lname"
       />
-      <label htmlFor="last_name">Last name</label>
+      <label htmlFor="last_name">
+        Last Name<b className="inputRequired">*</b>
+      </label>
       {errors?.last_name && touched?.last_name && <p>{errors?.last_name}</p>}
     </div>
   );
@@ -34,7 +38,9 @@ const Email = ({ errors, touched }) => {
   return (
     <div className="formGroup">
       <input id="Email" name="email" placeholder="Email" autoComplete="email" />
-      <label htmlFor="email">Email</label>
+      <label htmlFor="email">
+        Email<b className="inputRequired">*</b>
+      </label>
       {errors?.email && touched?.email && <p>{errors?.email}</p>}
     </div>
   );
@@ -50,7 +56,9 @@ const Phone = ({ errors, touched }) => {
         autoComplete="phone"
         type="number"
       />
-      <label htmlFor="phone">Phone Number</label>
+      <label htmlFor="phone">
+        Phone Number<b className="inputRequired">*</b>
+      </label>
       {errors?.phone && touched?.phone && <p>{errors?.phone}</p>}
     </div>
   );
@@ -66,7 +74,9 @@ const DateOfBirth = ({ errors, touched }) => {
         autoComplete="DOB"
         type="date"
       />
-      <label htmlFor="DOB">Date of Birth</label>
+      <label htmlFor="DOB">
+        Date of Birth<b className="inputRequired">*</b>
+      </label>
       {errors?.phone && touched?.phone && <p>{errors?.phone}</p>}
     </div>
   );
@@ -82,7 +92,9 @@ const AltPhone = ({ errors, touched }) => {
         autoComplete="phone"
         type="number"
       />
-      <label htmlFor="Alt phone">Alt Phone Number</label>
+      <label htmlFor="Alt phone">
+        Alt Phone Number<b className="inputRequired">*</b>
+      </label>
       {errors?.phone && touched?.phone && <p>{errors?.phone}</p>}
     </div>
   );

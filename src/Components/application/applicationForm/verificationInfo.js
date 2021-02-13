@@ -12,7 +12,9 @@ const DriversLicense = ({ errors, touched }) => {
         autoComplete="DL"
         type="text"
       />
-      <label htmlFor="Drivers_licese">Driver's License</label>
+      <label htmlFor="Drivers_licese">
+        Driver's License<b className="inputRequired">*</b>
+      </label>
       {/* {errors?.Drivers_license && touched?.Drivers_license && (
         <p>{errors?.Drivers_license}</p> */}
       {/* )} */}
@@ -30,7 +32,9 @@ const Expiration = ({ errors, touched }) => {
         autoComplete="email"
         type="date"
       />
-      <label htmlFor="DL_Expiration">Experation Date</label>
+      <label htmlFor="DL_Expiration">
+        Experation Date<b className="inputRequired">*</b>
+      </label>
       {/* {errors?.DL_Expiration && touched?.DL_Expiration && (
         <p>{errors?.DL_Expiration}</p> */}
       {/* )} */}
@@ -48,7 +52,9 @@ const AddressInput = ({ handleChange, values, errors, touched }) => {
         // onChange={handleChange}
         // value={values.address}
       />
-      <label htmlFor="address">Address</label>
+      <label htmlFor="address">
+        Address<b className="inputRequired">*</b>
+      </label>
       {/* {errors.address && touched.address && <p>{errors.address}</p>} */}
     </div>
   );
@@ -65,7 +71,9 @@ const CityInput = ({ handleChange, values, errors, touched }) => {
         // value={values.city}
         autoComplete="billing address-level2"
       />
-      <label htmlFor="city">City</label>
+      <label htmlFor="city">
+        City<b className="inputRequired">*</b>
+      </label>
       {/* {errors.city && touched.city && <p>{errors.city}</p>} */}
     </div>
   );
@@ -84,7 +92,9 @@ const AddressState = ({ errors, touched }) => {
           </option>
         ))}
       </select>
-      <label>State</label>
+      <label>
+        State<b className="inputRequired">*</b>
+      </label>
       {/* {errors.state && touched.state && <p>{errors.state}</p>} */}
     </div>
   );
@@ -94,7 +104,9 @@ const ZipInput = ({ handleChange, values, errors, touched }) => {
   return (
     <div className="formGroup">
       <input id="zip" name="zip" type="number" placeholder="Zip/Postal Code" />
-      <label htmlFor="zip">Zip Code</label>
+      <label htmlFor="zip">
+        Zip Code<b className="inputRequired">*</b>
+      </label>
       {/* {errors.zip && touched.zip && <p>{errors.zip}</p>} */}
     </div>
   );
