@@ -1,4 +1,5 @@
 import React from "react";
+import CurrentResidence from "./currentResidenceForm";
 import { states } from "./states";
 
 const DriversLicense = ({ errors, touched }) => {
@@ -7,31 +8,16 @@ const DriversLicense = ({ errors, touched }) => {
       <input
         id="Drivers_license"
         name="Drivers_license"
-        placeholder="Drivers licese #"
+        placeholder="Driver's License #"
         autoComplete="DL"
         type="text"
       />
-      <label htmlFor="Drivers_licese">What's Drivers license number?</label>
+      <label htmlFor="Drivers_licese">
+        Driver's License<b className="inputRequired">*</b>
+      </label>
       {/* {errors?.Drivers_license && touched?.Drivers_license && (
         <p>{errors?.Drivers_license}</p> */}
       {/* )} */}
-    </div>
-  );
-};
-
-const DLState = ({ errors, touched }) => {
-  return (
-    <div className="formGroup">
-      <select id="DL_state" name="DL_state">
-        <option value="" disabled>
-          State
-        </option>
-        {states.map((state) => (
-          <option key={state}>{state.label}</option>
-        ))}
-      </select>
-      <label>Drivers License State</label>
-      {/* {errors.state && touched.state && <p>{errors.state}</p>} */}
     </div>
   );
 };
@@ -42,11 +28,13 @@ const Expiration = ({ errors, touched }) => {
       <input
         id="DL_Expiration"
         name="DL_Expiration"
-        placeholder="Drivers License Experation"
+        placeholder="Driver's License Experation"
         autoComplete="email"
         type="date"
       />
-      <label htmlFor="DL_Expiration">Drivers License Experation</label>
+      <label htmlFor="DL_Expiration">
+        Experation Date<b className="inputRequired">*</b>
+      </label>
       {/* {errors?.DL_Expiration && touched?.DL_Expiration && (
         <p>{errors?.DL_Expiration}</p> */}
       {/* )} */}
@@ -60,11 +48,13 @@ const AddressInput = ({ handleChange, values, errors, touched }) => {
       <input
         id="address"
         name="address"
-        placeholder="Street Address"
+        placeholder="Street"
         // onChange={handleChange}
         // value={values.address}
       />
-      <label htmlFor="address">Street name, and house/apt number</label>
+      <label htmlFor="address">
+        Address<b className="inputRequired">*</b>
+      </label>
       {/* {errors.address && touched.address && <p>{errors.address}</p>} */}
     </div>
   );
@@ -81,7 +71,9 @@ const CityInput = ({ handleChange, values, errors, touched }) => {
         // value={values.city}
         autoComplete="billing address-level2"
       />
-      <label htmlFor="city">Which city do you live in?</label>
+      <label htmlFor="city">
+        City<b className="inputRequired">*</b>
+      </label>
       {/* {errors.city && touched.city && <p>{errors.city}</p>} */}
     </div>
   );
@@ -100,7 +92,9 @@ const AddressState = ({ errors, touched }) => {
           </option>
         ))}
       </select>
-      <label>State of address</label>
+      <label>
+        State<b className="inputRequired">*</b>
+      </label>
       {/* {errors.state && touched.state && <p>{errors.state}</p>} */}
     </div>
   );
@@ -110,7 +104,9 @@ const ZipInput = ({ handleChange, values, errors, touched }) => {
   return (
     <div className="formGroup">
       <input id="zip" name="zip" type="number" placeholder="Zip/Postal Code" />
-      <label htmlFor="zip">Enter your 5-digit postal code</label>
+      <label htmlFor="zip">
+        Zip Code<b className="inputRequired">*</b>
+      </label>
       {/* {errors.zip && touched.zip && <p>{errors.zip}</p>} */}
     </div>
   );
@@ -119,12 +115,6 @@ const ZipInput = ({ handleChange, values, errors, touched }) => {
 const VerificationInfo = ({ values, handleChange, errors, touched }) => (
   <div className="formContainer">
     <DriversLicense
-      touched={touched}
-      values={values}
-      handleChange={handleChange}
-      errors={errors}
-    />
-    <DLState
       touched={touched}
       values={values}
       handleChange={handleChange}
@@ -157,6 +147,12 @@ const VerificationInfo = ({ values, handleChange, errors, touched }) => (
     <ZipInput
       touched={touched}
       values={values}
+      handleChange={handleChange}
+      errors={errors}
+    />
+    <CurrentResidence
+      value={values}
+      touched={touched}
       handleChange={handleChange}
       errors={errors}
     />
