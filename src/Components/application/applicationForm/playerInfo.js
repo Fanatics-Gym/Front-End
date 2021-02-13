@@ -92,9 +92,7 @@ const AltPhone = ({ errors, touched }) => {
         autoComplete="phone"
         type="number"
       />
-      <label htmlFor="Alt phone">
-        Alt Phone Number<b className="inputRequired">*</b>
-      </label>
+      <label htmlFor="Alt phone">Alt Phone Number</label>
       {errors?.phone && touched?.phone && <p>{errors?.phone}</p>}
     </div>
   );
