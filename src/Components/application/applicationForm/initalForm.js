@@ -18,7 +18,7 @@ const FormWrapper = ({ steps, activeStep, setActiveStep }) => {
     last_name: "",
     email: "",
     phone: "",
-    DOB: "",
+    dob: "",
     Altphone: "",
     Drivers_license: "",
     DLstate: "",
