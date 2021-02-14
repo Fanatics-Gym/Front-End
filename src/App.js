@@ -19,7 +19,7 @@ import FootballPage from "./Components/application/FootballPage";
 import ApplicationForm from "./Components/application/applicationForm/applicationForm";
 import ConfirmationPage from "./Components/application/applicationForm/ConfirmationForm";
 
-const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_KEY);
+// const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_KEY);
 function App() {
   useEffect(() => {
     initGA("UA-159198142-1");
@@ -42,9 +42,9 @@ function App() {
           <Route path="/football" component={FootballPage} />
           <Route path="/footballapply" component={ApplicationForm} />
           <Route path="/confirmation" component={ConfirmationPage} />
-          <Elements stripe={stripePromise}>
-            <Route path="/checkout" component={Checkout} />
-          </Elements>
+          {/* <Elements stripe={stripePromise}> */}
+          <Route path="/checkout" component={Checkout} />
+          {/* </Elements> */}
         </div>
       </Router>
     </div>

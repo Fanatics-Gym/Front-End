@@ -1,6 +1,6 @@
 import React from "react";
 
-const FirstName = ({ errors, touched }) => {
+const FirstName = ({ values, errors, touched, handleChange }) => {
   return (
     <div className="formGroup">
       <input
@@ -8,6 +8,8 @@ const FirstName = ({ errors, touched }) => {
         name="first_name"
         placeholder="First"
         autoComplete="fname"
+        value={values.first_name}
+        onChange={handleChange}
       />
       <label htmlFor="first_name">
         First Name<b className="inputRequired">*</b>
@@ -17,7 +19,7 @@ const FirstName = ({ errors, touched }) => {
   );
 };
 
-const LastName = ({ errors, touched }) => {
+const LastName = ({ values, errors, touched, handleChange }) => {
   return (
     <div className="formGroup">
       <input
@@ -25,6 +27,8 @@ const LastName = ({ errors, touched }) => {
         name="last_name"
         placeholder="Last"
         autoComplete="lname"
+        value={values.last_name}
+        onChange={handleChange}
       />
       <label htmlFor="last_name">
         Last Name<b className="inputRequired">*</b>
@@ -34,10 +38,17 @@ const LastName = ({ errors, touched }) => {
   );
 };
 
-const Email = ({ errors, touched }) => {
+const Email = ({ values, errors, touched, handleChange }) => {
   return (
     <div className="formGroup">
-      <input id="Email" name="email" placeholder="Email" autoComplete="email" />
+      <input
+        id="Email"
+        name="email"
+        placeholder="Email"
+        autoComplete="email"
+        value={values.email}
+        onChange={handleChange}
+      />
       <label htmlFor="email">
         Email<b className="inputRequired">*</b>
       </label>
@@ -46,7 +57,7 @@ const Email = ({ errors, touched }) => {
   );
 };
 
-const Phone = ({ errors, touched }) => {
+const Phone = ({ errors, touched, values, handleChange }) => {
   return (
     <div className="formGroup">
       <input
@@ -55,6 +66,8 @@ const Phone = ({ errors, touched }) => {
         placeholder="(xxx)-xxx-xxxx"
         autoComplete="phone"
         type="number"
+        value={values.phone}
+        onChange={handleChange}
       />
       <label htmlFor="phone">
         Phone Number<b className="inputRequired">*</b>
@@ -64,15 +77,16 @@ const Phone = ({ errors, touched }) => {
   );
 };
 
-const DateOfBirth = ({ errors, touched }) => {
+const DateOfBirth = ({ values, handleChange, errors, touched }) => {
   return (
     <div className="formGroup">
       <input
-        id="DOB"
-        name="DOB"
+        id="dob"
+        name="dob"
         placeholder="Date of Birth"
-        autoComplete="DOB"
         type="date"
+        value={values.dob}
+        onChange={handleChange}
       />
       <label htmlFor="DOB">
         Date of Birth<b className="inputRequired">*</b>
@@ -82,7 +96,7 @@ const DateOfBirth = ({ errors, touched }) => {
   );
 };
 
-const AltPhone = ({ errors, touched }) => {
+const AltPhone = ({ values, handleChange, errors, touched }) => {
   return (
     <div className="formGroup">
       <input
@@ -91,6 +105,8 @@ const AltPhone = ({ errors, touched }) => {
         placeholder="(xxx)-xxx-xxxx"
         autoComplete="phone"
         type="number"
+        value={values.AltPhone}
+        onChange={handleChange}
       />
       <label htmlFor="Alt phone">Alt Phone Number</label>
       {errors?.phone && touched?.phone && <p>{errors?.phone}</p>}

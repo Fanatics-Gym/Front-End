@@ -13,14 +13,6 @@ const ApplicationForm = () => {
     "Terms & Conditions",
   ];
 
-  // const handleNext = (activeStep, setActiveStep) => {
-  //   if (activeStep === 0) {
-  //     setActiveStep(activeStep + 1);
-  //   } else if (activeStep === 1) {
-  //     setActiveStep(activeStep + 1);
-  //   }
-  // };
-
   return (
     <ThemeProvider theme={theme}>
       <div className="applicationFormContainer">

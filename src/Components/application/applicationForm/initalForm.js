@@ -6,6 +6,9 @@ import PlayerInfo from "./playerInfo";
 import VerificationInfo from "./verificationInfo";
 import EmergencyInfo from "./emergencyInfo";
 import TermsAndConditions from "./Terms";
+import { PlayerInfoSchema } from "../../../yup/playerInfoSchema";
+import { VerificationSchema } from "../../../yup/verificationSchema";
+import { EmergencySchema } from "../../../yup/EmergencySchema";
 
 const FormWrapper = ({ steps, activeStep, setActiveStep }) => {
   const { push } = useHistory();
@@ -15,7 +18,7 @@ const FormWrapper = ({ steps, activeStep, setActiveStep }) => {
     last_name: "",
     email: "",
     phone: "",
-    DOB: "",
+    dob: "",
     Altphone: "",
     Drivers_license: "",
     DLstate: "",
@@ -47,6 +50,9 @@ const FormWrapper = ({ steps, activeStep, setActiveStep }) => {
   return (
     <Formik
       initialValues={applicationInfo}
+      validationSchema={
+        activeStep === 0 ? PlayerInfoSchema : VerificationSchema
+      }
       onSubmit={(values) => handleNext(values, activeStep, setActiveStep)}
     >
       {(props) => (
