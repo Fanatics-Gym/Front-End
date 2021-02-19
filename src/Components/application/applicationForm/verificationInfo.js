@@ -79,15 +79,20 @@ const CityInput = ({ handleChange, values, errors, touched }) => {
   );
 };
 
-const AddressState = ({ errors, touched }) => {
+const AddressState = ({ errors, touched, values, handleChange }) => {
   return (
     <div className="formGroup">
-      <select id="address_state" name="address_state">
+      <select
+        id="address_state"
+        name="address_state"
+        value={values}
+        onChange={handleChange}
+      >
         <option value="" disabled>
           State
         </option>
         {states.map((state) => (
-          <option key={state} value={state.value}>
+          <option key={state.value} value={state.value}>
             {state.label}
           </option>
         ))}

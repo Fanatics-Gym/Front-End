@@ -10,7 +10,7 @@ import { PlayerInfoSchema } from "../../../yup/playerInfoSchema";
 import { VerificationSchema } from "../../../yup/verificationSchema";
 import { EmergencySchema } from "../../../yup/EmergencySchema";
 
-const FormWrapper = ({ steps, activeStep, setActiveStep }) => {
+const FormWrapper = ({ steps, activeStep, setActiveStep, props }) => {
   const { push } = useHistory();
 
   const applicationInfo = {
@@ -50,9 +50,9 @@ const FormWrapper = ({ steps, activeStep, setActiveStep }) => {
   return (
     <Formik
       initialValues={applicationInfo}
-      validationSchema={
-        activeStep === 0 ? PlayerInfoSchema : VerificationSchema
-      }
+      // validationSchema={
+      //   activeStep === 0 ? PlayerInfoSchema : VerificationSchema
+      // }
       onSubmit={(values) => handleNext(values, activeStep, setActiveStep)}
     >
       {(props) => (

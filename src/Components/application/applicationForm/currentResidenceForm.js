@@ -57,7 +57,7 @@ const CurrentState = ({ errors, touched }) => {
           State
         </option>
         {states.map((state) => (
-          <option key={state} value={state.value}>
+          <option key={state.value} value={state.value}>
             {state.label}
           </option>
         ))}
