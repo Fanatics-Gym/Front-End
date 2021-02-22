@@ -81,8 +81,8 @@ const DateOfBirth = ({ values, handleChange, errors, touched }) => {
   return (
     <div className="formGroup">
       <input
-        id="dob"
-        name="dob"
+        id="DOB"
+        name="DOB"
         placeholder="Date of Birth"
         type="date"
         value={values.dob}
