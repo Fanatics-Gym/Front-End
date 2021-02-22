@@ -9,6 +9,7 @@ import TermsAndConditions from "./Terms";
 import { PlayerInfoSchema } from "../../../yup/playerInfoSchema";
 import { VerificationSchema } from "../../../yup/verificationSchema";
 import { EmergencySchema } from "../../../yup/EmergencySchema";
+import { BaseUrl } from "../../Auth/axios";
 
 const FormWrapper = ({ steps, activeStep, setActiveStep, props }) => {
   const { push } = useHistory();
@@ -18,7 +19,7 @@ const FormWrapper = ({ steps, activeStep, setActiveStep, props }) => {
     last_name: "",
     email: "",
     phone: "",
-    dob: "",
+    DOB: "",
     Altphone: "",
     Drivers_license: "",
     DLstate: "",
@@ -31,7 +32,7 @@ const FormWrapper = ({ steps, activeStep, setActiveStep, props }) => {
     Em_Last: "",
     relation: "",
     em_phone: "",
-    terms: false,
+    // terms: false,
   };
 
   const handleNext = (applicationInfo, activeStep, setActiveStep, push) => {
@@ -41,7 +42,8 @@ const FormWrapper = ({ steps, activeStep, setActiveStep, props }) => {
       setActiveStep(activeStep + 1);
     } else if (activeStep === 2) {
       setActiveStep(activeStep + 1);
-    } else if (activeStep === 4) {
+    } else if (activeStep === 3) {
+      BaseUrl().post("/applications/add", applicationInfo);
       push("/confirmation");
     }
   };
