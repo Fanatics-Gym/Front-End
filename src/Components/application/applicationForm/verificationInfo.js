@@ -33,7 +33,7 @@ const Expiration = ({ values, handleChange, errors, touched }) => {
         placeholder="Driver's License Experation"
         autoComplete="email"
         type="date"
-        value={values.Drivers_license}
+        value={values.DL_Expiration}
         onChange={handleChange}
       />
       <label htmlFor="DL_Expiration">
