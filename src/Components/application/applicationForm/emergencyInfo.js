@@ -1,9 +1,15 @@
 import React from "react";
 
-const EmergencyFirst = ({}) => {
+const EmergencyFirst = ({ values, handleChange }) => {
   return (
     <div className="formGroup">
-      <input id="Em_First" name="Em_First" placeholder="First" />
+      <input
+        id="Em_First"
+        name="Em_First"
+        placeholder="First"
+        value={values.Em_First}
+        onChange={handleChange}
+      />
       <label htmlFor="firstName">
         First Name<b className="inputRequired">*</b>
       </label>
@@ -11,10 +17,16 @@ const EmergencyFirst = ({}) => {
   );
 };
 
-const EmergencyLast = ({}) => {
+const EmergencyLast = ({ values, handleChange }) => {
   return (
     <div className="formGroup">
-      <input id="Em_Last" name="Em_Last" placeholder="Last" />
+      <input
+        id="Em_Last"
+        name="Em_Last"
+        placeholder="Last"
+        value={values.Em_Last}
+        onChange={handleChange}
+      />
       <label htmlFor="lastName">
         Last Name<b className="inputRequired">*</b>
       </label>
@@ -22,10 +34,16 @@ const EmergencyLast = ({}) => {
   );
 };
 
-const EmergencyRelation = ({}) => {
+const EmergencyRelation = ({ values, handleChange }) => {
   return (
     <div className="formGroup">
-      <input id="relation" name="relation" placeholder="Family/Friend/Etc." />
+      <input
+        id="relation"
+        name="relation"
+        placeholder="Family/Friend/Etc."
+        value={values.relation}
+        onChange={handleChange}
+      />
       <label htmlFor="relation">
         Relation<b className="inputRequired">*</b>
       </label>
@@ -33,7 +51,7 @@ const EmergencyRelation = ({}) => {
   );
 };
 
-const EmergencyPhone = ({}) => {
+const EmergencyPhone = ({ values, handleChange }) => {
   return (
     <div className="formGroup">
       <input
@@ -41,6 +59,8 @@ const EmergencyPhone = ({}) => {
         name="em_phone"
         placeholder="(xxx)-xxx-xxxx"
         type="number"
+        value={values.em_phone}
+        onChange={handleChange}
       />
       <label>
         Phone Number<b className="inputRequired">*</b>
