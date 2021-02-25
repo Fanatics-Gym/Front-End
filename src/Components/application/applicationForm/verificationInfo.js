@@ -2,7 +2,7 @@ import React from "react";
 import CurrentResidence from "./currentResidenceForm";
 import { states } from "./states";
 
-const DriversLicense = ({ errors, touched }) => {
+const DriversLicense = ({ values, handleChange, errors, touched }) => {
   return (
     <div className="formGroup">
       <input
@@ -11,6 +11,8 @@ const DriversLicense = ({ errors, touched }) => {
         placeholder="Driver's License #"
         autoComplete="DL"
         type="text"
+        value={values.Drivers_license}
+        onChange={handleChange}
       />
       <label htmlFor="Drivers_licese">
         Driver's License<b className="inputRequired">*</b>
@@ -22,7 +24,7 @@ const DriversLicense = ({ errors, touched }) => {
   );
 };
 
-const Expiration = ({ errors, touched }) => {
+const Expiration = ({ values, handleChange, errors, touched }) => {
   return (
     <div className="formGroup">
       <input
@@ -31,6 +33,8 @@ const Expiration = ({ errors, touched }) => {
         placeholder="Driver's License Experation"
         autoComplete="email"
         type="date"
+        value={values.DL_Expiration}
+        onChange={handleChange}
       />
       <label htmlFor="DL_Expiration">
         Experation Date<b className="inputRequired">*</b>
@@ -49,8 +53,8 @@ const AddressInput = ({ handleChange, values, errors, touched }) => {
         id="address"
         name="address"
         placeholder="Street"
-        // onChange={handleChange}
-        // value={values.address}
+        onChange={handleChange}
+        value={values.address}
       />
       <label htmlFor="address">
         Address<b className="inputRequired">*</b>
@@ -67,8 +71,8 @@ const CityInput = ({ handleChange, values, errors, touched }) => {
         id="city"
         name="city"
         placeholder="City"
-        // onChange={handleChange}
-        // value={values.city}
+        onChange={handleChange}
+        value={values.city}
         autoComplete="billing address-level2"
       />
       <label htmlFor="city">
@@ -86,6 +90,8 @@ const AddressState = ({ errors, touched, values, handleChange }) => {
         id="address_state"
         name="address_state"
         value={values}
+        onChange={handleChange}
+        value={values.address_state}
         onChange={handleChange}
       >
         <option value="" disabled>
@@ -108,7 +114,14 @@ const AddressState = ({ errors, touched, values, handleChange }) => {
 const ZipInput = ({ handleChange, values, errors, touched }) => {
   return (
     <div className="formGroup">
-      <input id="zip" name="zip" type="number" placeholder="Zip/Postal Code" />
+      <input
+        id="zip"
+        name="zip"
+        type="number"
+        placeholder="Zip/Postal Code"
+        value={values.zip}
+        onChange={handleChange}
+      />
       <label htmlFor="zip">
         Zip Code<b className="inputRequired">*</b>
       </label>
