@@ -22,7 +22,6 @@ const FormWrapper = ({ steps, activeStep, setActiveStep, props }) => {
     DOB: "",
     Altphone: "",
     Drivers_license: "",
-    DLstate: "",
     DL_Expiration: "",
     address: "",
     city: "",
@@ -35,7 +34,7 @@ const FormWrapper = ({ steps, activeStep, setActiveStep, props }) => {
     // terms: false,
   };
 
-  const handleNext = (applicationInfo, activeStep, setActiveStep, push) => {
+  const handleNext = (applicationInfo, activeStep, setActiveStep) => {
     if (activeStep === 0) {
       setActiveStep(activeStep + 1);
     } else if (activeStep === 1) {
@@ -44,7 +43,7 @@ const FormWrapper = ({ steps, activeStep, setActiveStep, props }) => {
       setActiveStep(activeStep + 1);
     } else if (activeStep === 3) {
       BaseUrl().post("/applications/add", applicationInfo);
-      push("/confirmation");
+      props.history.push("/confirmation");
     }
   };
 
@@ -52,9 +51,9 @@ const FormWrapper = ({ steps, activeStep, setActiveStep, props }) => {
   return (
     <Formik
       initialValues={applicationInfo}
-      // validationSchema={
-      //   activeStep === 0 ? PlayerInfoSchema : VerificationSchema
-      // }
+      validationSchema={
+        activeStep === 0 ? PlayerInfoSchema : VerificationSchema
+      }
       onSubmit={(values) => handleNext(values, activeStep, setActiveStep)}
     >
       {(props) => (

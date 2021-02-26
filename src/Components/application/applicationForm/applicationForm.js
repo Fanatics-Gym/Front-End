@@ -27,7 +27,6 @@ const ApplicationForm = () => {
             steps={steps}
             activeStep={activeStep}
             setActiveStep={setActiveStep}
-            // handleNext={handleNext}
           />
         </div>
       </div>
