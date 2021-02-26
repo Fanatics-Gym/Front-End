@@ -52,9 +52,9 @@ const FormWrapper = ({ steps, activeStep, setActiveStep, props }) => {
   return (
     <Formik
       initialValues={applicationInfo}
-      // validationSchema={
-      //   activeStep === 0 ? PlayerInfoSchema : VerificationSchema
-      // }
+      validationSchema={
+        activeStep === 0 ? PlayerInfoSchema : VerificationSchema
+      }
       onSubmit={(values) => handleNext(values, activeStep, setActiveStep)}
     >
       {(props) => (

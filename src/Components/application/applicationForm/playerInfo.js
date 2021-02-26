@@ -105,7 +105,7 @@ const AltPhone = ({ values, handleChange, errors, touched }) => {
         placeholder="(xxx)-xxx-xxxx"
         autoComplete="phone"
         type="number"
-        value={values.AltPhone}
+        value={values.Altphone}
         onChange={handleChange}
       />
       <label htmlFor="Alt phone">Alt Phone Number</label>
