@@ -85,7 +85,7 @@ const DateOfBirth = ({ values, handleChange, errors, touched }) => {
         name="DOB"
         placeholder="Date of Birth"
         type="date"
-        value={values.dob}
+        value={values.DOB}
         onChange={handleChange}
       />
       <label htmlFor="DOB">

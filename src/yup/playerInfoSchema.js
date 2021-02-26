@@ -8,7 +8,4 @@ export const PlayerInfoSchema = Yup.object().shape({
     .matches(/^\d{10}$/, "Invalid phone number")
     .required("Phone number is required"),
   DOB: Yup.string().required("Date of birth is required"),
-  Altphone: Yup.string()
-    .matches(/^\d{10}$/, "Invalid phone number")
-    .required("Phone number is required"),
 });
