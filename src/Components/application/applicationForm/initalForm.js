@@ -10,6 +10,7 @@ import { PlayerInfoSchema } from "../../../yup/playerInfoSchema";
 import { VerificationSchema } from "../../../yup/verificationSchema";
 import { EmergencySchema } from "../../../yup/EmergencySchema";
 import { BaseUrl } from "../../Auth/axios";
+import { SubmitApplication } from "../../../Recoil/apiCalls/applicationApiCalls";
 
 const FormWrapper = ({ steps, activeStep, setActiveStep, props }) => {
   const { push } = useHistory();
@@ -42,8 +43,7 @@ const FormWrapper = ({ steps, activeStep, setActiveStep, props }) => {
     } else if (activeStep === 2) {
       setActiveStep(activeStep + 1);
     } else if (activeStep === 3) {
-      BaseUrl().post("/applications/add", applicationInfo);
-      props.history.push("/confirmation");
+      SubmitApplication(applicationInfo, push)();
     }
   };
 
@@ -51,9 +51,9 @@ const FormWrapper = ({ steps, activeStep, setActiveStep, props }) => {
   return (
     <Formik
       initialValues={applicationInfo}
-      validationSchema={
-        activeStep === 0 ? PlayerInfoSchema : VerificationSchema
-      }
+      // validationSchema={
+      //   activeStep === 0 ? PlayerInfoSchema : VerificationSchema
+      // }
       onSubmit={(values) => handleNext(values, activeStep, setActiveStep)}
     >
       {(props) => (
