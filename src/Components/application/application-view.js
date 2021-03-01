@@ -3,12 +3,13 @@ import React from "react";
 const ApplicationView = ({ application }) => {
   return (
     <div className="userApplication">
-      <p>{application.first_name}</p>
-      <p>{application.last_name}</p>
-      <p>{application.email}</p>
-      <p>{application.phone}</p>
-      <p>{application.DOB}</p>
-      <p>{application.Altphone}</p>
+      <p>
+        Name: {application.first_name} {application.last_name}
+      </p>
+      <p>Email: {application.email}</p>
+      <p>Phone Number: {application.phone}</p>
+      <p>Date of Birth: {application.DOB}</p>
+      <p>Alt-Phone: {application.Altphone}</p>
       <p>{application.Drivers_license}</p>
       <p>{application.DL_Expiration}</p>
       <p>{application.address}</p>

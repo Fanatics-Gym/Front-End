@@ -20,9 +20,9 @@ const ViewApplications = () => {
   console.log(applicationList);
 
   return (
-    <div>
+    <div className="applicationViewCont">
       <h2>Applications</h2>
-      <div>
+      <div className="applicationsCont">
         {applicationList.map((app) => (
           <ApplicationView key={app.id} application={app} />
         ))}
