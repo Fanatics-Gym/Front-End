@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useRecoilState } from "recoil";
 import ApplicationAtom from "../../Recoil/atom/applicationsAtom";
+import ApplicationView from "../application/application-view";
 import { BaseUrl } from "../Auth/axios";
 
 const ViewApplications = () => {
@@ -21,6 +22,11 @@ const ViewApplications = () => {
   return (
     <div>
       <h2>Applications</h2>
+      <div>
+        {applicationList.map((app) => (
+          <ApplicationView key={app.id} application={app} />
+        ))}
+      </div>
     </div>
   );
 };

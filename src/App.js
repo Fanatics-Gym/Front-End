@@ -45,7 +45,7 @@ function App() {
           <Route path="/confirmation" component={ConfirmationPage} />
           {/* <Elements stripe={stripePromise}> */}
           <Route path="/checkout" component={Checkout} />
-          <Route path="/view-application" component={ViewApplications} />
+          <Route path="/view-applications" component={ViewApplications} />
           {/* </Elements> */}
         </div>
       </Router>
