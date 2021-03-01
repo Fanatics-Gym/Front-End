@@ -3,6 +3,7 @@ import React from "react";
 const ApplicationView = ({ application }) => {
   return (
     <div className="userApplication">
+      <h3>Player Info</h3>
       <p>
         Name: {application.first_name} {application.last_name}
       </p>
@@ -10,17 +11,23 @@ const ApplicationView = ({ application }) => {
       <p>Phone Number: {application.phone}</p>
       <p>Date of Birth: {application.DOB}</p>
       <p>Alt-Phone: {application.Altphone}</p>
-      <p>{application.Drivers_license}</p>
-      <p>{application.DL_Expiration}</p>
-      <p>{application.address}</p>
-      <p>{application.city}</p>
-      <p>{application.address_state}</p>
-      <p>{application.zip}</p>
-      <p>{application.Em_First}</p>
-      <p>{application.Em_Last}</p>
-      <p>{application.relation}</p>
-      <p>{application.em_phone}</p>
-      <p>{application.status === false ? "Accepted" : "Review"}</p>
+      <h3>Verification Info</h3>
+      <p>Drivers License #: {application.Drivers_license}</p>
+      <p>DL Expiration: {application.DL_Expiration}</p>
+      <p>Address: {application.address}</p>
+      <p>City: {application.city}</p>
+      <p>State: {application.address_state}</p>
+      <p>Zip Code: {application.zip}</p>
+      <h3>Emergency Info</h3>
+      <p>
+        Name: {application.Em_First} {application.Em_Last}
+      </p>
+      <p>Relation: {application.relation}</p>
+      <p>Phone Number: {application.em_phone}</p>
+      <h3>Application Status</h3>
+      <p>
+        {application.status === false ? "Needs to be Reviewed" : "Accepted"}
+      </p>
     </div>
   );
 };
