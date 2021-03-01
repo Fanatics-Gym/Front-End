@@ -2,7 +2,7 @@ import React from "react";
 
 const ApplicationView = ({ application }) => {
   return (
-    <div>
+    <div className="userApplication">
       <p>{application.first_name}</p>
       <p>{application.last_name}</p>
       <p>{application.email}</p>
@@ -19,7 +19,7 @@ const ApplicationView = ({ application }) => {
       <p>{application.Em_Last}</p>
       <p>{application.relation}</p>
       <p>{application.em_phone}</p>
-      <p>{application.status}</p>
+      <p>{application.status === false ? "Accepted" : "Review"}</p>
     </div>
   );
 };
