@@ -1,7 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import { lora } from "../PageData";
 
-const TermsAndConditions = () => {
+const TermsAndConditions = (applicationInfo) => {
+  const [termsState, setTermsState] = useState(applicationInfo.terms);
+  const confirmTerms = () => {
+    if (termsState) {
+      setTermsState(!termsState);
+    }
+  };
   return (
     <div className="termsContainer">
       <h2>Read the Terms and Conditions</h2>
@@ -12,7 +18,7 @@ const TermsAndConditions = () => {
         <p>{lora[3]}</p>
       </div>
       <div className="confirmRead">
-        <input type="checkbox" id="terms" name="terms" />
+        <input type="checkbox" onClick={confirmTerms} id="terms" name="terms" />
         <label>Check the box if you agree with the terms</label>
       </div>
     </div>
