@@ -10,5 +10,7 @@ export const EmergencySchema = Yup.object().shape({
 });
 
 export const TermsSchema = Yup.object().shape({
-  terms: Yup.boolean().isValid(true).required("Please check the box"),
+  terms: Yup.boolean()
+    .required("Field is required")
+    .oneOf([true], "Field is required"),
 });

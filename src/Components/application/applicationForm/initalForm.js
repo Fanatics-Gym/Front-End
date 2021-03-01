@@ -71,7 +71,7 @@ const FormWrapper = ({ steps, activeStep, setActiveStep, props }) => {
           ) : activeStep === 2 ? (
             <EmergencyInfo {...props} />
           ) : (
-            <TermsAndConditions />
+            <TermsAndConditions {...props} />
           )}
           <Buttons
             steps={steps}
