@@ -96,7 +96,7 @@ const DateOfBirth = ({ values, handleChange, errors, touched }) => {
   );
 };
 
-const AltPhone = ({ values, handleChange, errors, touched }) => {
+const AltPhone = ({ values, handleChange }) => {
   return (
     <div className="formGroup">
       <input
@@ -109,7 +109,6 @@ const AltPhone = ({ values, handleChange, errors, touched }) => {
         onChange={handleChange}
       />
       <label htmlFor="Alt phone">Alt Phone Number</label>
-      {errors?.phone && touched?.phone && <p>{errors?.phone}</p>}
     </div>
   );
 };
