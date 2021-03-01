@@ -8,7 +8,7 @@ import EmergencyInfo from "./emergencyInfo";
 import TermsAndConditions from "./Terms";
 import { PlayerInfoSchema } from "../../../yup/playerInfoSchema";
 import { VerificationSchema } from "../../../yup/verificationSchema";
-import { EmergencySchema } from "../../../yup/EmergencySchema";
+import { EmergencySchema, TermsSchema } from "../../../yup/EmergencySchema";
 import { BaseUrl } from "../../Auth/axios";
 import { SubmitApplication } from "../../../Recoil/apiCalls/applicationApiCalls";
 
@@ -32,7 +32,7 @@ const FormWrapper = ({ steps, activeStep, setActiveStep, props }) => {
     Em_Last: "",
     relation: "",
     em_phone: "",
-    // terms: false,
+    terms: false,
   };
 
   const handleNext = (applicationInfo, activeStep, setActiveStep) => {
@@ -51,9 +51,15 @@ const FormWrapper = ({ steps, activeStep, setActiveStep, props }) => {
   return (
     <Formik
       initialValues={applicationInfo}
-      // validationSchema={
-      //   activeStep === 0 ? PlayerInfoSchema : VerificationSchema
-      // }
+      validationSchema={
+        activeStep === 0
+          ? PlayerInfoSchema
+          : activeStep === 1
+          ? VerificationSchema
+          : activeStep === 2
+          ? EmergencySchema
+          : TermsSchema
+      }
       onSubmit={(values) => handleNext(values, activeStep, setActiveStep)}
     >
       {(props) => (
@@ -65,7 +71,7 @@ const FormWrapper = ({ steps, activeStep, setActiveStep, props }) => {
           ) : activeStep === 2 ? (
             <EmergencyInfo {...props} />
           ) : (
-            <TermsAndConditions />
+            <TermsAndConditions {...props} />
           )}
           <Buttons
             steps={steps}
