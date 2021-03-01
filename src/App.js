@@ -18,6 +18,7 @@ import { loadStripe } from "@stripe/stripe-js";
 import FootballPage from "./Components/application/FootballPage";
 import ApplicationForm from "./Components/application/applicationForm/applicationForm";
 import ConfirmationPage from "./Components/application/applicationForm/ConfirmationForm";
+import ViewApplications from "./Components/user/userViewApplications";
 
 // const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_KEY);
 function App() {
@@ -44,6 +45,7 @@ function App() {
           <Route path="/confirmation" component={ConfirmationPage} />
           {/* <Elements stripe={stripePromise}> */}
           <Route path="/checkout" component={Checkout} />
+          <Route path="/view-applications" component={ViewApplications} />
           {/* </Elements> */}
         </div>
       </Router>
