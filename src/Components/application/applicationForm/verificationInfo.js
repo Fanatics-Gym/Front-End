@@ -17,9 +17,9 @@ const DriversLicense = ({ values, handleChange, errors, touched }) => {
       <label htmlFor="Drivers_licese">
         Driver's License<b className="inputRequired">*</b>
       </label>
-      {/* {errors?.Drivers_license && touched?.Drivers_license && (
-        <p>{errors?.Drivers_license}</p> */}
-      {/* )} */}
+      {errors?.Drivers_license && touched?.Drivers_license && (
+        <p>{errors?.Drivers_license}</p>
+      )}
     </div>
   );
 };
@@ -39,9 +39,9 @@ const Expiration = ({ values, handleChange, errors, touched }) => {
       <label htmlFor="DL_Expiration">
         Experation Date<b className="inputRequired">*</b>
       </label>
-      {/* {errors?.DL_Expiration && touched?.DL_Expiration && (
-        <p>{errors?.DL_Expiration}</p> */}
-      {/* )} */}
+      {errors?.DL_Expiration && touched?.DL_Expiration && (
+        <p>{errors?.DL_Expiration}</p>
+      )}
     </div>
   );
 };
@@ -59,7 +59,7 @@ const AddressInput = ({ handleChange, values, errors, touched }) => {
       <label htmlFor="address">
         Address<b className="inputRequired">*</b>
       </label>
-      {/* {errors.address && touched.address && <p>{errors.address}</p>} */}
+      {errors.address && touched.address && <p>{errors.address}</p>}
     </div>
   );
 };
@@ -78,7 +78,7 @@ const CityInput = ({ handleChange, values, errors, touched }) => {
       <label htmlFor="city">
         City<b className="inputRequired">*</b>
       </label>
-      {/* {errors.city && touched.city && <p>{errors.city}</p>} */}
+      {errors.city && touched.city && <p>{errors.city}</p>}
     </div>
   );
 };
@@ -106,7 +106,7 @@ const AddressState = ({ errors, touched, values, handleChange }) => {
       <label>
         State<b className="inputRequired">*</b>
       </label>
-      {/* {errors.state && touched.state && <p>{errors.state}</p>} */}
+      {errors.state && touched.state && <p>{errors.state}</p>}
     </div>
   );
 };
@@ -125,7 +125,7 @@ const ZipInput = ({ handleChange, values, errors, touched }) => {
       <label htmlFor="zip">
         Zip Code<b className="inputRequired">*</b>
       </label>
-      {/* {errors.zip && touched.zip && <p>{errors.zip}</p>} */}
+      {errors.zip && touched.zip && <p>{errors.zip}</p>}
     </div>
   );
 };

@@ -1,6 +1,6 @@
 import React from "react";
 
-const EmergencyFirst = ({ values, handleChange }) => {
+const EmergencyFirst = ({ values, handleChange, errors, touched }) => {
   return (
     <div className="formGroup">
       <input
@@ -13,11 +13,12 @@ const EmergencyFirst = ({ values, handleChange }) => {
       <label htmlFor="firstName">
         First Name<b className="inputRequired">*</b>
       </label>
+      {errors?.Em_First && touched?.Em_First && <p>{errors?.Em_First}</p>}
     </div>
   );
 };
 
-const EmergencyLast = ({ values, handleChange }) => {
+const EmergencyLast = ({ values, handleChange, errors, touched }) => {
   return (
     <div className="formGroup">
       <input
@@ -30,11 +31,12 @@ const EmergencyLast = ({ values, handleChange }) => {
       <label htmlFor="lastName">
         Last Name<b className="inputRequired">*</b>
       </label>
+      {errors?.Em_Last && touched?.Em_Last && <p>{errors?.Em_Last}</p>}
     </div>
   );
 };
 
-const EmergencyRelation = ({ values, handleChange }) => {
+const EmergencyRelation = ({ values, handleChange, errors, touched }) => {
   return (
     <div className="formGroup">
       <input
@@ -47,11 +49,12 @@ const EmergencyRelation = ({ values, handleChange }) => {
       <label htmlFor="relation">
         Relation<b className="inputRequired">*</b>
       </label>
+      {errors?.relation && touched?.relation && <p>{errors?.relation}</p>}
     </div>
   );
 };
 
-const EmergencyPhone = ({ values, handleChange }) => {
+const EmergencyPhone = ({ values, handleChange, errors, touched }) => {
   return (
     <div className="formGroup">
       <input
@@ -65,6 +68,7 @@ const EmergencyPhone = ({ values, handleChange }) => {
       <label>
         Phone Number<b className="inputRequired">*</b>
       </label>
+      {errors?.em_phone && touched?.em_phone && <p>{errors?.em_phone}</p>}
     </div>
   );
 };
