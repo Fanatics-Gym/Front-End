@@ -47,7 +47,6 @@ const FormWrapper = ({ steps, activeStep, setActiveStep, props }) => {
     }
   };
 
-  console.log(applicationInfo);
   return (
     <Formik
       initialValues={applicationInfo}
