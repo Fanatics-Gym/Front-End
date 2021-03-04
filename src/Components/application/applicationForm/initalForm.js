@@ -32,7 +32,6 @@ const FormWrapper = ({ steps, activeStep, setActiveStep, props }) => {
     Em_Last: "",
     relation: "",
     em_phone: "",
-    terms: false,
   };
 
   const handleNext = (applicationInfo, activeStep, setActiveStep) => {

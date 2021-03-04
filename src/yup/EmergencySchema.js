@@ -9,8 +9,8 @@ export const EmergencySchema = Yup.object().shape({
     .required("Phone number is required"),
 });
 
-export const TermsSchema = Yup.object().shape({
-  terms: Yup.boolean()
-    .required("Field is required")
-    .oneOf([true], "Field is required"),
-});
+// export const TermsSchema = Yup.object().shape({
+//   terms: Yup.boolean()
+//     .required("Field is required")
+//     .oneOf([true], "Field is required"),
+// });
