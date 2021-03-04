@@ -6,7 +6,7 @@ const ConfirmationPage = () => {
       <h2>Congratulations!</h2>
       <h3>
         You've completed your Fanatics Football Application. A copy has been
-        sent to our email and ou application is now under review. Once your
+        sent to our email and your application is now under review. Once your
         application is approved, you will recieve a confirmation email where you
         will be able to choose the size of your equipment.
       </h3>
