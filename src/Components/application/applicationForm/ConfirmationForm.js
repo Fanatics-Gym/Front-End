@@ -3,13 +3,14 @@ import React from "react";
 const ConfirmationPage = () => {
   return (
     <div className="ConfirmationCont">
-      <h2>Thanks for applying</h2>
+      <h2>Congratulations!</h2>
       <h3>
-        We will reach out to you shortly regarding your application. We will
-        send you a message regarding wether you were approved or not. It should
-        take a few days.
+        You've completed your Fanatics Football Application. A copy has been
+        sent to our email and your application is now under review. Once your
+        application is approved, you will recieve a confirmation email where you
+        will be able to choose the size of your equipment.
       </h3>
-      <p>If you have any questions feel free to contact this email</p>
+      <h2>Talk with you soon!</h2>
     </div>
   );
 };

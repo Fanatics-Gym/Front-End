@@ -91,7 +91,7 @@ const DateOfBirth = ({ values, handleChange, errors, touched }) => {
       <label htmlFor="DOB">
         Date of Birth<b className="inputRequired">*</b>
       </label>
-      {errors?.phone && touched?.phone && <p>{errors?.phone}</p>}
+      {errors?.DOB && touched?.DOB && <p>{errors?.DOB}</p>}
     </div>
   );
 };

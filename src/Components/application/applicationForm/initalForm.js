@@ -1,5 +1,5 @@
 import { Form, Formik } from "formik";
-import React from "react";
+import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import Buttons from "./buttonsForForm";
 import PlayerInfo from "./playerInfo";
@@ -14,7 +14,7 @@ import { SubmitApplication } from "../../../Recoil/apiCalls/applicationApiCalls"
 
 const FormWrapper = ({ steps, activeStep, setActiveStep, props }) => {
   const { push } = useHistory();
-
+  const [termsState, setTermsState] = useState(false);
   const applicationInfo = {
     first_name: "",
     last_name: "",
@@ -32,8 +32,13 @@ const FormWrapper = ({ steps, activeStep, setActiveStep, props }) => {
     Em_Last: "",
     relation: "",
     em_phone: "",
-    terms: false,
   };
+
+  const confirmTerms = () => {
+    setTermsState(!termsState);
+  };
+
+  console.log(termsState);
 
   const handleNext = (applicationInfo, activeStep, setActiveStep) => {
     if (activeStep === 0) {
@@ -42,12 +47,11 @@ const FormWrapper = ({ steps, activeStep, setActiveStep, props }) => {
       setActiveStep(activeStep + 1);
     } else if (activeStep === 2) {
       setActiveStep(activeStep + 1);
-    } else if (activeStep === 3) {
+    } else if (activeStep === 3 && termsState === true) {
       SubmitApplication(applicationInfo, push)();
     }
   };
 
-  console.log(applicationInfo);
   return (
     <Formik
       initialValues={applicationInfo}
@@ -56,9 +60,7 @@ const FormWrapper = ({ steps, activeStep, setActiveStep, props }) => {
           ? PlayerInfoSchema
           : activeStep === 1
           ? VerificationSchema
-          : activeStep === 2
-          ? EmergencySchema
-          : TermsSchema
+          : EmergencySchema
       }
       onSubmit={(values) => handleNext(values, activeStep, setActiveStep)}
     >
@@ -71,7 +73,7 @@ const FormWrapper = ({ steps, activeStep, setActiveStep, props }) => {
           ) : activeStep === 2 ? (
             <EmergencyInfo {...props} />
           ) : (
-            <TermsAndConditions {...props} />
+            <TermsAndConditions confirmTerms={confirmTerms} />
           )}
           <Buttons
             steps={steps}
