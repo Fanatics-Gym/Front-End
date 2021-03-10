@@ -25,9 +25,7 @@ const ApplicationView = ({ application }) => {
       <p>Relation: {application.relation}</p>
       <p>Phone Number: {application.em_phone}</p>
       <h3>Application Status</h3>
-      <p>
-        {application.status === false ? "Needs to be Reviewed" : "Accepted"}
-      </p>
+      <p>Status: {application.status}</p>
     </div>
   );
 };
