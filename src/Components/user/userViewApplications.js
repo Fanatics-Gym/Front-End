@@ -21,13 +21,16 @@ const ViewApplications = () => {
       });
   }, []);
 
-  console.log(applicationList);
-
   return (
     <div className="applicationViewCont">
       <h2>Applications</h2>
       <div className="applNumCount">
         <h3>Total: {totalAppl} </h3>
+        <div className="statusNums">
+          <h4>Approved: {approvedAppl}</h4>
+          <h4>Pending: {pendingAppl}</h4>
+          <h4>Rejected: {rejectedAppl}</h4>
+        </div>
       </div>
       <div className="applicationsCont">
         {applicationList.map((app) => (

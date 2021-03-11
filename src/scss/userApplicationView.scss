@@ -25,7 +25,16 @@
 
   .applNumCount {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .statusNums {
+    margin: auto;
+    width: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
   }
 
   .applicationsCont {

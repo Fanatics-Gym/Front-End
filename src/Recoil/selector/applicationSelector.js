@@ -10,7 +10,7 @@ const ApplicationSelector = selector({
       .length;
     const approvedAppl = applications.filter(
       (appl) => appl.status === "Approved"
-    );
+    ).length;
     const rejectedAppl = applications.filter(
       (appl) => appl.status === "Rejected"
     ).length;
