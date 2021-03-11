@@ -14,6 +14,7 @@
   }
 
   .sectionCont {
+    text-align: center;
     margin: 5%;
     width: 90%;
     h2 {
@@ -27,6 +28,15 @@
       display: flex;
       justify-content: space-between;
       width: 100%;
+    }
+
+    .linksCont {
+      display: flex;
+      flex-direction: column;
+
+      .aboutLink {
+        margin: 2%;
+      }
     }
   }
 }

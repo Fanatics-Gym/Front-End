@@ -5,6 +5,7 @@ import { data } from "./newHomeData";
 import ShopAtom from "../../Recoil/atom/shop";
 import ItemPreview from "./itemPreview";
 import { BaseUrl } from "../Auth/axios";
+import { Link } from "react-router-dom";
 
 const NewHome = () => {
   const [shopItems, setShopItems] = useRecoilState(ShopAtom);
@@ -36,7 +37,18 @@ const NewHome = () => {
               ))}
             </div>
           </section>
-          <section></section>
+          <section class="sectionCont">
+            <h2 class="sectionSubtitle">About</h2>
+            <p>Learn more about the owner and what we represent</p>
+            <div class="linksCont">
+              <Link class="aboutLink" to="/represent">
+                Represent
+              </Link>
+              <Link class="aboutLink" to="/about">
+                About
+              </Link>
+            </div>
+          </section>
         </div>
       </div>
     </div>
