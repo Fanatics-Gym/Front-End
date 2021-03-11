@@ -1,5 +1,4 @@
 const { get } = require("http");
-const { listenerCount } = require("node:events");
 const { selector } = require("recoil");
 const { default: ApplicationStatus } = require("../atom/applicationFilterAtom");
 const { default: ApplicationAtom } = require("../atom/applicationsAtom");
