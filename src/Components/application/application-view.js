@@ -1,6 +1,28 @@
 import React from "react";
+import { NavItem } from "reactstrap";
+import { useRecoilState } from "recoil";
+import ApplicationAtom from "../../Recoil/atom/applicationsAtom";
+import { BaseUrl } from "../Auth/axios";
 
 const ApplicationView = ({ application }) => {
+  const [ApplicationList, setApplList] = useRecoilState(ApplicationAtom);
+  const applicant = ApplicationList.findIndex((list) => list === application);
+  const editStatus = ({ target: { value } }) => {
+    if (value === "Approved") {
+      const newList = replaceItem(ApplicationList, applicant, {
+        ...application,
+        status: value,
+      });
+      setApplList(newList);
+    } else if (value === "Rejected") {
+      const newList = replaceItem(ApplicationList, applicant, {
+        ...application,
+        status: value,
+      });
+      setApplList(newList);
+    }
+  };
+
   return (
     <div className="userApplication">
       <h3>Player Info</h3>
@@ -27,11 +49,19 @@ const ApplicationView = ({ application }) => {
       <h3>Application Status</h3>
       <p>Status: {application.status}</p>
       <div className="ButtonStatus">
-        <button>Approve</button>
-        <button>Reject</button>
+        <button id="Approved" value="Approved" onClick={editStatus}>
+          Approve
+        </button>
+        <button id="Rejected" value="Rejected" onClick={editStatus}>
+          Rejected
+        </button>
       </div>
     </div>
   );
+
+  function replaceItem(arr, index, newValue) {
+    return [...arr.slice(0, index), newValue, ...arr.slice(index + 1)];
+  }
 };
 
 export default ApplicationView;
