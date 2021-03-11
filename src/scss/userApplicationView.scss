@@ -2,6 +2,16 @@
   border: solid 3px black;
   border-radius: 10px;
   padding: 1rem;
+  margin-bottom: 2%;
+
+  .ButtonStatus {
+    display: flex;
+    flex-flow: column;
+
+    button {
+      margin: 3% 0;
+    }
+  }
 }
 
 .applicationViewCont {
@@ -11,6 +21,20 @@
     border-bottom: 3px solid black;
     width: 175px;
     text-align: center;
+  }
+
+  .applNumCount {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .statusNums {
+    margin: auto;
+    width: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
   }
 
   .applicationsCont {

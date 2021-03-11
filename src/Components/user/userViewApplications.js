@@ -1,10 +1,14 @@
 import React, { useEffect } from "react";
-import { useRecoilState } from "recoil";
+import { useRecoilState, useRecoilValue } from "recoil";
 import ApplicationAtom from "../../Recoil/atom/applicationsAtom";
+import ApplicationSelector from "../../Recoil/selector/applicationSelector";
 import ApplicationView from "../application/application-view";
 import { BaseUrl } from "../Auth/axios";
 
 const ViewApplications = () => {
+  const { totalAppl, pendingAppl, approvedAppl, rejectedAppl } = useRecoilValue(
+    ApplicationSelector
+  );
   const [applicationList, setApplicationList] = useRecoilState(ApplicationAtom);
   useEffect(() => {
     BaseUrl()
@@ -17,11 +21,17 @@ const ViewApplications = () => {
       });
   }, []);
 
-  console.log(applicationList);
-
   return (
     <div className="applicationViewCont">
       <h2>Applications</h2>
+      <div className="applNumCount">
+        <h3>Total: {totalAppl} </h3>
+        <div className="statusNums">
+          <h4>Approved: {approvedAppl}</h4>
+          <h4>Pending: {pendingAppl}</h4>
+          <h4>Rejected: {rejectedAppl}</h4>
+        </div>
+      </div>
       <div className="applicationsCont">
         {applicationList.map((app) => (
           <ApplicationView key={app.id} application={app} />

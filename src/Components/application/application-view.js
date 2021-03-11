@@ -26,6 +26,10 @@ const ApplicationView = ({ application }) => {
       <p>Phone Number: {application.em_phone}</p>
       <h3>Application Status</h3>
       <p>Status: {application.status}</p>
+      <div className="ButtonStatus">
+        <button>Approve</button>
+        <button>Reject</button>
+      </div>
     </div>
   );
 };
