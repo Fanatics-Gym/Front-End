@@ -1,17 +1,19 @@
 import React, { useEffect } from "react";
 import { useRecoilState, useRecoilValue } from "recoil";
+import ApplicationStatus from "../../Recoil/atom/applicationFilterAtom";
 import ApplicationAtom from "../../Recoil/atom/applicationsAtom";
-import applicationFilter from "../../Recoil/selector/applicationfilterSelector";
+import ApplicationFilter from "../../Recoil/selector/applicationfilterSelector";
 import ApplicationSelector from "../../Recoil/selector/applicationSelector";
 import ApplicationView from "../application/application-view";
 import { BaseUrl } from "../Auth/axios";
+import ApplicationSelectFilter from "../utils/applicationSelectFilter";
 
 const ViewApplications = () => {
   const { totalAppl, pendingAppl, approvedAppl, rejectedAppl } = useRecoilValue(
     ApplicationSelector
   );
-  const [applicationList, setApplicationList] = useRecoilState(ApplicationAtom);
-  const ApplicationFilter = useRecoilValue(applicationFilter);
+  const [ApplicationList, setApplicationList] = useRecoilState(ApplicationAtom);
+  const filter = useRecoilValue(ApplicationFilter);
   useEffect(() => {
     BaseUrl()
       .get("applications/")
@@ -33,9 +35,10 @@ const ViewApplications = () => {
           <h4>Pending: {pendingAppl}</h4>
           <h4>Rejected: {rejectedAppl}</h4>
         </div>
+        <ApplicationSelectFilter />
       </div>
       <div className="applicationsCont">
-        {ApplicationFilter.map((app) => (
+        {filter.map((app) => (
           <ApplicationView key={app.id} application={app} />
         ))}
       </div>

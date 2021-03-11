@@ -3,14 +3,14 @@ const { selector } = require("recoil");
 const { default: ApplicationStatus } = require("../atom/applicationFilterAtom");
 const { default: ApplicationAtom } = require("../atom/applicationsAtom");
 
-const applicationFilter = selector({
+const ApplicationFilter = selector({
   key: "applicationFilter",
   get: ({ get }) => {
     const defaultStatus = get(ApplicationStatus);
     const applicationList = get(ApplicationAtom);
 
     switch (defaultStatus) {
-      case "Aprroved":
+      case "Approved":
         return applicationList.filter((appl) => appl.status === "Approved");
       case "Pending":
         return applicationList.filter((appl) => appl.status === "Pending");
@@ -22,4 +22,4 @@ const applicationFilter = selector({
   },
 });
 
-export default applicationFilter;
+export default ApplicationFilter;

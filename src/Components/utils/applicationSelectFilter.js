@@ -1,9 +1,9 @@
 import React from "react";
 import { useRecoilState } from "recoil";
-import applicationFilter from "../../Recoil/selector/applicationfilterSelector";
+import ApplicationStatus from "../../Recoil/atom/applicationFilterAtom";
 
 const ApplicationSelectFilter = () => {
-  const [filter, setFilter] = useRecoilState(applicationFilter);
+  const [filter, setFilter] = useRecoilState(ApplicationStatus);
 
   const updateFilter = ({ target: { value } }) => {
     setFilter(value);
@@ -14,8 +14,9 @@ const ApplicationSelectFilter = () => {
       Filter:
       <select value={filter} onChange={updateFilter}>
         <option value="All">All</option>
-        <option value="Completed">Completed</option>
-        <option value="Uncompleted">Uncompleted</option>
+        <option value="Approved">Approved</option>
+        <option value="Pending">Pending</option>
+        <option value="Rejected">Rejected</option>
       </select>
     </div>
   );
