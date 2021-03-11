@@ -1,11 +1,21 @@
-import React from "react";
-import { useRecoilValue } from "recoil";
+import React, { useEffect } from "react";
+import { useRecoilState } from "recoil";
 import Logo from "../../imgs/Logo.JPG";
 import { data } from "./newHomeData";
 import ShopAtom from "../../Recoil/atom/shop";
+import ItemPreview from "./itemPreview";
+import { BaseUrl } from "../Auth/axios";
 
 const NewHome = () => {
-  const shopItems = useRecoilValue(ShopAtom);
+  const [shopItems, setShopItems] = useRecoilState(ShopAtom);
+  useEffect(() => {
+    BaseUrl()
+      .get(`items`)
+      .then((res) => {
+        setShopItems(res.data);
+      })
+      .catch((err) => console.log(err));
+  }, []);
   return (
     <div class="newHome">
       {/* <h2 class="subtitle">Home</h2> */}
@@ -20,7 +30,11 @@ const NewHome = () => {
           </section>
           <section class="sectionCont">
             <h2 class="sectionSubtitle">Shop</h2>
-            <div>{shopItems.map((item) => item)}</div>
+            <div>
+              {shopItems.map((item) => (
+                <ItemPreview key={item.id} item={item} />
+              ))}
+            </div>
           </section>
           <section></section>
         </div>
