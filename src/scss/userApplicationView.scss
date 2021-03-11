@@ -3,6 +3,15 @@
   border-radius: 10px;
   padding: 1rem;
   margin-bottom: 2%;
+
+  .ButtonStatus {
+    display: flex;
+    flex-flow: column;
+
+    button {
+      margin: 3% 0;
+    }
+  }
 }
 
 .applicationViewCont {
