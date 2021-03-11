@@ -1,0 +1,21 @@
+.newHome {
+  .NewHomeCont {
+    display: flex;
+    justify-content: space-between;
+  }
+  .logoImg {
+    width: 45%;
+  }
+
+  .newHomeText {
+    width: 45%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .sectionSubtitle {
+    border-bottom: 3px solid black;
+    width: 125%;
+    text-align: center;
+  }
+}
