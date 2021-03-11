@@ -1,8 +1,8 @@
 const { atom } = require("recoil");
 
-const ApplicationFilter = atom({
+const ApplicationStatus = atom({
   key: "applicationStatus",
   default: "All",
 });
 
-export default ApplicationFilter;
+export default ApplicationStatus;
