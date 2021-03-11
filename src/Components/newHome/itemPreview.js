@@ -5,7 +5,7 @@ const ItemPreview = ({ item }) => {
     <div className="ItemPreviewCont">
       <h3>{item.name}</h3>
       <img src={item.img} />
-      <p>{item.price}</p>
+      <p>${item.price}</p>
     </div>
   );
 };

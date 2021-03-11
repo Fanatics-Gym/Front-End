@@ -47,6 +47,7 @@ function App() {
           {/* <Elements stripe={stripePromise}> */}
           <Route path="/checkout" component={Checkout} />
           <Route path="/view-applications" component={ViewApplications} />
+          <Route path="/represent" component={HomePage} />
           {/* </Elements> */}
         </div>
       </Router>
