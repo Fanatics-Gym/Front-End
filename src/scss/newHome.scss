@@ -10,12 +10,17 @@
   .newHomeText {
     width: 45%;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
   }
 
-  .sectionSubtitle {
-    border-bottom: 3px solid black;
-    width: 125%;
-    text-align: center;
+  .sectionCont {
+    margin: 5%;
+    width: 90%;
+    h2 {
+      margin: auto;
+      width: 35%;
+      border-bottom: black solid 3px;
+      text-align: center;
+    }
   }
 }
