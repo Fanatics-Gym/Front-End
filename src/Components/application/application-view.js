@@ -6,20 +6,24 @@ import { BaseUrl } from "../Auth/axios";
 
 const ApplicationView = ({ application }) => {
   const [ApplicationList, setApplList] = useRecoilState(ApplicationAtom);
-  const applicant = ApplicationList.findIndex((list) => list === application);
+  const applicantIndex = ApplicationList.findIndex(
+    (list) => list === application
+  );
   const editStatus = ({ target: { value } }) => {
     if (value === "Approved") {
-      const newList = replaceItem(ApplicationList, applicant, {
+      const newList = replaceItem(ApplicationList, applicantIndex, {
         ...application,
         status: value,
       });
       setApplList(newList);
+      BaseUrl().put(`applications/${application.id}`, newList[applicantIndex]);
     } else if (value === "Rejected") {
-      const newList = replaceItem(ApplicationList, applicant, {
+      const newList = replaceItem(ApplicationList, applicantIndex, {
         ...application,
         status: value,
       });
       setApplList(newList);
+      BaseUrl().put(`applications/${application.id}`, newList[applicantIndex]);
     }
   };
 
