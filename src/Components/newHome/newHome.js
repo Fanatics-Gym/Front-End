@@ -30,7 +30,7 @@ const NewHome = () => {
           </section>
           <section class="sectionCont">
             <h2 class="sectionSubtitle">Shop</h2>
-            <div>
+            <div className="shopPreview">
               {shopItems.map((item) => (
                 <ItemPreview key={item.id} item={item} />
               ))}

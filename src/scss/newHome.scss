@@ -22,5 +22,11 @@
       border-bottom: black solid 3px;
       text-align: center;
     }
+
+    .shopPreview {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+    }
   }
 }

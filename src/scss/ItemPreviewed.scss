@@ -3,7 +3,11 @@
   flex-direction: column;
   text-align: center;
   border: solid black 3px;
+  border-radius: 15px;
+  width: 25%;
+  margin: 3%;
   img {
-    width: 20%;
+    margin: auto;
+    width: 35%;
   }
 }
