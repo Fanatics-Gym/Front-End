@@ -33,4 +33,24 @@
   margin: 0 5%;
   text-decoration: none;
   color: white;
+
+  .badge {
+    position: absolute;
+    top: 25px;
+    right: 30px;
+    height: 10px;
+    width: 5px;
+    padding: 5px 10px;
+    border-radius: 45%;
+    background: red;
+    color: white;
+    opacity: 75%;
+    font-size: 0.7rem;
+    .badgeNum {
+      color: black;
+      position: relative;
+      bottom: 17px;
+      right: 1px;
+    }
+  }
 }
