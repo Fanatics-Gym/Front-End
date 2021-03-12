@@ -29,14 +29,14 @@ const NewHome = () => {
             <h2 class="sectionSubtitle">Football League</h2>
             <p>{data[0]}</p>
           </section>
-          <section class="sectionCont">
+          {/* <section class="sectionCont">
             <h2 class="sectionSubtitle">Shop</h2>
             <div className="shopPreview">
               {shopItems.map((item) => (
                 <ItemPreview key={item.id} item={item} />
               ))}
             </div>
-          </section>
+          </section> */}
           <section class="sectionCont">
             <h2 class="sectionSubtitle">About</h2>
             <p>Learn more about the owner and what we represent</p>
