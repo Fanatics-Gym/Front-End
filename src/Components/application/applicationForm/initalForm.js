@@ -11,6 +11,7 @@ import { VerificationSchema } from "../../../yup/verificationSchema";
 import { EmergencySchema, TermsSchema } from "../../../yup/EmergencySchema";
 import { BaseUrl } from "../../Auth/axios";
 import { SubmitApplication } from "../../../Recoil/apiCalls/applicationApiCalls";
+import ReviewInfo from "./ReviewInfo";
 
 const FormWrapper = ({ steps, activeStep, setActiveStep, props }) => {
   const { push } = useHistory();
@@ -70,6 +71,8 @@ const FormWrapper = ({ steps, activeStep, setActiveStep, props }) => {
             <VerificationInfo {...props} />
           ) : activeStep === 2 ? (
             <EmergencyInfo {...props} />
+          ) : activeStep === 3 ? (
+            <ReviewInfo {...props} />
           ) : (
             <TermsAndConditions confirmTerms={confirmTerms} />
           )}
