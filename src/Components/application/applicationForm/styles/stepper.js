@@ -29,8 +29,8 @@ export const Circle = styled(FlexCenter)`
 `;
 
 export const StepLabel = styled(Circle)`
-  height: 3.6rem;
-  width: 3.5rem;
+  height: 2.6rem;
+  width: 2.5rem;
   background: ${(props) =>
     props.active
       ? ({ theme: { palette } }) => palette.secondary.main
@@ -45,11 +45,11 @@ export const StepTitle = styled.div`
     props.active
       ? ({ theme: { palette } }) => palette.secondary.main
       : "#a1a1a1"};
-  font-size: 1.6rem;
+  font-size: 1rem;
 `;
 
 export const StepConnector = styled.div`
-  width: 60px;
+  width: 30px;
   border-bottom: ${(props) =>
     props.active
       ? ({ theme: { palette } }) => `1px solid ${palette.secondary.main}`

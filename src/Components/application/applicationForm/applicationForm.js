@@ -10,6 +10,7 @@ const ApplicationForm = () => {
     "Player Info",
     "Verification Info",
     "Emergency Contact",
+    "Review",
     "Terms & Conditions",
   ];
 

@@ -6,10 +6,13 @@ import { Link } from "react-router-dom";
 function adminInfo() {
   return (
     <div className="about">
+      <div class="aboutHeader">
+        <h2 className="subtitle">About</h2>
+      </div>
       <div className="header">
-        <h1>Fanatics Gym Members</h1>
+        <h1>Fanatics Member's</h1>
         <h3>
-          A hardworking, dedicated indivdual, who loves to have a good time
+          Are hardworking, dedicated indivdual, who loves to have a good time?
         </h3>
         <img src={joggin} alt="Four hands grabbing one anothers wrist, unity" />
       </div>

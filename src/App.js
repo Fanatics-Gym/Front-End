@@ -19,6 +19,7 @@ import FootballPage from "./Components/application/FootballPage";
 import ApplicationForm from "./Components/application/applicationForm/applicationForm";
 import ConfirmationPage from "./Components/application/applicationForm/ConfirmationForm";
 import ViewApplications from "./Components/user/userViewApplications";
+import NewHome from "./Components/newHome/newHome";
 
 // const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_KEY);
 function App() {
@@ -33,7 +34,7 @@ function App() {
         <NavBar />
         <div className="spacing">
           <PrivateRoute exact path="/user" component={userPage} />
-          <Route exact path="/" component={HomePage} />
+          <Route exact path="/" component={NewHome} />
           <Route path="/login" component={LoginForm} />
           <Route path="/about" component={aboutUs} />
           <Route path="/shop" component={Shop} />
@@ -46,6 +47,7 @@ function App() {
           {/* <Elements stripe={stripePromise}> */}
           <Route path="/checkout" component={Checkout} />
           <Route path="/view-applications" component={ViewApplications} />
+          <Route path="/represent" component={HomePage} />
           {/* </Elements> */}
         </div>
       </Router>

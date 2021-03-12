@@ -1,0 +1,42 @@
+.newHome {
+  .NewHomeCont {
+    display: flex;
+    justify-content: space-between;
+  }
+  .logoImg {
+    width: 45%;
+  }
+
+  .newHomeText {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sectionCont {
+    text-align: center;
+    margin: 5%;
+    width: 90%;
+    h2 {
+      margin: auto;
+      width: 35%;
+      border-bottom: black solid 3px;
+      text-align: center;
+    }
+
+    .shopPreview {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    .linksCont {
+      display: flex;
+      flex-direction: column;
+
+      .aboutLink {
+        margin: 2%;
+      }
+    }
+  }
+}

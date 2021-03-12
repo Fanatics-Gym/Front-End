@@ -1,0 +1,20 @@
+.reviewCont {
+  width: 75%;
+  height: 50%;
+  margin: auto;
+  display: flex;
+  justify-content: space-evenly;
+  flex-flow: wrap row;
+  background-color: lightgray;
+  //   margin: 5% 0 5% 0;
+  p {
+    color: black;
+  }
+
+  section {
+    width: 45%;
+    h3 {
+      text-align: center;
+    }
+  }
+}
