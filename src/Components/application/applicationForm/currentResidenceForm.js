@@ -78,11 +78,11 @@ const CurrentState = ({ values, handleChange, errors, touched }) => {
 const CurrentResidence = ({ value, handleChange, errors, touched }) => {
   const [current, setCurrent] = useState(false);
   const changeCurrent = () => {
-    if (current) {
-      setCurrent(!current);
-    } else {
-      setCurrent(!current);
-    }
+    setCurrent(!current);
+    value.current_address = value.address;
+    value.current_city = value.city;
+    value.current_zip = value.zip;
+    value.current_state = value.address_state;
   };
 
   return (
