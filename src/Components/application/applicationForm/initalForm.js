@@ -41,9 +41,9 @@ const FormWrapper = ({ steps, activeStep, setActiveStep, props }) => {
   console.log(termsState);
 
   const handleNext = (applicationInfo, activeStep, setActiveStep) => {
-    if (activeStep === 5 && termsState === true) {
+    if (activeStep === 4 && termsState === true) {
       SubmitApplication(applicationInfo, push)();
-    } else if (activeStep < 5) {
+    } else if (activeStep < 4) {
       setActiveStep(activeStep + 1);
       console.log(activeStep);
     }
