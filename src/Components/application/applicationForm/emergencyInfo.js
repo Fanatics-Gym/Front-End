@@ -60,7 +60,7 @@ const EmergencyPhone = ({ values, handleChange, errors, touched }) => {
       <input
         id="em_phone"
         name="em_phone"
-        placeholder="(xxx)-xxx-xxxx"
+        placeholder="(xxx) xxx-xxxx"
         type="number"
         value={values.em_phone}
         onChange={handleChange}

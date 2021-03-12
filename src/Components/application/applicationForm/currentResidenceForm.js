@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 import { states } from "./states";
 
-const CurrentAddress = ({ handleChange, values, errors, touched }) => {
+const CurrentAddress = ({ values, handleChange }) => {
   return (
     <div className="formGroup">
       <input
         id="current_address"
         name="current_address"
         placeholder="Street"
-        // onChange={handleChange}
-        // value={values.address}
+        onChange={handleChange}
+        value={values.current_address}
       />
       <label htmlFor="address">Address</label>
       {/* {errors.address && touched.address && <p>{errors.address}</p>} */}
@@ -24,8 +24,8 @@ const CurrentCity = ({ handleChange, values, errors, touched }) => {
         id="current_city"
         name="current_city"
         placeholder="City"
-        // onChange={handleChange}
-        // value={values.city}
+        onChange={handleChange}
+        value={values.current_city}
         autoComplete="billing address-level2"
       />
       <label htmlFor="city">City</label>
@@ -42,6 +42,8 @@ const CurrentZip = ({ handleChange, values, errors, touched }) => {
         name="current_zip"
         type="number"
         placeholder="Zip/Postal Code"
+        value={values.current_zip}
+        onChange={handleChange}
       />
       <label htmlFor="zip">Zip Code</label>
       {/* {errors.zip && touched.zip && <p>{errors.zip}</p>} */}
@@ -49,10 +51,15 @@ const CurrentZip = ({ handleChange, values, errors, touched }) => {
   );
 };
 
-const CurrentState = ({ errors, touched }) => {
+const CurrentState = ({ values, handleChange, errors, touched }) => {
   return (
     <div className="formGroup">
-      <select id="current_state" name="current_state">
+      <select
+        id="current_state"
+        name="current_state"
+        value={values.current_state}
+        onChange={handleChange}
+      >
         <option value="" disabled>
           State
         </option>
@@ -68,16 +75,16 @@ const CurrentState = ({ errors, touched }) => {
   );
 };
 
-const CurrentResidence = ({ values, handleChange, errors, touched }) => {
+const CurrentResidence = ({ value, handleChange, errors, touched }) => {
   const [current, setCurrent] = useState(false);
   const changeCurrent = () => {
-    if (current) {
-      setCurrent(!current);
-    } else {
-      setCurrent(!current);
-    }
+    setCurrent(!current);
+    value.current_address = value.address;
+    value.current_city = value.city;
+    value.current_zip = value.zip;
+    value.current_state = value.address_state;
   };
-  console.log(current);
+
   return (
     <div className="currentResidenceCont">
       <div className="residenceHeader">
@@ -93,25 +100,25 @@ const CurrentResidence = ({ values, handleChange, errors, touched }) => {
       ) : (
         <div className="formContainer2">
           <CurrentAddress
-            value={values}
+            values={value}
             touched={touched}
             handleChange={handleChange}
             errors={errors}
           />
           <CurrentCity
-            value={values}
+            values={value}
             touched={touched}
             handleChange={handleChange}
             errors={errors}
           />
           <CurrentState
-            value={values}
+            values={value}
             touched={touched}
             handleChange={handleChange}
             errors={errors}
           />
           <CurrentZip
-            value={values}
+            values={value}
             touched={touched}
             handleChange={handleChange}
             errors={errors}

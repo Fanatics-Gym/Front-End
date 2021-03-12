@@ -37,7 +37,7 @@ const Expiration = ({ values, handleChange, errors, touched }) => {
         onChange={handleChange}
       />
       <label htmlFor="DL_Expiration">
-        Experation Date<b className="inputRequired">*</b>
+        Expiration Date<b className="inputRequired">*</b>
       </label>
       {errors?.DL_Expiration && touched?.DL_Expiration && (
         <p>{errors?.DL_Expiration}</p>

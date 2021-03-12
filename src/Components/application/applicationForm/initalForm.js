@@ -13,11 +13,12 @@ import { BaseUrl } from "../../Auth/axios";
 import { SubmitApplication } from "../../../Recoil/apiCalls/applicationApiCalls";
 import ReviewInfo from "./ReviewInfo";
 
-const FormWrapper = ({ steps, activeStep, setActiveStep, props }) => {
+const FormWrapper = ({ steps, activeStep, setActiveStep }) => {
   const { push } = useHistory();
   const [termsState, setTermsState] = useState(false);
   const applicationInfo = {
     first_name: "",
+    mi: "",
     last_name: "",
     email: "",
     phone: "",
@@ -29,11 +30,17 @@ const FormWrapper = ({ steps, activeStep, setActiveStep, props }) => {
     city: "",
     address_state: "",
     zip: "",
+    current_address: "",
+    current_city: "",
+    current_zip: "",
+    current_state: "",
     Em_First: "",
     Em_Last: "",
     relation: "",
     em_phone: "",
   };
+
+  console.log(applicationInfo);
 
   const confirmTerms = () => {
     setTermsState(!termsState);

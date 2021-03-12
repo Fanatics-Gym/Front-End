@@ -5,8 +5,6 @@ export const data = [
 ];
 
 export const TermsData = [
-  "When you are able to, please add the following:",
-
   "By Accepting the Terms and Conditions, you agree to the following:",
 
   "You are playing at your own risk.  If you get hurt and/or injured, Fanatics Gym LLC, Fanatics Football, and/or any other business, company, legal entity(ies), professional(s), supplier(s), manufacturer(s), or any other company/legal entity that is associated with Fanatics Gym LLC is not liable or responsible.  Being/getting hurt and/or injured include, but are not limited to, the following:  Concussion(s), head trauma(s), broke bone(s), fracture(s), pulled muscle(s) and/or ligament(s), strained muscle(s) and/or ligament(s), torn muscle(s) and/or ligament(s), cut(s), scrape(s), laceration(s), bruise(s), contusion(s), hyperextension(s), death, and/or any future injuries that may become present after your participation with the above mentioned has concluded and/or that may effect your quality of life.",
