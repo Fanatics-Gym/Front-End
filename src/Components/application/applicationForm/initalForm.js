@@ -18,6 +18,7 @@ const FormWrapper = ({ steps, activeStep, setActiveStep, props }) => {
   const [termsState, setTermsState] = useState(false);
   const applicationInfo = {
     first_name: "",
+    mi: "",
     last_name: "",
     email: "",
     phone: "",

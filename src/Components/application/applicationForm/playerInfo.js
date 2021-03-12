@@ -2,12 +2,13 @@ import React from "react";
 
 const FirstName = ({ values, errors, touched, handleChange }) => {
   return (
-    <div className="formGroup">
+    <div className="firstName">
       <input
+        class="firstNLast"
         id="first_name"
         name="first_name"
         placeholder="First"
-        autoComplete="fname"
+        autoComplete="First"
         value={values.first_name}
         onChange={handleChange}
       />
@@ -19,10 +20,28 @@ const FirstName = ({ values, errors, touched, handleChange }) => {
   );
 };
 
+const MI = ({ values, handleChange }) => {
+  return (
+    <div className="mi">
+      <input
+        className="middleInt"
+        id="mi"
+        name="mi"
+        placeholder="M.I."
+        autoComplete="Middle"
+        value={values.first_name}
+        onChange={handleChange}
+      />
+      <label htmlFor="last_name">M.I</label>
+    </div>
+  );
+};
+
 const LastName = ({ values, errors, touched, handleChange }) => {
   return (
-    <div className="formGroup">
+    <div className="firstName">
       <input
+        class="firstNLast"
         id="last_name"
         name="last_name"
         placeholder="Last"
@@ -115,18 +134,21 @@ const AltPhone = ({ values, handleChange }) => {
 
 const PlayerInfo = ({ values, handleChange, errors, touched }) => (
   <div className="formContainer">
-    <FirstName
-      touched={touched}
-      values={values}
-      handleChange={handleChange}
-      errors={errors}
-    />
-    <LastName
-      touched={touched}
-      values={values}
-      handleChange={handleChange}
-      errors={errors}
-    />
+    <div className="formNameCont">
+      <FirstName
+        touched={touched}
+        values={values}
+        handleChange={handleChange}
+        errors={errors}
+      />
+      <MI values={values} handleChange={handleChange} />
+      <LastName
+        touched={touched}
+        values={values}
+        handleChange={handleChange}
+        errors={errors}
+      />
+    </div>
     <Email
       touched={touched}
       values={values}
