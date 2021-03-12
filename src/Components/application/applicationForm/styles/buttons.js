@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { Flex, FlexCenter, Btn, Circle } from "./stepper";
 
 export const BtnContainer = styled(Flex)`
-  margin-right: 3%;
+  margin: 3% 3% 0 0;
   width: 100%;
   justify-content: flex-end;
 `;

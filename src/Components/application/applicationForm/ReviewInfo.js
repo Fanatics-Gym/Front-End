@@ -25,6 +25,54 @@ const ReviewInfo = (application) => {
           {values.Altphone.toString().slice(3, 6)}-
           {values.Altphone.toString().slice(6)}
         </p>
+        <p>
+          <b>Date of Birth: </b>
+          {values.DOB}
+        </p>
+      </section>
+      <section>
+        <h3>Emergency Info</h3>
+        <p>
+          <b>Name: </b>
+          {values.Em_First} {values.Em_Last}
+        </p>
+        <p>
+          <b>Relation: </b>
+          {values.relation}
+        </p>
+        <p>
+          <b>Phone Number: </b>({values.em_phone.toString().slice(0, 3)})-
+          {values.em_phone.toString().slice(3, 6)}-
+          {values.em_phone.toString().slice(6)}
+        </p>
+      </section>
+      <section>
+        <h3>Verification Info</h3>
+        <p>
+          <b>Drivers license#: </b>
+          {values.Drivers_license}
+        </p>
+        <p>
+          <b>Expiration: </b>
+          {values.DL_Expiration}
+        </p>
+        <p>
+          <b>Address: </b>
+          {values.address}
+        </p>
+        <p>
+          {values.city}, {values.address_state} {values.zip}
+        </p>
+      </section>
+      <section>
+        <h3>Current Residence</h3>
+        <p>
+          <b>Address: </b>
+          {values.address}
+        </p>
+        <p>
+          {values.city}, {values.address_state} {values.zip}
+        </p>
       </section>
     </div>
   );
