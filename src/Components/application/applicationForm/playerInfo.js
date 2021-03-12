@@ -63,7 +63,7 @@ const Email = ({ values, errors, touched, handleChange }) => {
       <input
         id="Email"
         name="email"
-        placeholder="Email"
+        placeholder="Example@FanaticsGym.com"
         autoComplete="email"
         value={values.email}
         onChange={handleChange}
@@ -82,7 +82,7 @@ const Phone = ({ errors, touched, values, handleChange }) => {
       <input
         id="phone"
         name="phone"
-        placeholder="(xxx)-xxx-xxxx"
+        placeholder="(xxx) xxx-xxxx"
         autoComplete="phone"
         type="number"
         value={values.phone}
@@ -121,7 +121,7 @@ const AltPhone = ({ values, handleChange }) => {
       <input
         id="Altphone"
         name="Altphone"
-        placeholder="(xxx)-xxx-xxxx"
+        placeholder="(xxx) xxx-xxxx"
         autoComplete="phone"
         type="number"
         value={values.Altphone}

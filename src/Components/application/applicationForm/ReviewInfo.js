@@ -9,7 +9,7 @@ const ReviewInfo = (application) => {
         <h3>Player Info</h3>
         <p>
           <b>Name: </b>
-          {values.first_name} {values.last_name}
+          {values.first_name} {values.mi}. {values.last_name}
         </p>
         <p>
           <b>Email: </b>
