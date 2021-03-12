@@ -29,7 +29,7 @@ const MI = ({ values, handleChange }) => {
         name="mi"
         placeholder="M.I."
         autoComplete="Middle"
-        value={values.first_name}
+        value={values.mi}
         onChange={handleChange}
       />
       <label htmlFor="last_name">M.I</label>
