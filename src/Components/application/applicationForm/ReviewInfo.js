@@ -68,10 +68,10 @@ const ReviewInfo = (application) => {
         <h3>Current Residence</h3>
         <p>
           <b>Address: </b>
-          {values.address}
+          {values.current_address}
         </p>
         <p>
-          {values.city}, {values.address_state} {values.zip}
+          {values.current_city}, {values.current_state} {values.current_zip}
         </p>
       </section>
     </div>
