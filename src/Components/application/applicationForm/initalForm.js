@@ -41,27 +41,25 @@ const FormWrapper = ({ steps, activeStep, setActiveStep, props }) => {
   console.log(termsState);
 
   const handleNext = (applicationInfo, activeStep, setActiveStep) => {
-    if (activeStep === 0) {
-      setActiveStep(activeStep + 1);
-    } else if (activeStep === 1) {
-      setActiveStep(activeStep + 1);
-    } else if (activeStep === 2) {
-      setActiveStep(activeStep + 1);
-    } else if (activeStep === 3 && termsState === true) {
+    if (activeStep === 5 && termsState === true) {
       SubmitApplication(applicationInfo, push)();
+    } else if (activeStep < 5) {
+      setActiveStep(activeStep + 1);
+      console.log(activeStep);
     }
+    console.log(activeStep);
   };
 
   return (
     <Formik
       initialValues={applicationInfo}
-      validationSchema={
-        activeStep === 0
-          ? PlayerInfoSchema
-          : activeStep === 1
-          ? VerificationSchema
-          : EmergencySchema
-      }
+      // validationSchema={
+      //   activeStep === 0
+      //     ? PlayerInfoSchema
+      //     : activeStep === 1
+      //     ? VerificationSchema
+      //     : EmergencySchema
+      // }
       onSubmit={(values) => handleNext(values, activeStep, setActiveStep)}
     >
       {(props) => (
