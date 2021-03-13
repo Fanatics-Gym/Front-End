@@ -1,8 +1,14 @@
 .playerInfoCont {
   margin-top: 2%;
   display: flex;
+  //   justify-content: space-evenly;
+  border: solid 1px black;
+
   .playerInfoSection {
-    width: 45%;
-    margin: auto;
+    width: 50%;
+    padding: 0 3%;
+    h3 {
+      text-align: center;
+    }
   }
 }

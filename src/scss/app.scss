@@ -30,11 +30,13 @@
 }
 
 .headerCont {
-  margin-left: 5%;
-
   h2 {
     border-bottom: solid black 3px;
     width: 200px;
     text-align: center;
   }
+}
+.componentCont {
+  width: 90%;
+  margin: auto;
 }
