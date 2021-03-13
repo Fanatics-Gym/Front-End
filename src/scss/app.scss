@@ -23,7 +23,12 @@
 @import "./newHome.scss";
 @import "./ItemPreviewed.scss";
 @import "./reviewInfo.scss";
+@import "./playerProfile.scss";
 
 *:focus {
   outline: 0;
+}
+
+.headerCont {
+  margin-left: 5%;
 }

@@ -20,6 +20,7 @@ import ApplicationForm from "./Components/application/applicationForm/applicatio
 import ConfirmationPage from "./Components/application/applicationForm/ConfirmationForm";
 import ViewApplications from "./Components/user/userViewApplications";
 import NewHome from "./Components/newHome/newHome";
+import PlayerProfile from "./Components/player/playerProfile";
 
 // const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_KEY);
 function App() {
@@ -49,6 +50,7 @@ function App() {
           <Route path="/view-applications" component={ViewApplications} />
           <Route path="/represent" component={HomePage} />
           {/* </Elements> */}
+          <Route path="/player-profile" component={PlayerProfile} />
         </div>
       </Router>
     </div>
