@@ -1,4 +1,5 @@
 import React from "react";
+import { profileData, profileStats } from "./playerData";
 
 const PlayerProfile = () => {
   return (
@@ -7,9 +8,20 @@ const PlayerProfile = () => {
         <h2>Player Profile</h2>
       </div>
       <div className="playerInfoCont">
-        <section>
+        <section className="playerInfoSection">
           <div>
             <h3>Player Contact</h3>
+            <p>{profileData.userName}</p>
+            <p>{profileData.email}</p>
+          </div>
+        </section>
+        <section className="playerInfoSection">
+          <div>
+            <h3>Player Stats </h3>
+            <p>{profileStats.tackles}</p>
+            <p>{profileStats.interception}</p>
+            <p>{profileStats.catches}</p>
+            <p>{profileStats.touchdowns}</p>
           </div>
         </section>
       </div>
