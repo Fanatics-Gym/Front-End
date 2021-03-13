@@ -21,13 +21,16 @@ const NavBar = () => {
         </Link>
       </div>
       <div className="navLinks">
-        <Link className="links" to="/shop">
-          Shop
+        <Link className="links" to="/">
+          Home
         </Link>
+        {/* <Link className="links" to="/shop">
+          Shop
+        </Link> */}
         <Link className="links" to="/football">
           Football
         </Link>
-        <Link className="links" to="/cart">
+        {/* <Link className="links" to="/cart">
           <img src={cart} />
           {listLength !== 0 ? (
             <span class="badge">
@@ -36,7 +39,7 @@ const NavBar = () => {
           ) : (
             <span></span>
           )}
-        </Link>
+        </Link> */}
       </div>
     </nav>
   );
