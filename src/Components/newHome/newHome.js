@@ -6,6 +6,7 @@ import ShopAtom from "../../Recoil/atom/shop";
 import ItemPreview from "./itemPreview";
 import { BaseUrl } from "../Auth/axios";
 import { Link } from "react-router-dom";
+import PictureSlide from "./picture_slider";
 
 const NewHome = () => {
   const [shopItems, setShopItems] = useRecoilState(ShopAtom);
@@ -36,7 +37,11 @@ const NewHome = () => {
                 <ItemPreview key={item.id} item={item} />
               ))}
             </div>
-          </section> */}
+          </section> */}          
+          <section class="sectionCont">
+            <h2>Gear</h2>
+            <PictureSlide />
+          </section>
           <section class="sectionCont">
             <h2 class="sectionSubtitle">About</h2>
             <p>Learn more about the owner and what we represent</p>
@@ -49,6 +54,7 @@ const NewHome = () => {
               </Link>
             </div>
           </section>
+
         </div>
       </div>
     </div>
