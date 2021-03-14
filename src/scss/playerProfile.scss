@@ -1,12 +1,15 @@
 .playerInfoCont {
   margin-top: 2%;
   display: flex;
+  justify-content: space-evenly;
   //   justify-content: space-evenly;
-  border: solid 1px black;
 
   .playerInfoSection {
-    width: 50%;
-    padding: 0 3%;
+    width: 35%;
+    padding: 0 3%; border: solid 10px black;
+    border-radius: 15px;
+    opacity: 70%;
+    box-shadow: 5px 5px #888888;
     h3 {
       text-align: center;
     }
