@@ -7,27 +7,36 @@ const PickGear = () => {
     </div>
         <div>                
             <h3>Helmet</h3>
-            <select>
-                <option>M</option>
-                <option>L</option>
-                <option>XL</option>
-            </select>
+            <span>
+                <input type='radio' name='helmet' value='M' />
+                <label for='M'>M</label>
+                <input type='radio' name='helmet' value='L' />
+                <label for='L'>L</label>
+                <input type='radio' name='helmet' value='XL'/>
+                <label for='XL'>XL</label>
+            </span>
         </div>
         <div>
             <h3>Shoulder Pads</h3>
-            <select>
-                <option>M</option>
-                <option>L</option>
-                <option>XL</option>
-            </select>
+            <span>                
+                <input type='radio' name='Shoulder' value='M' />
+                <label for='M'>M</label>
+                <input type='radio' name='Shoulder' value='L' />
+                <label for='L'>L</label>
+                <input type='radio' name='Shoulder' value='XL'/>
+                <label for='XL'>XL</label>
+            </span>
         </div>
         <div>
             <h3>Jeresy</h3>
-            <select>
-                <option>M</option>
-                <option>L</option>
-                <option>XL</option>
-            </select>
+            <span>                
+                <input type='radio' name='Jeresy' value='M' />
+                <label for='M'>M</label>
+                <input type='radio' name='Jeresy' value='L' />
+                <label for='L'>L</label>
+                <input type='radio' name='Jeresy' value='XL'/>
+                <label for='XL'>XL</label>
+            </span>
         </div>
         
     </div>
