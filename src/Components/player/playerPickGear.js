@@ -7,8 +7,8 @@ const PickGear = () => {
             <h2>Pick Gear</h2>
         </div>
         <div className='pickGearContainer'>
-        <div>                
-            <h3>Helmet</h3>
+        <div className='pickGearInputs'>                
+            <h3>Helmet: </h3>
             <span>
                 <input type='radio' name='helmet' value='M' />
                 <label for='M'>M</label>
@@ -18,8 +18,8 @@ const PickGear = () => {
                 <label for='XL'>XL</label>
             </span>
         </div>
-        <div>
-            <h3>Shoulder Pads</h3>
+        <div className='pickGearInputs'>
+            <h3>Shoulder Pads: </h3>
             <span>                
                 <input type='radio' name='Shoulder' value='M' />
                 <label for='M'>M</label>
@@ -29,8 +29,8 @@ const PickGear = () => {
                 <label for='XL'>XL</label>
             </span>
         </div>
-        <div>
-            <h3>Jeresy</h3>
+        <div className='pickGearInputs'>
+            <h3>Jeresy: </h3>
             <span>                
                 <input type='radio' name='Jeresy' value='M' />
                 <label for='M'>M</label>
@@ -40,8 +40,8 @@ const PickGear = () => {
                 <label for='XL'>XL</label>
             </span>
         </div>
-        <div>
-            <h3>Pants</h3>
+        <div className='pickGearInputs'>
+            <h3>Pants: </h3>
             <span>                
                 <input type='radio' name='Pants' value='M' />
                 <label for='M'>M</label>
@@ -51,8 +51,8 @@ const PickGear = () => {
                 <label for='XL'>XL</label>
             </span>
         </div>
-        <div>
-            <h3>Back Plate - Do you want one?</h3>
+        <div className='pickGearInputs'>
+            <h3>Back Plate - Do you want one?: </h3>
             <span>
                 <input type='radio' name='backPlate' value='Yes' />
                 <label for='Yes'>Yes</label>
@@ -60,7 +60,7 @@ const PickGear = () => {
                 <label for='No'>No</label>
             </span>
         </div>
-        <div>
+        <div className='pickGearInputs'>
             <h3>Pick Up</h3>
         </div>
         </div>
