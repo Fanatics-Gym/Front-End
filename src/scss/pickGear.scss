@@ -1,0 +1,25 @@
+.pickGearPage {
+    .pickGearHeader {
+        margin: 0 5%;
+        h2 {
+            border-bottom: solid black 3px;
+            width: 150px;
+            text-align: center;
+        }
+    }
+    .pickGearContainer {
+        width: 80%;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        flex-flow: wrap row;
+    }
+
+    .pickGearInputs {
+        width: 45%;
+        height: 150px;
+        display: flex;
+        align-items: baseline;
+        justify-content: center;
+    }
+}
