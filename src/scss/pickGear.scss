@@ -32,6 +32,13 @@
       width: 35%;
       display: flex;
       justify-content: space-evenly;
+
+      div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+      }
     }
   }
 }
