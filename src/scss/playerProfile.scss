@@ -6,20 +6,13 @@
 
   .playerInfoSection {
     width: 35%;
-    padding: 0 3%; border: solid 10px black;
+    padding: 0 3%;
+    border: solid 10px black;
     border-radius: 15px;
     opacity: 70%;
     box-shadow: 5px 5px #888888;
     h3 {
       text-align: center;
     }
-  }
-}
-
-.picture-slider {
-  width: 30%;
-
-  .pictures {
-    width: 30%;
   }
 }
