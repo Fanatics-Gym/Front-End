@@ -41,3 +41,12 @@
   width: 90%;
   margin: auto;
 }
+
+.pageHeader {
+  margin: 0 5%;
+  h2 {
+    border-bottom: solid black 3px;
+    width: 150px;
+    text-align: center;
+  }
+}
