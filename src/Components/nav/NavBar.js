@@ -12,6 +12,7 @@ const NavBar = () => {
       return <div></div>;
     }
   };
+  const userDiv = () => {};
   console.log(listLength);
   return (
     <nav className="nav">
