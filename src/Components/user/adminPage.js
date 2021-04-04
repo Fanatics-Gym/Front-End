@@ -3,7 +3,7 @@ import { Link, Redirect } from "react-router-dom";
 import { useRecoilValue } from "recoil";
 import UserInfo from "../../Recoil/atom/userData";
 
-const UserPage = (props) => {
+const AdminPage = (props) => {
   const userInfo = useRecoilValue(UserInfo);
   const logout = () => {
     localStorage.removeItem("token");
@@ -24,4 +24,4 @@ const UserPage = (props) => {
   );
 };
 
-export default UserPage;
+export default AdminPage;

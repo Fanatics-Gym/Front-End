@@ -28,7 +28,7 @@ const LoginForm = (props) => {
       .post(`${process.env.REACT_APP_API_URL}user/login`, userCredentials)
       .then((res) => {
         setUserInfo(res.data);
-        props.history.push("/user");
+        props.history.push("/admin");
       })
       .catch((err) => console.error(err));
   };
