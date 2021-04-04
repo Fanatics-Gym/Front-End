@@ -22,6 +22,7 @@ import ViewApplications from "./Components/user/userViewApplications";
 import NewHome from "./Components/newHome/newHome";
 import PlayerProfile from "./Components/player/playerProfile";
 import PickGear from "./Components/player/playerPickGear";
+import SignUp from "./Components/login/signUp";
 
 // const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_KEY);
 function App() {
@@ -52,7 +53,8 @@ function App() {
           <Route path="/represent" component={HomePage} />
           {/* </Elements> */}
           <Route path="/player-profile" component={PlayerProfile} />
-          <Route path="/pick-gear" component={PickGear}/>
+          <Route path="/pick-gear" component={PickGear} />
+          <Route path="/new-p-signUp" component={SignUp} />
         </div>
       </Router>
     </div>
