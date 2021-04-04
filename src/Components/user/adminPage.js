@@ -1,12 +1,17 @@
 import React from "react";
 import { Link, Redirect } from "react-router-dom";
+import { useRecoilValue } from "recoil";
+import UserInfo from "../../Recoil/atom/userData";
 
-const userPage = (props) => {
+const AdminPage = (props) => {
+  const userInfo = useRecoilValue(UserInfo);
   const logout = () => {
     localStorage.removeItem("token");
     props.history.push("/login");
     window.location.reload();
   };
+
+  console.log(userInfo);
   return (
     <div className="userStyles">
       <h1>You've successfully logged in!!!</h1>
@@ -19,4 +24,4 @@ const userPage = (props) => {
   );
 };
 
-export default userPage;
+export default AdminPage;
