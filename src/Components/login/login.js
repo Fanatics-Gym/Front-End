@@ -27,8 +27,13 @@ const LoginForm = (props) => {
     BaseUrl()
       .post(`${process.env.REACT_APP_API_URL}user/login`, userCredentials)
       .then((res) => {
+        const type = res.data.user.userType;
         setUserInfo(res.data);
-        props.history.push("/admin");
+        if (type === "Admin") {
+          props.history.push("/admin");
+        } else if (type === "Player") {
+          props.history.push("/player");
+        }
       })
       .catch((err) => console.error(err));
   };
