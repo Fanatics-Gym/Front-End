@@ -2,7 +2,7 @@ import React from "react";
 
 const ReviewInfo = (application) => {
   const values = application.values;
-  console.log(values);
+
   return (
     <div className="reviewCont">
       <section>

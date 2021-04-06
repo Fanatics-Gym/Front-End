@@ -82,11 +82,10 @@ const NavBar = (props) => {
     }
   };
   userDiv();
-  console.log(listLength);
   return (
     <nav className="nav">
       <div className="navLogo">
-        <Link class="linkHome" to="/">
+        <Link className="linkHome" to="/">
           <h1>Fanatics Gym</h1>
         </Link>
       </div>
