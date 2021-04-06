@@ -1,13 +1,74 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { BaseUrl } from "../Auth/axios";
+import { PageView } from "../../analyicts";
+import { useRecoilState } from "recoil";
+import UserInfo from "../../Recoil/atom/userData";
+import { useHistory } from "react-router-dom";
 
-const SignUp = () => {
+const SignUpFormPlayer = (props) => {
+  const { push } = useHistory();
+  const par = window.location.pathname.slice(14);
+  const [userCredentials, setUserCredentials] = useState({
+    username: "",
+    password: "",
+    userType: "Player",
+    appl_id: `${par}`,
+  });
+  useEffect(() => {
+    PageView();
+  }, []);
+
+  const [userInfo, setUserInfo] = useRecoilState(UserInfo);
+
+  const handleChange = (e) => {
+    setUserCredentials({
+      ...userCredentials,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  console.log(par);
+  const onSubmit = (e) => {
+    e.preventDefault();
+    BaseUrl()
+      .post(`${process.env.REACT_APP_API_URL}user/register`, userCredentials)
+      .then((res) => {
+        const type = res.data.user.userType;
+        setUserInfo(res.data);
+        console.log(userInfo);
+        if (type === "Player") {
+          props.history.push("/player-profile");
+        }
+      })
+      .catch((err) => console.error(err));
+  };
+
   return (
-    <div>
-      <div className="pageHeader">
-        <h2>Sign Up</h2>
-      </div>
+    <div className="loginForm" onSubmit={onSubmit}>
+      <h2>Sign up</h2>
+      <form>
+        <h3>Username/Email</h3>
+        <input
+          className="loginInputs"
+          type="text"
+          placeholder="Insert Username or Email"
+          name="username"
+          value={userCredentials.username}
+          onChange={handleChange}
+        />
+        <h3>Password</h3>
+        <input
+          className="loginInputs"
+          type="password"
+          name="password"
+          placeholder="Insert Password"
+          value={userCredentials.password}
+          onChange={handleChange}
+        />
+        <button>Confirm</button>
+      </form>
     </div>
   );
 };
 
-export default SignUp;
+export default SignUpFormPlayer;
