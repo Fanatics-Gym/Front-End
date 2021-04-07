@@ -33,12 +33,8 @@ const SignUpFormPlayer = (props) => {
     BaseUrl()
       .post(`${process.env.REACT_APP_API_URL}user/register`, userCredentials)
       .then((res) => {
-        const type = res.data.user.userType;
         setUserInfo(res.data);
-        console.log(userInfo);
-        if (type === "Player") {
-          props.history.push("/player-profile");
-        }
+        push("/player-profile");
       })
       .catch((err) => console.error(err));
   };
