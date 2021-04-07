@@ -54,7 +54,7 @@ function App() {
           {/* </Elements> */}
           <Route path="/player-profile" component={PlayerProfile} />
           <Route path="/pick-gear" component={PickGear} />
-          <Route path="/new-p-signUp" component={SignUp} />
+          <Route path="/new-p-signUp/:id" component={SignUp} />
         </div>
       </Router>
     </div>

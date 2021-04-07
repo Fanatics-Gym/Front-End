@@ -40,13 +40,9 @@ const FormWrapper = ({ steps, activeStep, setActiveStep }) => {
     em_phone: "",
   };
 
-  console.log(applicationInfo);
-
   const confirmTerms = () => {
     setTermsState(!termsState);
   };
-
-  console.log(termsState);
 
   const handleNext = (applicationInfo, activeStep, setActiveStep) => {
     if (activeStep === 4 && termsState === true) {

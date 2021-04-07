@@ -4,15 +4,22 @@ import { useRecoilValue } from "recoil";
 import cart from "../../imgs/cart.png";
 import UserInfo from "../../Recoil/atom/userData";
 import CheckoutSelector from "../../Recoil/selector/checkoutSelector";
+import { useHistory } from "react-router-dom";
 
-const NavBar = () => {
+const NavBar = (props) => {
   const [navDrop, setNavDrop] = useState(false);
   const { listLength } = useRecoilValue(CheckoutSelector);
   const userInfo = useRecoilValue(UserInfo);
+  const { push } = useHistory();
   const adjust = () => {
     if (window.screen.width <= 500) {
       return <div></div>;
     }
+  };
+  const logout = () => {
+    localStorage.removeItem("token");
+    push("/login");
+    window.location.reload();
   };
   const userDiv = () => {
     if (userInfo.user) {
@@ -22,10 +29,28 @@ const NavBar = () => {
             <Link className="links" to="/">
               Home
             </Link>
+            <Link className="links" to="/admin">
+              Admin
+            </Link>
+            <Link className="links" onClick={logout}>
+              Logout
+            </Link>
           </div>
         );
       } else if (userInfo.user.userType === "Player") {
-        console.log("Player");
+        return (
+          <div>
+            <Link className="links" to="/">
+              Stats
+            </Link>
+            <Link className="links" to="/">
+              Player
+            </Link>
+            <Link className="links" onClick={logout}>
+              Logout
+            </Link>
+          </div>
+        );
       }
     } else {
       return (
@@ -49,16 +74,18 @@ const NavBar = () => {
         <span></span>
       )}
     </Link> */}
+          <Link className="links" to="/login">
+            Login
+          </Link>
         </div>
       );
     }
   };
   userDiv();
-  console.log(listLength);
   return (
     <nav className="nav">
       <div className="navLogo">
-        <Link class="linkHome" to="/">
+        <Link className="linkHome" to="/">
           <h1>Fanatics Gym</h1>
         </Link>
       </div>
