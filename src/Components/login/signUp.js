@@ -5,7 +5,7 @@ import { useRecoilState } from "recoil";
 import UserInfo from "../../Recoil/atom/userData";
 import { useHistory } from "react-router-dom";
 
-const SignUpFormPlayer = (props) => {
+const SignUpFormPlayer = () => {
   const { push } = useHistory();
   const par = window.location.pathname.slice(14);
   const [userCredentials, setUserCredentials] = useState({
@@ -27,7 +27,6 @@ const SignUpFormPlayer = (props) => {
     });
   };
 
-  console.log(par);
   const onSubmit = (e) => {
     e.preventDefault();
     BaseUrl()
