@@ -56,7 +56,7 @@ function App() {
           <Route path="/player-profile" component={PlayerProfile} />
           <Route path="/pick-gear" component={PickGear} />
           <Route path="/new-p-signUp/:id" component={SignUp} />
-          <Route path="/playerHome" component={PlayerPage} />
+          <Route path="/player-home" component={PlayerPage} />
         </div>
       </Router>
     </div>
