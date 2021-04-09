@@ -5,7 +5,7 @@ import { useRecoilState } from "recoil";
 import UserInfo from "../../Recoil/atom/userData";
 import { useHistory } from "react-router-dom";
 
-const SignUpFormPlayer = (props) => {
+const SignUpFormPlayer = () => {
   const { push } = useHistory();
   const par = window.location.pathname.slice(14);
   const [userCredentials, setUserCredentials] = useState({
@@ -27,14 +27,13 @@ const SignUpFormPlayer = (props) => {
     });
   };
 
-  console.log(par);
   const onSubmit = (e) => {
     e.preventDefault();
     BaseUrl()
       .post(`${process.env.REACT_APP_API_URL}user/register`, userCredentials)
       .then((res) => {
         setUserInfo(res.data);
-        push("/player-profile");
+        push("/player");
       })
       .catch((err) => console.error(err));
   };
