@@ -33,7 +33,7 @@ const SignUpFormPlayer = () => {
       .post(`${process.env.REACT_APP_API_URL}user/register`, userCredentials)
       .then((res) => {
         setUserInfo(res.data);
-        push("/player-profile");
+        push("/player");
       })
       .catch((err) => console.error(err));
   };
