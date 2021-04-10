@@ -1,8 +1,37 @@
-import React from "react";
+import { userInfo } from "os";
+import React, { useState } from "react";
+import { useRecoilValue } from "recoil";
+import UserInfo from "../../Recoil/atom/userData";
+import { BaseUrl } from "../Auth/axios";
 
 const PickGear = () => {
+  const userId = useRecoilValue(UserInfo);
+  console.log(userId);
+  const [gear, setGear] = useState({
+    helmet: "",
+    shoulderPads: "",
+    pants: "",
+    jeresy: "",
+    backPlate: false,
+    player_id: userId.user.id,
+  });
+  const handleChange = (e) => {
+    setGear({
+      ...gear,
+      [e.target.name]: e.target.value,
+    });
+  };
+  const onSubmit = (e) => {
+    e.preventDefault();
+    BaseUrl()
+      .post(`${process.env.REACT_APP_API_URL}gear/add`, gear)
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => console.error(err));
+  };
   return (
-    <div className="pickGearPage">
+    <form className="pickGearPage" onSubmit={onSubmit}>
       <div className="pickGearHeader">
         <h2>Pick Gear</h2>
       </div>
@@ -17,7 +46,7 @@ const PickGear = () => {
         </div>
         <div className="pickGearInputs">
           <h3>Helmet: </h3>
-          <span>
+          <span name="helmet" value={gear.helmet} onChange={handleChange}>
             <div>
               <input type="radio" name="helmet" value="M" />
               <label for="M">M</label>
@@ -34,64 +63,68 @@ const PickGear = () => {
         </div>
         <div className="pickGearInputs">
           <h3>Shoulder Pads: </h3>
-          <span>
+          <span
+            name="shoulderPads"
+            value={gear.shoulderPads}
+            onChange={handleChange}
+          >
             <div>
-              <input type="radio" name="Shoulder" value="M" />
+              <input type="radio" name="shoulderPads" value="M" />
               <label for="M">M</label>
             </div>
             <div>
-              <input type="radio" name="Shoulder" value="L" />
+              <input type="radio" name="shoulderPads" value="L" />
               <label for="L">L</label>
             </div>
             <div>
-              <input type="radio" name="Shoulder" value="XL" />
+              <input type="radio" name="shoulderPads" value="XL" />
               <label for="XL">XL</label>
             </div>
           </span>
         </div>
         <div className="pickGearInputs">
           <h3>Jeresy: </h3>
-          <span>
+          <span name="jeresy" value={gear.jeresy} onChange={handleChange}>
             <div>
-              <input type="radio" name="Jeresy" value="M" />
+              <input type="radio" name="jeresy" value="M" />
               <label for="M">M</label>
             </div>
             <div>
-              <input type="radio" name="Jeresy" value="L" />
+              <input type="radio" name="jeresy" value="L" />
               <label for="L">L</label>{" "}
             </div>
             <div>
-              <input type="radio" name="Jeresy" value="XL" />
+              <input type="radio" name="jeresy" value="XL" />
               <label for="XL">XL</label>
             </div>
           </span>
         </div>
         <div className="pickGearInputs">
           <h3>Pants: </h3>
-          <span>
+          <span name="pants" value={gear.pants} onChange={handleChange}>
             <div>
-              <input type="radio" name="Pants" value="M" />
+              <input type="radio" name="pants" value="M" />
               <label for="M">M</label>
             </div>
             <div>
-              <input type="radio" name="Pants" value="L" />
+              <input type="radio" name="pants" value="L" />
               <label for="L">L</label>
             </div>
             <div>
-              <input type="radio" name="Pants" value="XL" />
+              <input type="radio" name="pants" value="XL" />
               <label for="XL">XL</label>
             </div>
           </span>
         </div>
         <div className="pickGearInputs">
           <h3>Back Plate - Do you want one?: </h3>
-          <span>
+          <span name="backPlate" value={gear.backPlate} onChange={handleChange}>
             <div>
-              <input type="radio" name="backPlate" value="Yes" />
+              <input type="radio" name="backPlate" value={true} />
               <label for="Yes">Yes</label>
             </div>
             <div>
-              <input type="radio" name="backPlate" value="No" />
+              <input type="radio" name="backPlate" value={false} />
               <label for="No">No</label>
             </div>
           </span>
@@ -100,7 +133,10 @@ const PickGear = () => {
           <h3>Pick Up</h3>
         </div>
       </div>
-    </div>
+      <div className="buttonCont">
+        <button>Submit</button>
+      </div>
+    </form>
   );
 };
 
