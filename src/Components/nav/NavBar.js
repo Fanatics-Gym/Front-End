@@ -39,11 +39,11 @@ const NavBar = (props) => {
         );
       } else if (userInfo.user.userType === "Player") {
         return (
-          <div>
+          <div className="navLinks">
             <Link className="links" to="/player-profile">
               Stats
             </Link>
-            <Link className="links" to="/player-home">
+            <Link className="links" to="/player">
               Player
             </Link>
             <Link className="links" onClick={logout}>
@@ -81,7 +81,6 @@ const NavBar = (props) => {
       );
     }
   };
-  userDiv();
   return (
     <nav className="nav">
       <div className="navLogo">

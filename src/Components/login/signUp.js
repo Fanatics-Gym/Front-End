@@ -32,6 +32,7 @@ const SignUpFormPlayer = () => {
     BaseUrl()
       .post(`${process.env.REACT_APP_API_URL}user/register`, userCredentials)
       .then((res) => {
+        console.log(res);
         setUserInfo(res.data);
         push("/player");
       })
