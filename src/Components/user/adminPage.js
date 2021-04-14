@@ -17,9 +17,6 @@ const AdminPage = (props) => {
       <h1>You've successfully logged in!!!</h1>
       <Link to="/add">Add items</Link>
       <Link to="/view-applications">View all applicants</Link>
-      <button className="logoutButton" onClick={logout}>
-        Logout
-      </button>
     </div>
   );
 };
