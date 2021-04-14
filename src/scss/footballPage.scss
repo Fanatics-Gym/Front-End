@@ -1,34 +1,21 @@
-.footballPage {
+.footballContent {
+  margin: auto;
+  width: 75%;
+  h2 {
+    text-align: center;
+  }
+}
+
+.applyButtonContainer {
   display: flex;
-  flex-direction: column;
-  .footballHeader {
-    margin: 0 5%;
-    h2 {
-      border-bottom: solid black 3px;
-      width: 150px;
-      text-align: center;
-    }
-  }
-
-  .footballContent {
-    margin: auto;
-    width: 75%;
-    h2 {
-      text-align: center;
-    }
-  }
-
-  .applyButtonContainer {
-    display: flex;
-    justify-content: center;
-    button {
-      background-color: black;
-      opacity: 0.9;
-      color: white;
-      width: 200px;
-      border-radius: 10px;
-      height: 75px;
-      font-size: large;
-    }
+  justify-content: center;
+  button {
+    background-color: black;
+    opacity: 0.9;
+    color: white;
+    width: 200px;
+    border-radius: 10px;
+    height: 75px;
+    font-size: large;
   }
 }

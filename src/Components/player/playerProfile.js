@@ -9,7 +9,7 @@ const PlayerProfile = () => {
   const info = userData[1];
   return (
     <div className="componentCont">
-      <div className="headerCont">
+      <div className="pageHeader">
         <h2>Player Profile</h2>
       </div>
       <div className="playerInfoCont">

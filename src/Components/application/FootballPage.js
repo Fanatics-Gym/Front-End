@@ -4,8 +4,8 @@ import { data } from "./PageData";
 
 const FootballPage = () => {
   return (
-    <div className="footballPage">
-      <div className="footballHeader">
+    <div className="componentCont">
+      <div className="pageHeader">
         <h2>FootBall</h2>
       </div>
       <div className="footballContent">
