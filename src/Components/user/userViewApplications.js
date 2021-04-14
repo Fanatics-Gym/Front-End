@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useRecoilState, useRecoilValue } from "recoil";
 import ApplicationStatus from "../../Recoil/atom/applicationFilterAtom";
 import ApplicationAtom from "../../Recoil/atom/applicationsAtom";
@@ -14,6 +14,7 @@ const ViewApplications = () => {
   );
   const [ApplicationList, setApplicationList] = useRecoilState(ApplicationAtom);
   const filter = useRecoilValue(ApplicationFilter);
+  const searchList = [];
   useEffect(() => {
     BaseUrl()
       .get("applications/")
@@ -25,11 +26,21 @@ const ViewApplications = () => {
       });
   }, []);
 
+  const [search, setSearch] = useState("");
+
+  const onChange = (e) => {
+    setSearch(e.target.value);
+  };
+
   return (
     <div className="applicationViewCont">
       <h2>Applications</h2>
       <div className="applNumCount">
         <h3>Total: {totalAppl} </h3>
+        <div>
+          <label>Search: </label>
+          <input onChange={onChange} />
+        </div>
         <div className="statusNums">
           <h4>Approved: {approvedAppl}</h4>
           <h4>Pending: {pendingAppl}</h4>
@@ -38,9 +49,19 @@ const ViewApplications = () => {
         <ApplicationSelectFilter />
       </div>
       <div className="applicationsCont">
-        {filter.map((app) => (
-          <ApplicationView key={app.id} application={app} />
-        ))}
+        {filter
+          .filter((val) => {
+            if (search == "") {
+              return val;
+            } else if (
+              val.first_name.toLowerCase().includes(search.toLowerCase())
+            ) {
+              return val;
+            }
+          })
+          .map((app) => (
+            <ApplicationView key={app.id} application={app} />
+          ))}
       </div>
     </div>
   );
