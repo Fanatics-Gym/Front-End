@@ -11,8 +11,10 @@ const PlayerPage = () => {
       <div className="pageHeader">
         <h2>Player Menu</h2>
       </div>
-      <Link to="/player-profile">Profile</Link>
-      <Link to="/pick-gear">Pick Gear</Link>
+      <div className="userStyles">
+        <Link to="/player-profile">Profile</Link>
+        <Link to="/pick-gear">Pick Gear</Link>
+      </div>
     </div>
   );
 };
