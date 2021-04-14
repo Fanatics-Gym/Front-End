@@ -1,6 +1,6 @@
 import React from "react";
 import { useRecoilValue } from "recoil";
-import { profileData, profileStats } from "./playerData";
+import { profileData } from "./playerData";
 import UserInfo from "../../Recoil/atom/userData";
 
 const PlayerProfile = () => {
