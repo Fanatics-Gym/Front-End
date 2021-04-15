@@ -1,12 +1,11 @@
 import React from "react";
 import { useRecoilValue } from "recoil";
-import { profileData, profileStats } from "./playerData";
+import { profileData } from "./playerData";
 import UserInfo from "../../Recoil/atom/userData";
 
 const PlayerProfile = () => {
   const userData = useRecoilValue(UserInfo);
-  const stats = userData[0];
-  const info = userData[1];
+  const info = userData.user;
   return (
     <div className="componentCont">
       <div className="pageHeader">
@@ -31,19 +30,19 @@ const PlayerProfile = () => {
             <h3>Player Stats </h3>
             <p>
               <b>Tackles: </b>
-              {stats.tackles}
+              {info.tackles}
             </p>
             <p>
               <b>Interceptions: </b>
-              {stats.Interceptions}
+              {info.Interceptions}
             </p>
             <p>
               <b>Catches: </b>
-              {stats.fumbles}
+              {info.fumbles}
             </p>
             <p>
               <b>Touchdownes: </b>
-              {stats.touchdowns}
+              {info.touchdowns}
             </p>
           </div>
         </section>
