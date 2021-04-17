@@ -1,10 +1,16 @@
 import React from "react";
+import NoImg from "../../imgs/download.png";
 
 const RosterCard = ({ stats }) => {
   console.log(stats);
   return (
     <div className="rosterCard">
       <div className="cardName">
+        {stats.img !== undefined ? (
+          <img src="../../imgs/download.png" />
+        ) : (
+          <img src={NoImg} />
+        )}
         <p> {stats.username}</p>
       </div>
       <p>Touchdowns: {stats.touchdowns}</p>
