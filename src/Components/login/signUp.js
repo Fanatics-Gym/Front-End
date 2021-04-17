@@ -3,10 +3,8 @@ import { BaseUrl } from "../Auth/axios";
 import { PageView } from "../../analyicts";
 import { useSetRecoilState } from "recoil";
 import UserInfo from "../../Recoil/atom/userData";
-import { useHistory } from "react-router-dom";
 
-const SignUpFormPlayer = () => {
-  const { push } = useHistory();
+const SignUpFormPlayer = (props) => {
   const par = window.location.pathname.slice(14);
   const [userCredentials, setUserCredentials] = useState({
     username: "",
@@ -34,7 +32,7 @@ const SignUpFormPlayer = () => {
       .then((res) => {
         console.log(res);
         setUserInfo(res.data);
-        push("/player");
+        props.history.push("/player");
       })
       .catch((err) => console.error(err));
   };

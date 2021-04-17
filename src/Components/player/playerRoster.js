@@ -22,7 +22,7 @@ const Roster = () => {
       <div className="pageHeader">
         <h2>Roster</h2>
       </div>
-      <div>
+      <div className="rosterCont">
         {roster.map((player) => (
           <RosterCard key={player.id} stats={player} />
         ))}

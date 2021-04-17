@@ -1,0 +1,29 @@
+.rosterCont {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.rosterCard {
+  display: flex;
+  flex-flow: row wrap;
+  width: 250px;
+  justify-content: space-evenly;
+  border: black 2px solid;
+  box-shadow: 5px 5px #888888;
+  border-radius: 15px;
+  .cardName {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    width: 90%;
+    margin: auto;
+    padding: 2%;
+    img {
+      border-radius: 15px;
+    }
+  }
+  p {
+    padding: 0 2%;
+  }
+}
