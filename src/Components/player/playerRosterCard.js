@@ -11,7 +11,9 @@ const RosterCard = ({ stats }) => {
         ) : (
           <img src={NoImg} />
         )}
-        <p> {stats.username}</p>
+        <p>
+          {stats.first_name} {stats.last_name}
+        </p>
       </div>
       <p>Touchdowns: {stats.touchdowns}</p>
       <p>Fumbles: {stats.fumbles}</p>
