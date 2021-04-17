@@ -23,7 +23,7 @@ import NewHome from "./Components/newHome/newHome";
 import PlayerProfile from "./Components/player/playerProfile";
 import PickGear from "./Components/player/playerPickGear";
 import SignUp from "./Components/login/signUp";
-import PlayerPage from "./Components/user/playerPage";
+import PlayerPage from "./Components/player/playerPage";
 
 // const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_KEY);
 function App() {
