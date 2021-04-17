@@ -4,11 +4,11 @@ const RosterCard = ({ stats }) => {
   console.log(stats);
   return (
     <div>
-      <p>{stats.username}</p>
-      <p>{stats.touchdowns}</p>
-      <p>{stats.fumbles}</p>
-      <p>{stats.Interceptions}</p>
-      <p>{stats.tackles}</p>
+      <p>UserName: {stats.username}</p>
+      <p>Touchdowns: {stats.touchdowns}</p>
+      <p>Fumbles: {stats.fumbles}</p>
+      <p>Interceptions: {stats.Interceptions}</p>
+      <p>Tackles: {stats.tackles}</p>
     </div>
   );
 };
