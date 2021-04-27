@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { BaseUrl } from "../Auth/axios";
 import { PageView } from "../../analyicts";
-import { useRecoilState } from "recoil";
+import { useSetRecoilState } from "recoil";
 import UserInfo from "../../Recoil/atom/userData";
 
 const LoginForm = (props) => {
@@ -13,7 +13,7 @@ const LoginForm = (props) => {
     PageView();
   }, []);
 
-  const [userInfo, setUserInfo] = useRecoilState(UserInfo);
+  const setUserInfo = useSetRecoilState(UserInfo);
 
   const handleChange = (e) => {
     setUserCredentials({
