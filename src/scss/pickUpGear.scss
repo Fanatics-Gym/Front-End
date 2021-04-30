@@ -1,0 +1,13 @@
+.pickUpGearCont {
+  display: flex;
+  justify-content: space-evenly;
+  width: 90%;
+
+  .setPickUpDate {
+    display: flex;
+    flex-flow: column;
+    input {
+      margin: 2%;
+    }
+  }
+}
