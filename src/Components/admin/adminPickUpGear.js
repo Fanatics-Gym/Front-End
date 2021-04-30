@@ -1,8 +1,19 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useRecoilState } from "recoil";
+import PickUpDatesAtom from "../../Recoil/atom/pickUpDatesAtom";
 import { BaseUrl } from "../Auth/axios";
 
 const PickGearDate = () => {
   const [date, setDate] = useState("");
+  const [pickUpDates, setPickUpDates] = useRecoilState(PickUpDatesAtom);
+
+  useEffect(() => {
+    BaseUrl()
+      .get(`${process.env.REACT_APP_API_URL}pickUp/`)
+      .then((res) => {
+        setPickUpDates(res.data);
+      });
+  }, []);
 
   const handleChange = (e) => {
     setDate(e.target.value);
@@ -12,10 +23,12 @@ const PickGearDate = () => {
     e.preventDefault();
     BaseUrl()
       .post(`${process.env.REACT_APP_API_URL}pickUp/addDate`, { date: date })
-      .then((res) => {})
+      .then((res) => {
+        setPickUpDates((old) => [...old, res.data]);
+      })
       .catch((err) => console.log(err));
   };
-
+  console.log(pickUpDates);
   console.log(date);
   return (
     <div className="componentCont">
@@ -36,6 +49,9 @@ const PickGearDate = () => {
         </div>
         <div>
           <h3>Dates set to pick up gear</h3>
+          {pickUpDates.map((date) => (
+            <h4>{date.date}</h4>
+          ))}
         </div>
       </section>
     </div>

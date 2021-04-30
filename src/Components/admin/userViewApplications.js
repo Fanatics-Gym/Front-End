@@ -51,7 +51,7 @@ const ViewApplications = () => {
       <div className="applicationsCont">
         {filter
           .filter((val) => {
-            if (search == "") {
+            if (search === "") {
               return val;
             } else if (
               val.first_name.toLowerCase().includes(search.toLowerCase())
