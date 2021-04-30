@@ -25,6 +25,7 @@ import PickGear from "./Components/player/playerPickGear";
 import SignUp from "./Components/login/signUp";
 import PlayerPage from "./Components/player/playerPage";
 import Roster from "./Components/player/playerRoster";
+import PickGearDate from "./Components/admin/adminPickUpGear";
 
 // const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_KEY);
 function App() {
@@ -59,6 +60,7 @@ function App() {
           <Route path="/new-p-signUp/:id" component={SignUp} />
           <Route path="/player" component={PlayerPage} />
           <Route path="/playerRoster" component={Roster} />
+          <Route path="/pickUpDate" component={PickGearDate} />
         </div>
       </Router>
     </div>
