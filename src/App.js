@@ -13,8 +13,6 @@ import Cart from "./Components/Shop/Cart";
 import UserAddItem from "./Components/admin/userAddItem";
 import ItemPage from "./Components/Shop/itemPage";
 import Checkout from "./Components/Shop/checkout";
-import { Elements } from "@stripe/react-stripe-js";
-import { loadStripe } from "@stripe/stripe-js";
 import FootballPage from "./Components/application/FootballPage";
 import ApplicationForm from "./Components/application/applicationForm/applicationForm";
 import ConfirmationPage from "./Components/application/applicationForm/ConfirmationForm";
