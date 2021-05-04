@@ -14,7 +14,7 @@ const PickGear = () => {
     pants: "",
     jeresy: "",
     backPlate: false,
-    player_id: userId.user.id,
+    player_id: userId.user.id || null,
     date_id: "",
   });
   const handleChange = (e) => {
@@ -140,8 +140,8 @@ const PickGear = () => {
             </div>
           </span>
         </div>
-        <div className="pickGearInputs">
-          <h3>Pick Up</h3>
+        <div className="pickGearDate">
+          <h3>Choose pick up date</h3>
           <span name="date_id" value={gear.date_id} onChange={handleChange}>
             {pickUpDates.map((date) => (
               <div>
