@@ -13,7 +13,7 @@ const PickGear = () => {
     shoulderPads: "",
     pants: "",
     jeresy: "",
-    backPlate: false,
+    backPlate: "",
     player_id: userId.user.id || null,
     date_id: "",
   });
@@ -131,11 +131,11 @@ const PickGear = () => {
           <h3>Back Plate - Do you want one?: </h3>
           <span name="backPlate" value={gear.backPlate} onChange={handleChange}>
             <div>
-              <input type="radio" name="backPlate" value={true} />
+              <input type="radio" name="backPlate" value="Yes" />
               <label for="Yes">Yes</label>
             </div>
             <div>
-              <input type="radio" name="backPlate" value={false} />
+              <input type="radio" name="backPlate" value="No" />
               <label for="No">No</label>
             </div>
           </span>
