@@ -32,7 +32,7 @@ function PickUpDisplay() {
       ],
     },
     {
-      Header: "Picked Up",
+      Header: "Pick Up",
       columns: [
         { Header: "Picked Up", accessor: "pickedUp" },
         { Header: "Date", accessor: "date" },
@@ -41,8 +41,13 @@ function PickUpDisplay() {
   ]);
 
   return (
-    <div className="pickUpTable">
-      <PickUpTable columns={columns} data={playersGear} />
+    <div className="componentCont">
+      <div className="pageHeader">
+        <h2>Gear Pick Up</h2>
+      </div>
+      <div className="pickUpTable">
+        <PickUpTable columns={columns} data={playersGear} />
+      </div>
     </div>
   );
 }
