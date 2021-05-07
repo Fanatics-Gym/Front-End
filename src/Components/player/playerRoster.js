@@ -1,20 +1,39 @@
 import React, { useEffect } from "react";
 import { useRecoilState } from "recoil";
 import PlayerRoster from "../../Recoil/atom/playerRosterAtom";
+import ReactTable from "../admin/pickUpTable/reactTable";
 import { BaseUrl } from "../Auth/axios";
-import RosterCard from "./playerRosterCard";
 
 const Roster = () => {
   const [roster, setRoster] = useRecoilState(PlayerRoster);
 
   useEffect(() => {
     BaseUrl()
-      .get(`${process.env.REACT_APP_API_URL}user/players`)
+      .get(`stats/`)
       .then((res) => {
         setRoster(res.data);
       })
       .catch((err) => console.error(err));
   }, []);
+
+  const columns = React.useMemo(() => [
+    {
+      Header: "Name",
+      columns: [
+        { Header: "First Name", accessor: "first_name" },
+        { Header: "Last Name", accessor: "last_name" },
+      ],
+    },
+    {
+      Header: "Stats",
+      columns: [
+        { Header: "Touchdowns", accessor: "touchdowns" },
+        { Header: "Tackles", accessor: "tackles" },
+        { Header: "Fumbles", accessor: "fumbles" },
+        { Header: "Interceptions", accessor: "Interceptions" },
+      ],
+    },
+  ]);
 
   console.log(roster);
   return (
@@ -22,10 +41,8 @@ const Roster = () => {
       <div className="pageHeader">
         <h2>Roster</h2>
       </div>
-      <div className="rosterCont">
-        {roster.map((player) => (
-          <RosterCard key={player.id} stats={player} />
-        ))}
+      <div className="pickUpTable">
+        <ReactTable columns={columns} data={roster} />
       </div>
     </div>
   );
