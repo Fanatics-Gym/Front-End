@@ -41,6 +41,18 @@
       }
     }
   }
+
+  .pickGearDate {
+    display: flex;
+    width: 45%;
+    flex-flow: column;
+    text-align: center;
+    span {
+      display: flex;
+      justify-content: space-evenly;
+      flex-flow: row wrap;
+    }
+  }
   .buttonCont {
     width: 100%;
     display: flex;

@@ -1,19 +1,21 @@
 import { userInfo } from "os";
-import React, { useState } from "react";
-import { useRecoilValue } from "recoil";
+import React, { useEffect, useState } from "react";
+import { useRecoilState, useRecoilValue } from "recoil";
+import PickUpDatesAtom from "../../Recoil/atom/pickUpDatesAtom";
 import UserInfo from "../../Recoil/atom/userData";
 import { BaseUrl } from "../Auth/axios";
 
 const PickGear = () => {
   const userId = useRecoilValue(UserInfo);
-  console.log(userId);
+  const [pickUpDates, setPickUpDates] = useRecoilState(PickUpDatesAtom);
   const [gear, setGear] = useState({
     helmet: "",
     shoulderPads: "",
     pants: "",
     jeresy: "",
-    backPlate: false,
-    player_id: userId.user.id,
+    backPlate: "",
+    player_id: userId.user.id || null,
+    date_id: "",
   });
   const handleChange = (e) => {
     setGear({
@@ -21,6 +23,14 @@ const PickGear = () => {
       [e.target.name]: e.target.value,
     });
   };
+
+  useEffect(() => {
+    BaseUrl()
+      .get(`${process.env.REACT_APP_API_URL}pickUp/`)
+      .then((res) => {
+        setPickUpDates(res.data);
+      });
+  }, []);
   const onSubmit = (e) => {
     e.preventDefault();
     BaseUrl()
@@ -30,6 +40,7 @@ const PickGear = () => {
       })
       .catch((err) => console.error(err));
   };
+  console.log(gear);
   return (
     <form className="pickGearPage" onSubmit={onSubmit}>
       <div className="pickGearHeader">
@@ -120,17 +131,25 @@ const PickGear = () => {
           <h3>Back Plate - Do you want one?: </h3>
           <span name="backPlate" value={gear.backPlate} onChange={handleChange}>
             <div>
-              <input type="radio" name="backPlate" value={true} />
+              <input type="radio" name="backPlate" value="Yes" />
               <label for="Yes">Yes</label>
             </div>
             <div>
-              <input type="radio" name="backPlate" value={false} />
+              <input type="radio" name="backPlate" value="No" />
               <label for="No">No</label>
             </div>
           </span>
         </div>
-        <div className="pickGearInputs">
-          <h3>Pick Up</h3>
+        <div className="pickGearDate">
+          <h3>Choose pick up date</h3>
+          <span name="date_id" value={gear.date_id} onChange={handleChange}>
+            {pickUpDates.map((date) => (
+              <div>
+                <input type="radio" name="date_id" value={date.id} />
+                <label>{date.date}</label>
+              </div>
+            ))}
+          </span>
         </div>
       </div>
       <div className="buttonCont">

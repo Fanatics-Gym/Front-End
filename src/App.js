@@ -13,8 +13,6 @@ import Cart from "./Components/Shop/Cart";
 import UserAddItem from "./Components/admin/userAddItem";
 import ItemPage from "./Components/Shop/itemPage";
 import Checkout from "./Components/Shop/checkout";
-import { Elements } from "@stripe/react-stripe-js";
-import { loadStripe } from "@stripe/stripe-js";
 import FootballPage from "./Components/application/FootballPage";
 import ApplicationForm from "./Components/application/applicationForm/applicationForm";
 import ConfirmationPage from "./Components/application/applicationForm/ConfirmationForm";
@@ -25,6 +23,8 @@ import PickGear from "./Components/player/playerPickGear";
 import SignUp from "./Components/login/signUp";
 import PlayerPage from "./Components/player/playerPage";
 import Roster from "./Components/player/playerRoster";
+import PickGearDate from "./Components/admin/adminPickUpGear";
+import PickUpTable from "./Components/admin/pickUpTable/pickUpTable";
 
 // const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_KEY);
 function App() {
@@ -59,6 +59,8 @@ function App() {
           <Route path="/new-p-signUp/:id" component={SignUp} />
           <Route path="/player" component={PlayerPage} />
           <Route path="/playerRoster" component={Roster} />
+          <Route path="/pickUpDate" component={PickGearDate} />
+          <Route path="/pickUpTable" component={PickUpTable} />
         </div>
       </Router>
     </div>
