@@ -24,7 +24,7 @@ import SignUp from "./Components/login/signUp";
 import PlayerPage from "./Components/player/playerPage";
 import Roster from "./Components/player/playerRoster";
 import PickGearDate from "./Components/admin/adminPickUpGear";
-import PickUpTable from "./Components/admin/pickUpTable/pickUpTableDisplay";
+import PickUpTable from "./Components/admin/pickUpTable/pickUpTable";
 
 // const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_KEY);
 function App() {
