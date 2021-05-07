@@ -6,7 +6,7 @@ import NoImg from "../../imgs/download.png";
 
 const PlayerProfile = () => {
   const userData = useRecoilValue(UserInfo);
-  const info = userData.user;
+  const info = userData.userInfo;
   return (
     <div className="componentCont">
       <div className="pageHeader">
@@ -18,7 +18,7 @@ const PlayerProfile = () => {
           <div className="playerContactCont">
             <div>
               {info.img !== undefined ? (
-                <img src="../../imgs/download.png" />
+                <img src={info.img} />
               ) : (
                 <img src={NoImg} />
               )}
