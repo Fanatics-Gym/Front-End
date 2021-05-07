@@ -1,39 +1,54 @@
-import React from "react";
-import { useTable } from "react-table";
+import React, { useEffect } from "react";
+import { useRecoilState } from "recoil";
+import PickUpDatesPlayers from "../../../Recoil/atom/pickUpDatesPlayersAtom";
+import { BaseUrl } from "../../Auth/axios";
+import ReactTable from "./reactTable";
 
-function PickUpTable({ columns, data }) {
-  const {
-    getTableProps,
-    getTableBodyProps,
-    headerGroups,
-    rows,
-    prepareRow,
-  } = useTable({ columns, data });
+function PickUpTable() {
+  const [playersGear, setPlayersGear] = useRecoilState(PickUpDatesPlayers);
+  useEffect(() => {
+    BaseUrl()
+      .get(`pickUp/playersPickUp`)
+      .then((res) => {
+        setPlayersGear(res.data);
+      });
+  }, []);
+  const columns = React.useMemo(() => [
+    {
+      Header: "Name",
+      columns: [
+        { Header: "First Name", accessor: "first_name" },
+        { Header: "Last Name", accessor: "last_name" },
+      ],
+    },
+    {
+      Header: "Gear",
+      columns: [
+        { Header: "Helmet", accessor: "helmet" },
+        { Header: "Shoulder Pads", accessor: "shoulderPads" },
+        { Header: "Pants", accessor: "pants" },
+        { Header: "Jeresy", accessor: "jeresy" },
+        { Header: "Back Plate", accessor: "backPlate" },
+      ],
+    },
+    {
+      Header: "Pick Up",
+      columns: [
+        { Header: "Picked Up", accessor: "pickedUp" },
+        { Header: "Date", accessor: "date" },
+      ],
+    },
+  ]);
 
   return (
-    <table {...getTableProps()}>
-      <thead>
-        {headerGroups.map((headerGroup) => (
-          <tr {...headerGroup.getHeaderGroupProps()}>
-            {headerGroup.headers.map((column) => (
-              <th {...column.getHeaderProps()}>{column.render("Header")}</th>
-            ))}
-          </tr>
-        ))}
-      </thead>
-      <tbody {...getTableBodyProps()}>
-        {rows.map((row, i) => {
-          prepareRow(row);
-          return (
-            <tr {...row.getRowProps()}>
-              {row.cells.map((cell) => {
-                return <td {...cell.getCellProps()}>{cell.render("Cell")}</td>;
-              })}
-            </tr>
-          );
-        })}
-      </tbody>
-    </table>
+    <div className="componentCont">
+      <div className="pageHeader">
+        <h2>Gear Pick Up</h2>
+      </div>
+      <div className="pickUpTable">
+        <ReactTable columns={columns} data={playersGear} />
+      </div>
+    </div>
   );
 }
 
