@@ -25,7 +25,7 @@ const Roster = () => {
       ],
     },
     {
-      Header: "stats",
+      Header: "Stats",
       columns: [
         { Header: "Touchdowns", accessor: "touchdowns" },
         { Header: "Tackles", accessor: "tackles" },
