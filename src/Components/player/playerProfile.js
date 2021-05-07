@@ -2,6 +2,7 @@ import React from "react";
 import { useRecoilValue } from "recoil";
 import { profileData } from "./playerData";
 import UserInfo from "../../Recoil/atom/userData";
+import NoImg from "../../imgs/download.png";
 
 const PlayerProfile = () => {
   const userData = useRecoilValue(UserInfo);
@@ -13,16 +14,25 @@ const PlayerProfile = () => {
       </div>
       <div className="playerInfoCont">
         <section className="playerInfoSection">
-          <div>
-            <h3>Player Contact</h3>
-            <p>
-              <b>UserName: </b>
-              {info.username}
-            </p>
-            <p>
-              <b>Email: </b>
-              {profileData.email}
-            </p>
+          <h3>Player Contact</h3>
+          <div className="playerContactCont">
+            <div>
+              {info.img !== undefined ? (
+                <img src="../../imgs/download.png" />
+              ) : (
+                <img src={NoImg} />
+              )}
+            </div>
+            <div>
+              <p>
+                <b>Name: </b>
+                {info.first_name} {info.last_name}
+              </p>
+              <p>
+                <b>Email: </b>
+                {info.email}
+              </p>
+            </div>
           </div>
         </section>
         <section className="playerInfoSection">
