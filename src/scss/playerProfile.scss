@@ -2,7 +2,6 @@
   margin-top: 2%;
   display: flex;
   justify-content: space-evenly;
-  //   justify-content: space-evenly;
 
   .playerInfoSection {
     width: 35%;
@@ -13,6 +12,13 @@
     box-shadow: 5px 5px #888888;
     h3 {
       text-align: center;
+    }
+
+    .playerContactCont {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+      padding: 3%;
     }
   }
 }

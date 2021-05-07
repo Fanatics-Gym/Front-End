@@ -9,7 +9,7 @@ import { useHistory } from "react-router-dom";
 const NavBar = (props) => {
   const [navDrop, setNavDrop] = useState(false);
   const { listLength } = useRecoilValue(CheckoutSelector);
-  const userInfo = useRecoilValue(UserInfo);
+  const user = useRecoilValue(UserInfo);
   const { push } = useHistory();
   const adjust = () => {
     if (window.screen.width <= 500) {
@@ -22,8 +22,8 @@ const NavBar = (props) => {
     window.location.reload();
   };
   const userDiv = () => {
-    if (userInfo.user) {
-      if (userInfo.user.userType === "Admin") {
+    if (user.userInfo) {
+      if (user.userInfo.userType === "Admin") {
         return (
           <div className="navLinks">
             <Link className="links" to="/">
@@ -37,7 +37,7 @@ const NavBar = (props) => {
             </Link>
           </div>
         );
-      } else if (userInfo.user.userType === "Player") {
+      } else if (user.userInfo.userType === "Player") {
         return (
           <div className="navLinks">
             <Link className="links" to="/player-profile">
