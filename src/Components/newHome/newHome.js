@@ -37,11 +37,11 @@ const NewHome = () => {
                 <ItemPreview key={item.id} item={item} />
               ))}
             </div>
-          </section> */}          
-          <section class="sectionCont">
+          </section> */}
+          {/* <section class="sectionCont">
             <h2>Gear</h2>
             <PictureSlide />
-          </section>
+          </section> */}
           <section class="sectionCont">
             <h2 class="sectionSubtitle">About</h2>
             <p>Learn more about the owner and what we represent</p>
@@ -54,7 +54,6 @@ const NewHome = () => {
               </Link>
             </div>
           </section>
-
         </div>
       </div>
     </div>
