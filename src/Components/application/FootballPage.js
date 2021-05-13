@@ -16,7 +16,7 @@ const FootballPage = () => {
       </div>
       <div className="applyButtonContainer">
         <Link to="/footballapply">
-          <button>Apply Now</button>
+          <button>Sign Up</button>
         </Link>
       </div>
     </div>

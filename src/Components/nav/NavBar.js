@@ -84,7 +84,7 @@ const NavBar = (props) => {
     <nav className="nav">
       <div className="navLogo">
         <Link className="linkHome" to="/">
-          <h1>Fanatics Gym</h1>
+          <h1>Fanatics Football</h1>
         </Link>
       </div>
       {userDiv()}
