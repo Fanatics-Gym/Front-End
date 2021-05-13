@@ -5,8 +5,6 @@ import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import { BrowserRouter as Router } from "react-router-dom";
 import { initGA } from "./analyicts";
-import { Provider } from "react-redux";
-import store from "./Components/Redux/store";
 import { RecoilRoot } from "recoil";
 
 (function initAnalytics() {
