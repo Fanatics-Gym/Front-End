@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import "./scss/app.scss";
 import NavBar from "./Components/nav/NavBar";
-import HomePage from "./Components/home/home";
+import RepresentPage from "./Components/Represent/Represent";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import LoginForm from "./Components/login/login";
 import aboutUs from "./Components/about/about";
@@ -52,7 +52,7 @@ function App() {
           {/* <Elements stripe={stripePromise}> */}
           <Route path="/checkout" component={Checkout} />
           <Route path="/view-applications" component={ViewApplications} />
-          <Route path="/represent" component={HomePage} />
+          <Route path="/represent" component={RepresentPage} />
           {/* </Elements> */}
           <Route path="/player-profile" component={PlayerProfile} />
           <Route path="/pick-gear" component={PickGear} />
