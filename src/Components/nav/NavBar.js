@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { useRecoilValue } from "recoil";
 import cart from "../../imgs/cart.png";
@@ -7,7 +7,6 @@ import CheckoutSelector from "../../Recoil/selector/checkoutSelector";
 import { useHistory } from "react-router-dom";
 
 const NavBar = (props) => {
-  const [navDrop, setNavDrop] = useState(false);
   const { listLength } = useRecoilValue(CheckoutSelector);
   const user = useRecoilValue(UserInfo);
   const { push } = useHistory();

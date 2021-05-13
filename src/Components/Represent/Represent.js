@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import Logo from "../../imgs/Logo.JPG";
 import { PageView } from "../../analyicts";
 
-const HomePage = () => {
+const RepresentPage = () => {
   useEffect(() => {
     PageView();
   }, []);
@@ -70,4 +70,4 @@ const HomePage = () => {
   );
 };
 
-export default HomePage;
+export default RepresentPage;

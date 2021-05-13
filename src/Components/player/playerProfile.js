@@ -1,6 +1,5 @@
 import React from "react";
 import { useRecoilValue } from "recoil";
-import { profileData } from "./playerData";
 import UserInfo from "../../Recoil/atom/userData";
 import NoImg from "../../imgs/download.png";
 
@@ -18,9 +17,9 @@ const PlayerProfile = () => {
           <div className="playerContactCont">
             <div>
               {info.img !== undefined ? (
-                <img src={info.img} />
+                <img src={info.img} alt="user img" />
               ) : (
-                <img src={NoImg} />
+                <img src={NoImg} alt="no img" />
               )}
             </div>
             <div>
