@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useRecoilState } from "recoil";
 import Logo from "../../imgs/Logo.JPG";
-import { data } from "./newHomeData";
+import { data } from "./oldHomeData";
 import ShopAtom from "../../Recoil/atom/shop";
 import ItemPreview from "./itemPreview";
 import { BaseUrl } from "../Auth/axios";
