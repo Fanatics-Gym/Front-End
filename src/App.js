@@ -17,7 +17,6 @@ import FootballPage from "./Components/application/FootballPage";
 import ApplicationForm from "./Components/application/applicationForm/applicationForm";
 import ConfirmationPage from "./Components/application/applicationForm/ConfirmationForm";
 import ViewApplications from "./Components/admin/userViewApplications";
-import NewHome from "./Components/newHome/newHome";
 import PlayerProfile from "./Components/player/playerProfile";
 import PickGear from "./Components/player/playerPickGear";
 import SignUp from "./Components/login/signUp";
@@ -25,6 +24,7 @@ import PlayerPage from "./Components/player/playerPage";
 import Roster from "./Components/player/playerRoster";
 import PickGearDate from "./Components/admin/adminPickUpGear";
 import PickUpTable from "./Components/admin/pickUpTable/pickUpTable";
+import HomePage from "./Components/newHome/Home";
 
 // const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_KEY);
 function App() {
@@ -39,7 +39,7 @@ function App() {
         <NavBar />
         <div className="spacing">
           <PrivateRoute exact path="/admin" component={AdminPage} />
-          <Route exact path="/" component={NewHome} />
+          <Route exact path="/" component={HomePage} />
           <Route path="/login" component={LoginForm} />
           <Route path="/about" component={aboutUs} />
           <Route path="/shop" component={Shop} />

@@ -60,9 +60,6 @@ const NavBar = (props) => {
           {/* <Link className="links" to="/shop">
       Shop
     </Link> */}
-          <Link className="links" to="/football">
-            Football
-          </Link>
           {/* <Link className="links" to="/cart">
       <img src={cart} />
       {listLength !== 0 ? (
@@ -84,7 +81,7 @@ const NavBar = (props) => {
     <nav className="nav">
       <div className="navLogo">
         <Link className="linkHome" to="/">
-          <h1>Fanatics Gym</h1>
+          <h1>Fanatics Football</h1>
         </Link>
       </div>
       {userDiv()}

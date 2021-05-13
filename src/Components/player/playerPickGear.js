@@ -14,7 +14,7 @@ const PickGear = () => {
     pants: "",
     jeresy: "",
     backPlate: "",
-    player_id: userId.user.id || null,
+    player_id: userId.userInfo.id || null,
     date_id: "",
   });
   const handleChange = (e) => {

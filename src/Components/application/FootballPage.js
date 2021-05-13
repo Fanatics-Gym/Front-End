@@ -14,11 +14,7 @@ const FootballPage = () => {
         <h3>{data[1]}</h3>
         <h3>{data[2]}</h3>
       </div>
-      <div className="applyButtonContainer">
-        <Link to="/footballapply">
-          <button>Apply Now</button>
-        </Link>
-      </div>
+      <div className="applyButtonContainer"></div>
     </div>
   );
 };
