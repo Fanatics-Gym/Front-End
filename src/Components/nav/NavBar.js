@@ -5,6 +5,7 @@ import cart from "../../imgs/cart.png";
 import UserInfo from "../../Recoil/atom/userData";
 import CheckoutSelector from "../../Recoil/selector/checkoutSelector";
 import { useHistory } from "react-router-dom";
+import guy from "../../imgs/Reference_1.png";
 
 const NavBar = (props) => {
   const { listLength } = useRecoilValue(CheckoutSelector);
@@ -81,7 +82,9 @@ const NavBar = (props) => {
     <nav className="nav">
       <div className="navLogo">
         <Link className="linkHome" to="/">
-          <h1>Fanatics Football</h1>
+          <div className="imgCont">
+            <img src={guy} />
+          </div>
         </Link>
       </div>
       {userDiv()}
