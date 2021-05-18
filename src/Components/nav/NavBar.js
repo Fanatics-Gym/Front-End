@@ -55,9 +55,6 @@ const NavBar = (props) => {
     } else {
       return (
         <div className="navLinks">
-          <Link className="links" to="/">
-            Home
-          </Link>
           {/* <Link className="links" to="/shop">
       Shop
     </Link> */}
@@ -86,6 +83,12 @@ const NavBar = (props) => {
             <img src={guy} />
           </div>
         </Link>
+        <div className="navLinksLeft">
+          <Link className="links">About</Link>
+          <Link className="links">Teams</Link>
+          <Link className="links">Rules</Link>
+          <Link className="links">Contact</Link>
+        </div>
       </div>
       {userDiv()}
     </nav>
