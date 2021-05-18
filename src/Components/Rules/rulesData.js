@@ -15,4 +15,25 @@ export const rulesData = [
     "Kicking Team may engage Receiving Team before any player on the Receiving Team touches the ball.",
     "Drop-Kick is allowed for Onside Kick.",
   ],
+  [
+    "Offence may have up to 2 Gunners",
+    "Only Gunner(s) may proceed downfield after the ball is snapped; every other offensive player must stay at/behind the Line of Scrimmage until the ball is punted/kicked.",
+    "Drop-Kick is allowed for Punting",
+  ],
+  [
+    "Ball placed at 5-yard line & anywhere between the hash marks.",
+    "Drop-Kick is allowed for PAT.",
+  ],
+  [
+    "Ball placed at 20-yard line for the Kicking Team.",
+    "Kicking Team may Punt, Drop-Kick, Kickoff, or Onside Kick.",
+  ],
+  [
+    "A ball carrier may use hands to the face and grab the face mask of a “would be tackler.”",
+    "Receiver must have at least one foot in-bounds in order for the pass to be completed.",
+    "If the receiver catches the ball in the air, but is pushed out of before the receiver gets one foot in bounds, the pass is incomplete.",
+    "Receiver must “survive the ground” in order for the pass to be completed.",
+    "Receiver must make a “football move” in order for the pass to be completed.",
+    "The ground can not cause a fumble",
+  ],
 ];

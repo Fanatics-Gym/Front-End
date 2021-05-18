@@ -26,6 +26,22 @@ const Rules = () => {
             ))}
           </ul>
         </section>
+        <section className="rulesSection">
+          <h3>Punting</h3>
+          <ul>
+            {rulesData[3].map((li) => (
+              <li>{li}</li>
+            ))}
+          </ul>
+        </section>
+        <section className="rulesSection">
+          <h3>PAT and 2-Point Conversion</h3>
+          <ul>
+            {rulesData[4].map((li) => (
+              <li>{li}</li>
+            ))}
+          </ul>
+        </section>
       </div>
     </div>
   );
