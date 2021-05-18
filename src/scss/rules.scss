@@ -1,6 +1,19 @@
 .rulesCont {
   display: flex;
+  flex-flow: column wrap;
+  width: 75%;
+  margin: auto;
   .rulesHeader {
     margin: auto;
+  }
+
+  .rulesSection {
+    h3 {
+      margin-left: 5%;
+      text-decoration: underline 3px;
+    }
+    ul {
+      margin-left: 5%;
+    }
   }
 }
