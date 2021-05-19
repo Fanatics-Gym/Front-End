@@ -1,6 +1,7 @@
 import React from "react";
 import RulesHeader from "../../imgs/rules.png";
 import { rulesData } from "./rulesData";
+import exhibitA from "../../imgs/blocking.png";
 
 const Rules = () => {
   return (
@@ -38,6 +39,50 @@ const Rules = () => {
           <h3>PAT and 2-Point Conversion</h3>
           <ul>
             {rulesData[4].map((li) => (
+              <li>{li}</li>
+            ))}
+          </ul>
+        </section>
+        <section className="rulesSection">
+          <h3>After Safety</h3>
+          <ul>
+            {rulesData[5].map((li) => (
+              <li>{li}</li>
+            ))}
+          </ul>
+        </section>
+        <section className="rulesSection">
+          <h3>Running and Receiving</h3>
+          <ul>
+            {rulesData[6].map((li) => (
+              <li>{li}</li>
+            ))}
+          </ul>
+        </section>
+        <section className="rulesSection">
+          <h3>Blocking</h3>
+          <ul>
+            {rulesData[7].map((li) => (
+              <li>{li}</li>
+            ))}
+          </ul>
+        </section>
+        <div className="demo">
+          <h2>Exhibit A</h2>
+          <img src={exhibitA} alt="demonstration visually" />
+        </div>
+        <section className="rulesSection">
+          <h3>Defense</h3>
+          <ul>
+            {rulesData[8].map((li) => (
+              <li>{li}</li>
+            ))}
+          </ul>
+        </section>
+        <section className="rulesSection">
+          <h3>Penalties</h3>
+          <ul>
+            {rulesData[10].map((li) => (
               <li>{li}</li>
             ))}
           </ul>

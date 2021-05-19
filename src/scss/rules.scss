@@ -15,5 +15,34 @@
     ul {
       margin-left: 5%;
     }
+
+    .demo {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      h2 {
+        text-align: center;
+        text-decoration: underline;
+      }
+      img {
+        width: 50%;
+        margin: auto;
+      }
+    }
+  }
+
+  .demo {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: auto;
+    h2 {
+      text-align: center;
+      text-decoration: underline;
+    }
+    img {
+      width: 75%;
+      margin: auto;
+    }
   }
 }
