@@ -87,6 +87,14 @@ const Rules = () => {
             ))}
           </ul>
         </section>
+        <section className="rulesSection">
+          <h3>Playoffs</h3>
+          <ul>
+            {rulesData[11].map((li) => (
+              <li>{li}</li>
+            ))}
+          </ul>
+        </section>
       </div>
     </div>
   );
