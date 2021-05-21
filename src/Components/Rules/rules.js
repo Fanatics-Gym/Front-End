@@ -8,9 +8,8 @@ const RuleBook = () => {
   return (
     <section className="rulesDownloadCont">
       <h4>
-        Download PDF of Rule Book{" "}
         <a href={pdf} download>
-          Here
+          Download PDF of Rule Book
         </a>
       </h4>
     </section>
