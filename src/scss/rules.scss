@@ -49,3 +49,12 @@
 .rulesDownloadCont {
   text-align: center;
 }
+
+@media screen and (min-width: 400px) {
+  .rulesCont {
+    display: flex;
+    .rulesHeader {
+      margin: 0 auto;
+    }
+  }
+}
