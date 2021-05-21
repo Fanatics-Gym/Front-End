@@ -92,3 +92,14 @@
     }
   }
 }
+
+.aboutCont {
+  display: flex;
+  justify-content: center;
+  width: 45%;
+  margin: auto;
+
+  b {
+    text-decoration: underline 3px;
+  }
+}
