@@ -65,4 +65,10 @@ export const rulesData = [
     "If Defensive Pass Interference occurs in the End-Zone, the ball is to be placed at the defensive 5-yard line with a new Set of Downs.",
     "The Game/Overtime may not end on a penalty that impacts the outcome of said Game/Overtime (i.e., an incomplete pass due to defensive pass interference or a touchdown pass, but there is an offensive hold on the play).",
   ],
+  [
+    "Top 4 teams advance to the Playoffs (in the event of a tie, the team(s) with the most points scored, during regulation time, will advance to the Playoffs).",
+    "There is 1 Playoff Game.",
+    "The 2 teams that win their Playoff Game, advance to the Championship Game",
+    "The team that wins the Championship Game, are the Champions.",
+  ],
 ];

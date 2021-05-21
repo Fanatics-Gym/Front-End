@@ -4,7 +4,7 @@ import NavBar from "./Components/nav/NavBar";
 import RepresentPage from "./Components/Represent/Represent";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import LoginForm from "./Components/login/login";
-import aboutUs from "./Components/about/about";
+import aboutUs from "./Components/about/newAbout";
 import PrivateRoute from "./Components/Auth/PrivateRoute";
 import AdminPage from "./Components/admin/adminPage";
 import { initGA, PageView } from "./analyicts";

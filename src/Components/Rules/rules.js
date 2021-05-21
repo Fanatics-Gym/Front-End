@@ -2,12 +2,26 @@ import React from "react";
 import RulesHeader from "../../imgs/rules.png";
 import { rulesData } from "./rulesData";
 import exhibitA from "../../imgs/blocking.png";
+import pdf from "../../pdf/Rule_Book.pdf";
+
+const RuleBook = () => {
+  return (
+    <section className="rulesDownloadCont">
+      <h4>
+        <a href={pdf} download>
+          Download PDF of Rule Book
+        </a>
+      </h4>
+    </section>
+  );
+};
 
 const Rules = () => {
   return (
     <div className="componentCont">
       <div className="rulesCont">
         <img className="rulesHeader" src={RulesHeader} />
+        <RuleBook />
         <section className="intro">
           <p>{rulesData[0]}</p>
         </section>
@@ -87,6 +101,15 @@ const Rules = () => {
             ))}
           </ul>
         </section>
+        <section className="rulesSection">
+          <h3>Playoffs</h3>
+          <ul>
+            {rulesData[11].map((li) => (
+              <li>{li}</li>
+            ))}
+          </ul>
+        </section>
+        <RuleBook />
       </div>
     </div>
   );

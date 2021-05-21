@@ -4,7 +4,7 @@
   width: 75%;
   margin: auto;
   .rulesHeader {
-    margin: auto;
+    margin: 3% auto;
   }
 
   .rulesSection {
@@ -46,3 +46,15 @@
     }
   }
 }
+.rulesDownloadCont {
+  text-align: center;
+}
+
+// @media screen and (max-width: 400px) {
+//   .rulesCont {
+//     display: flex;
+//     .rulesHeader {
+//       margin: 0 auto;
+//     }
+//   }
+// }
