@@ -84,7 +84,9 @@ const NavBar = (props) => {
           </div>
         </Link>
         <div className="navLinksLeft">
-          <Link className="links">About</Link>
+          <Link className="links" to="/about">
+            About
+          </Link>
           <Link className="links">Teams</Link>
           <Link className="links" to="/rules">
             Rules
