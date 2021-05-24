@@ -16,7 +16,7 @@ const TeamProfile = () => {
             </div>
             <div>
               <p>
-                <b>Name:</b> Team Name
+                <b>Name: </b> Team Name
               </p>
             </div>
           </div>
@@ -25,15 +25,18 @@ const TeamProfile = () => {
           <h3>Team Stats</h3>
           <div>
             <p>
-              <b>Wins:</b>0
+              <b>Wins: </b>0
             </p>
             <p>
-              <b>Losses:</b>0
+              <b>Losses: </b>0
             </p>
           </div>
         </section>
         <section className="playerInfoSection">
           <h3>Team Roster</h3>
+        </section>
+        <section className="playerInfoSection">
+          <h3>Team Events</h3>
         </section>
       </div>
     </div>
