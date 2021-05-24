@@ -26,6 +26,7 @@ import PickGearDate from "./Components/admin/adminPickUpGear";
 import PickUpTable from "./Components/admin/pickUpTable/pickUpTable";
 import HomePage from "./Components/newHome/Home";
 import Rules from "./Components/Rules/rules";
+import TeamTable from "./Components/teams/teamsTable";
 
 // const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_KEY);
 function App() {
@@ -63,6 +64,7 @@ function App() {
           <Route path="/pickUpDate" component={PickGearDate} />
           <Route path="/pickUpTable" component={PickUpTable} />
           <Route path="/rules" component={Rules} />
+          <Route path="/teams" component={TeamTable} />
         </div>
       </Router>
     </div>

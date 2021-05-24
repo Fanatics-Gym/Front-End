@@ -87,7 +87,9 @@ const NavBar = (props) => {
           <Link className="links" to="/about">
             About
           </Link>
-          <Link className="links">Teams</Link>
+          <Link className="links" to="/teams">
+            Teams
+          </Link>
           <Link className="links" to="/rules">
             Rules
           </Link>
