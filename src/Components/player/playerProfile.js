@@ -35,8 +35,8 @@ const PlayerProfile = () => {
           </div>
         </section>
         <section className="playerInfoSection">
+          <h3>Player Stats </h3>
           <div>
-            <h3>Player Stats </h3>
             <p>
               <b>Tackles: </b>
               {info.tackles}
