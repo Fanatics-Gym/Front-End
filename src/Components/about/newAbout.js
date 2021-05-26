@@ -19,7 +19,7 @@ const NewAbout = () => {
           the freedom of design and promotion of their brand/business. &nbsp; We
           are a league that values the tradition of football and keeps the
           integrity of the game. &nbsp; So, live the dream, strap up, and join
-          us, today.
+          us, today!
         </h3>
       </div>
     </div>
