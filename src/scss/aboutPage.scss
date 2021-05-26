@@ -95,12 +95,13 @@
 
 .aboutCont {
   display: flex;
-  justify-content: center;
   width: 65%;
-  margin: auto;
+  margin: 0 auto;
+
   h3 {
-    margin: 15% 0;
     line-height: 3rem;
+    text-align: center;
+    margin: 15% 0;
   }
 
   b {
