@@ -4,25 +4,25 @@ import PickUpDatesAtom from "../../Recoil/atom/pickUpDatesAtom";
 import { BaseUrl } from "../Auth/axios";
 
 const PickGearDate = () => {
-  const [date, setDate] = useState("");
+  const [date, setDate] = useState({ date: "", time: "" });
   const [pickUpDates, setPickUpDates] = useRecoilState(PickUpDatesAtom);
 
   useEffect(() => {
     BaseUrl()
-      .get(`${process.env.REACT_APP_API_URL}pickUp/`)
+      .get(`pickUp/`)
       .then((res) => {
         setPickUpDates(res.data);
       });
   }, []);
 
   const handleChange = (e) => {
-    setDate(e.target.value);
+    setDate({ ...date, [e.target.name]: e.target.value });
   };
 
   const onSubmit = (e) => {
     e.preventDefault();
     BaseUrl()
-      .post(`${process.env.REACT_APP_API_URL}pickUp/addDate`, { date: date })
+      .post(`pickUp/addDate`, { date: date })
       .then((res) => {
         setPickUpDates((old) => [...old, res.data]);
       })
@@ -40,11 +40,19 @@ const PickGearDate = () => {
           <h3>Choose a date for players to pick up gear</h3>
           <input
             id="pickUpDate"
-            name="pickUpDate"
+            name="date"
             type="date"
-            value={date}
+            value={date.date}
             onChange={handleChange}
           />
+          <input
+            id="pickUpTime"
+            name="time"
+            type="time"
+            onChange={handleChange}
+            value={date.time}
+          />
+
           <button onClick={onSubmit}>Add Date</button>
         </div>
         <div>
