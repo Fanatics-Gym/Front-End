@@ -58,7 +58,11 @@ const PickGearDate = () => {
         <div>
           <h3>Dates set to pick up gear</h3>
           {pickUpDates.map((date) => (
-            <h4>{date.date}</h4>
+            <div className="dateCont">
+              <h4>{date.date}</h4>
+              <h4>at</h4>
+              <h4>{date.time}</h4>
+            </div>
           ))}
         </div>
       </section>
