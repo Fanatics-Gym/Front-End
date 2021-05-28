@@ -22,7 +22,7 @@ const PickGearDate = () => {
   const onSubmit = (e) => {
     e.preventDefault();
     BaseUrl()
-      .post(`pickUp/addDate`, { date: date })
+      .post(`pickUp/addDate`, date)
       .then((res) => {
         setPickUpDates((old) => [...old, res.data]);
       })
