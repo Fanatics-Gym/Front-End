@@ -95,9 +95,15 @@
 
 .aboutCont {
   display: flex;
-  justify-content: center;
   width: 65%;
-  margin: 5% auto;
+  margin: 0 auto;
+
+  h3 {
+    line-height: 3rem;
+    text-align: center;
+    margin: 10% 0;
+    font-size: 1.5rem;
+  }
 
   b {
     text-decoration: underline 3px;
