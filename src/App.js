@@ -28,6 +28,7 @@ import HomePage from "./Components/newHome/Home";
 import Rules from "./Components/Rules/rules";
 import TeamTable from "./Components/teams/teamsTable";
 import TeamProfile from "./Components/teams/teamProfile";
+import CheckoutGearPage from "./Components/player/checkoutGear";
 
 // const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_KEY);
 function App() {
@@ -67,6 +68,7 @@ function App() {
           <Route path="/rules" component={Rules} />
           <Route path="/teams" component={TeamTable} />
           <Route path="/teamProfile" component={TeamProfile} />
+          <Route path="/checkoutGear" component={CheckoutGearPage} />
         </div>
       </Router>
     </div>
