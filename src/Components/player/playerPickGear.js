@@ -1,4 +1,3 @@
-import { userInfo } from "os";
 import React, { useEffect, useState } from "react";
 import { useRecoilState, useRecoilValue } from "recoil";
 import PickUpDatesAtom from "../../Recoil/atom/pickUpDatesAtom";
@@ -146,7 +145,9 @@ const PickGear = () => {
             {pickUpDates.map((date) => (
               <div>
                 <input type="radio" name="date_id" value={date.id} />
-                <label>{date.date}</label>
+                <label>
+                  {date.date} at {date.time}
+                </label>
               </div>
             ))}
           </span>
