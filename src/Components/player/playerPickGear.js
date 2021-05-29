@@ -146,7 +146,9 @@ const PickGear = () => {
             {pickUpDates.map((date) => (
               <div>
                 <input type="radio" name="date_id" value={date.id} />
-                <label>{date.date}</label>
+                <label>
+                  {date.date} at {date.time}
+                </label>
               </div>
             ))}
           </span>
