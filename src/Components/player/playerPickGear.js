@@ -1,4 +1,3 @@
-import { userInfo } from "os";
 import React, { useEffect, useState } from "react";
 import { useRecoilState, useRecoilValue } from "recoil";
 import PickUpDatesAtom from "../../Recoil/atom/pickUpDatesAtom";
