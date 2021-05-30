@@ -40,8 +40,11 @@ const FormWrapper = ({ steps, activeStep, setActiveStep }) => {
     em_phone: "",
   };
 
+  console.log(termsState);
+
   const confirmTerms = () => {
     setTermsState(!termsState);
+    console.log(termsState);
   };
 
   const handleNext = (applicationInfo, activeStep, setActiveStep) => {
@@ -76,8 +79,13 @@ const FormWrapper = ({ steps, activeStep, setActiveStep }) => {
             <EmergencyInfo {...props} />
           ) : activeStep === 3 ? (
             <ReviewInfo {...props} />
+          ) : activeStep === 4 ? (
+            <TermsAndConditions
+              confirmTerms={confirmTerms}
+              value={termsState}
+            />
           ) : (
-            <TermsAndConditions confirmTerms={confirmTerms} />
+            <div></div>
           )}
           <Buttons
             steps={steps}
