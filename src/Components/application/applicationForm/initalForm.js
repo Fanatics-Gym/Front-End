@@ -12,6 +12,7 @@ import { EmergencySchema, TermsSchema } from "../../../yup/EmergencySchema";
 import { BaseUrl } from "../../Auth/axios";
 import { SubmitApplication } from "../../../Recoil/apiCalls/applicationApiCalls";
 import ReviewInfo from "./ReviewInfo";
+import PaymentForm from "./paymentForm";
 
 const FormWrapper = ({ steps, activeStep, setActiveStep }) => {
   const { push } = useHistory();
@@ -48,9 +49,9 @@ const FormWrapper = ({ steps, activeStep, setActiveStep }) => {
   };
 
   const handleNext = (applicationInfo, activeStep, setActiveStep) => {
-    if (activeStep === 4 && termsState === true) {
+    if (activeStep === 5 && termsState === true) {
       SubmitApplication(applicationInfo, push)();
-    } else if (activeStep < 4) {
+    } else if (activeStep < 5) {
       setActiveStep(activeStep + 1);
       console.log(activeStep);
     }
@@ -85,7 +86,7 @@ const FormWrapper = ({ steps, activeStep, setActiveStep }) => {
               value={termsState}
             />
           ) : (
-            <div></div>
+            <PaymentForm />
           )}
           <Buttons
             steps={steps}

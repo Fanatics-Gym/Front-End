@@ -2,7 +2,6 @@ import React from "react";
 import { TermsData } from "../PageData";
 
 const TermsAndConditions = ({ confirmTerms, value }) => {
-  console.log(value);
   return (
     <div className="termsContainer">
       <h2>Terms and Conditions</h2>
