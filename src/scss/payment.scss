@@ -1,0 +1,30 @@
+.paymentCont {
+  height: 25%;
+  h3 {
+    text-align: center;
+    text-decoration: underline 2px;
+  }
+
+  .paymentInfoCont {
+    border: black solid 2px;
+    width: 40%;
+    margin: auto;
+    background-color: #ececec;
+
+    .paymentInfo {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin: 10px 10px;
+      border-bottom: 1px black dashed;
+    }
+
+    .paymentInfo#total {
+      background-color: darkgrey;
+      margin: 0 0;
+      padding: 0px 10px;
+      border-top: black solid 2px;
+      border-bottom: none;
+    }
+  }
+}
