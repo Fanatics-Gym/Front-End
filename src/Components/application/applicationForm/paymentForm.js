@@ -25,8 +25,11 @@ const PaymentForm = () => {
       <div className="paymentTermsCont">
         <input type="checkbox" />
         <label>
-          By clicking here, you agree to the <Link>Terms of Costs</Link> with
-          your payment.
+          By clicking here, you agree to the{" "}
+          <Link to="/termsOfCost" target="_blank">
+            Terms of Costs
+          </Link>{" "}
+          with your payment.
         </label>
       </div>
     </div>
