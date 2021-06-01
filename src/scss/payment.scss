@@ -1,0 +1,43 @@
+.paymentCont {
+  height: 25%;
+  h3 {
+    text-align: center;
+    text-decoration: underline 2px;
+  }
+
+  .paymentInfoCont {
+    border: black solid 2px;
+    width: 40%;
+    margin: auto;
+    background-color: #ececec;
+
+    .paymentInfo {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: baseline;
+      padding: 0 10px;
+      div {
+        width: 100%;
+        border-bottom: dotted 2px black;
+      }
+      h4 {
+        white-space: nowrap;
+        padding-right: 5px;
+      }
+    }
+
+    .paymentInfo#total {
+      background-color: darkgrey;
+      margin: 0 0;
+      padding: 0px 10px;
+      border-top: black solid 2px;
+      border-bottom: none;
+    }
+  }
+
+  .paymentTermsCont {
+    display: flex;
+    justify-content: center;
+    margin: 15px;
+  }
+}
