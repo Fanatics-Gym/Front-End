@@ -13,10 +13,17 @@
 
     .paymentInfo {
       display: flex;
-      justify-content: space-between;
+      justify-content: space-evenly;
       align-items: baseline;
-      margin: 10px 10px;
-      border-bottom: 1px black dashed;
+      padding: 0 10px;
+      div {
+        width: 100%;
+        border-bottom: dotted 2px black;
+      }
+      h4 {
+        white-space: nowrap;
+        padding-right: 5px;
+      }
     }
 
     .paymentInfo#total {
@@ -26,5 +33,11 @@
       border-top: black solid 2px;
       border-bottom: none;
     }
+  }
+
+  .paymentTermsCont {
+    display: flex;
+    justify-content: center;
+    margin: 15px;
   }
 }
