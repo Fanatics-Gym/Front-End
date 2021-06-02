@@ -2,7 +2,6 @@
   display: flex;
   justify-content: space-between;
   flex-flow: row nowrap;
-  border: solid 5px black;
   position: fixed;
   background: black;
   color: white;
@@ -16,7 +15,6 @@
 
   .navLogo {
     display: flex;
-    flex-direction: row;
     justify-content: flex-start;
     img {
       width: 100px;
@@ -29,7 +27,8 @@
   .navLinks {
     display: flex;
     justify-content: flex-end;
-    padding-right: 3%;
+    padding: 15px;
+    margin: auto 0;
   }
 }
 .links {

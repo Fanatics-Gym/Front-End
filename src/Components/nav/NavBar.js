@@ -16,8 +16,9 @@ const NavBar = (props) => {
     push("/login");
     window.location.reload();
   };
-  return (
-    <nav>
+
+  if (window.screen.width >= 768) {
+    return (
       <div className="nav">
         <div className="navLogo">
           <Link className="linkHome" to="/">
@@ -39,12 +40,29 @@ const NavBar = (props) => {
           </div>
         </div>
         <div className="navLinks">
+          <Link className="links" to="/login">
+            Login
+          </Link>
+        </div>
+      </div>
+    );
+  } else {
+    return (
+      <div className="nav">
+        <div className="navLogo">
+          <Link className="linkHome" to="/">
+            <div className="imgCont">
+              <img src={guy} alt="fanatics logo" />
+            </div>
+          </Link>
+        </div>
+        <div className="navLinks">
           <Burger open={open} setOpen={setOpen} />
           <Menu open={open} setOpen={setOpen} />
         </div>
       </div>
-    </nav>
-  );
+    );
+  }
 };
 
 export default NavBar;

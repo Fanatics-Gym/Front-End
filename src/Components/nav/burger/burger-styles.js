@@ -6,7 +6,6 @@ export const StyledBurger = styled.button`
   justify-content: space-around;
   width: 2rem;
   height: 2rem;
-  margin: auto 0;
   z-index: 10;
   background: transparent;
   border: none;
