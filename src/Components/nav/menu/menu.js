@@ -6,6 +6,9 @@ import { Link } from "react-router-dom";
 const Menu = ({ open }) => {
   return (
     <StyledMenu open={open}>
+      <Link to="/">
+        <a>Home</a>
+      </Link>
       <Link to="/about">
         <a>About us</a>
       </Link>

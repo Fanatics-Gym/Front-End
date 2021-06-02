@@ -23,7 +23,7 @@ export const StyledMenu = styled.nav`
     flex-direction: column;
     font-size: 2rem;
     text-transform: uppercase;
-    padding: 2rem 0;
+    padding: 1rem 0;
     font-weight: bold;
     letter-spacing: 0.5rem;
     color: white;
