@@ -16,71 +16,32 @@ const NavBar = (props) => {
     push("/login");
     window.location.reload();
   };
-  const userDiv = () => {
-    if (user.userInfo) {
-      if (user.userInfo.userType === "Admin") {
-        return (
-          <div className="navLinks">
-            <Link className="links" to="/">
-              Home
-            </Link>
-            <Link className="links" to="/admin">
-              Admin
-            </Link>
-            <Link className="links" onClick={logout}>
-              Logout
-            </Link>
-          </div>
-        );
-      } else if (user.userInfo.userType === "Player") {
-        return (
-          <div className="navLinks">
-            <Link className="links" to="/player-profile">
-              Stats
-            </Link>
-            <Link className="links" to="/player">
-              Player
-            </Link>
-            <Link className="links" onClick={logout}>
-              Logout
-            </Link>
-          </div>
-        );
-      }
-    } else {
-      return (
-        <div className="navLinks">
-          <Link className="links" to="/login">
-            Login
-          </Link>
-        </div>
-      );
-    }
-  };
   return (
-    <nav className="nav">
-      <div className="navLogo">
-        <Link className="linkHome" to="/">
-          <div className="imgCont">
-            <img src={guy} alt="fanatics logo" />
+    <nav>
+      <div className="nav">
+        <div className="navLogo">
+          <Link className="linkHome" to="/">
+            <div className="imgCont">
+              <img src={guy} alt="fanatics logo" />
+            </div>
+          </Link>
+          <div className="navLinksLeft">
+            <Link className="links" to="/about">
+              About
+            </Link>
+            <Link className="links" to="/teams">
+              Teams
+            </Link>
+            <Link className="links" to="/rules">
+              Rules
+            </Link>
+            <Link className="links">Contact</Link>
           </div>
-        </Link>
-        <div className="navLinksLeft">
-          <Link className="links" to="/about">
-            About
-          </Link>
-          <Link className="links" to="/teams">
-            Teams
-          </Link>
-          <Link className="links" to="/rules">
-            Rules
-          </Link>
-          <Link className="links">Contact</Link>
         </div>
-      </div>
-      <div className="navLinks">
-        <Burger open={open} setOpen={setOpen} />
-        <Menu open={open} setOpen={setOpen} />
+        <div className="navLinks">
+          <Burger open={open} setOpen={setOpen} />
+          <Menu open={open} setOpen={setOpen} />
+        </div>
       </div>
     </nav>
   );

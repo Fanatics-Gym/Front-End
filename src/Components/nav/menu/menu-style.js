@@ -10,7 +10,7 @@ export const StyledMenu = styled.nav`
   padding: 2rem;
   transition: transform 0.3s ease-in-out;
   position: absolute;
-  transform: ${({ open }) => (open ? "translateX(10%)" : "translateX(110%)")};
+  transform: ${({ open }) => (open ? "translateX(16%)" : "translateX(116%)")};
 
   @media (max-width: 768px) {
     width: 100%;
