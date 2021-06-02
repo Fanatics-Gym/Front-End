@@ -25,9 +25,27 @@ const Menu = ({ open }) => {
       <Link to="/rules">
         <a>
           <span role="img" aria-label="contact">
-            &#x1f4e9;
+            &#128203;
           </span>
           Rules
+        </a>
+      </Link>
+      <Link to="/login">
+        {" "}
+        <a>
+          <span role="img" aria-label="contact">
+            &#127944;
+          </span>
+          Login
+        </a>
+      </Link>
+      <Link to="/contact">
+        {" "}
+        <a>
+          <span role="img" aria-label="contact">
+            &#x1f4e9;
+          </span>
+          Contact
         </a>
       </Link>
     </StyledMenu>

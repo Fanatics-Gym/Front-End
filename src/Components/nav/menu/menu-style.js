@@ -17,6 +17,8 @@ export const StyledMenu = styled.nav`
   }
 
   a {
+    display: flex;
+    flex-direction: column;
     font-size: 2rem;
     text-transform: uppercase;
     padding: 2rem 0;
