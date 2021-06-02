@@ -3,11 +3,10 @@ import styled from "styled-components";
 export const StyledMenu = styled.nav`
   display: flex;
   flex-direction: column;
-  justify-content: center;
   background: black;
   height: 100vh;
   text-align: left;
-  padding: 2rem;
+  padding: 5rem 1rem;
   z-index: 5;
   transition: transform 0.3s ease-in-out;
   position: absolute;
