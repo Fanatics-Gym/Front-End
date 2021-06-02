@@ -7,12 +7,11 @@ export const StyledMenu = styled.nav`
   background: black;
   height: 100vh;
   text-align: left;
-  padding: 3rem;
+  padding: 2rem;
   z-index: 5;
   transition: transform 0.3s ease-in-out;
   position: absolute;
   transform: ${({ open }) => (open ? "translateX(16%)" : "translateX(116%)")};
-  opacity: 1;
 
   @media (max-width: 768px) {
     width: 45%;
@@ -21,7 +20,7 @@ export const StyledMenu = styled.nav`
   a {
     display: flex;
     flex-direction: column;
-    font-size: 2rem;
+    font-size: 1rem;
     text-transform: uppercase;
     padding: 1rem 0;
     font-weight: bold;
@@ -31,7 +30,8 @@ export const StyledMenu = styled.nav`
     transition: color 0.3s linear;
 
     @media (max-width: 768px) {
-      font-size: 1.5rem;
+      padding: 0.7rem 0;
+      font-size: 1.25rem;
       text-align: center;
     }
 
