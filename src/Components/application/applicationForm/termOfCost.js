@@ -1,14 +1,20 @@
 import React from "react";
+import termsPDF from "../../../pdf/Terms_of_Cost.docx.pdf";
 
 const TermsOfCost = () => {
   return (
     <div className="componentCont">
       <div className="termsHeader">
-        <h2>Terms of Cost</h2>
+        <div>
+          <h2>Terms of Cost</h2>
+          <a href={termsPDF} download className="downloadLink">
+            Download as PDF
+          </a>
+        </div>
       </div>
       <div className="termsContent">
         <div>
-          <ol type="1">
+          <ol type="I">
             <li>
               <ol type="A">
                 <li>
@@ -28,7 +34,7 @@ const TermsOfCost = () => {
                   damage/wear {"&"}
                   tear) Gear of Participant.
                 </li>
-                <ol type="I">
+                <ol type="1">
                   <li>
                     &nbsp; If all or any amount of the Security Deposit is used
                     during Participant’s participation, Participant agrees to
@@ -51,7 +57,7 @@ const TermsOfCost = () => {
                   game, Participant agrees to return all Gear to Fanatics
                   Football.
                 </li>
-                <ol type="I">
+                <ol type="1">
                   <li>
                     {" "}
                     &nbsp; Participant agrees and understands that all Gear is
@@ -98,8 +104,76 @@ const TermsOfCost = () => {
                 </ol>
               </ol>
             </li>
+            <li>
+              <ol type="A">
+                <li>
+                  &nbsp;<b>PARTICIPANT CANCELLATION:</b> &nbsp; Participant may
+                  cancel their participation at any time during their
+                  participation by emailing Fanatics Football at
+                  customerservice@fanaticsfb.com.
+                </li>
+                <ol type="1">
+                  <li>
+                    &nbsp; If Participant cancels their participation before
+                    Week 0, Fanatics Football will issue a full refund, to
+                    Participant, minus/less a $250.00 Cancelation Fee (
+                    <b>Cancelation Fee</b>
+                    ).
+                  </li>
+                  <li>
+                    &nbsp; If Participant cancels their participation after Week
+                    0, Participant agrees to and understands that Fanatics
+                    Football will not issue Participant a refund, in any amount,
+                    to the Participant.
+                  </li>
+                  <ol type="a">
+                    <li>
+                      &nbsp; If Participant cancels their participation after
+                      Week 0, Participant aggress to return all Gear to Fanatics
+                      Football within 14 days after Participant’s cancelation
+                      following the RETURN GEAR procedure as specified in
+                      paragraphs 2.A.(1).(a),(b),(c),(2), {"&"} (3).
+                    </li>
+                  </ol>
+                </ol>
+              </ol>
+            </li>
+            <li>
+              <ol type="A">
+                <li>
+                  &nbsp;<b>TERMINATION:</b> &nbsp; Fanatics Football reserves
+                  the right to immediately terminate, without warning,
+                  Participant from participating in, but not limited to, the
+                  following: any current and/or further activities, events,
+                  games, and functions of/put on by Fanatics Football.
+                </li>
+                <ol type="1">
+                  <li>
+                    &nbsp; In the event the Participant is terminated,
+                    Participant aggress to return all Gear to Fanatics Football
+                    within 14 days after Participant’s termination by following
+                    the RETURN GEAR
+                  </li>
+                  <li>
+                    &nbsp; After all Gear is returned to and received by
+                    Fanatics Football, Participant agrees to and understands
+                    that Fanatics Football reserves the right to not issue
+                    Participant a refund, in any amount.
+                  </li>
+                  <li>
+                    &nbsp; Participant agrees to and understands that if/when
+                    the Participant’s Security Deposit is returned, it will be
+                    minus/less a $350.00 Termination Fee (<b>Termination Fee</b>
+                    ).
+                  </li>
+                </ol>
+              </ol>
+            </li>
           </ol>
         </div>
+        <a className="downloadLink" href={termsPDF} download>
+          Download as PDF
+        </a>
       </div>
     </div>
   );
