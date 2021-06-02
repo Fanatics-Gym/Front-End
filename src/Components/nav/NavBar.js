@@ -1,13 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useRecoilValue } from "recoil";
 import UserInfo from "../../Recoil/atom/userData";
 import { useHistory } from "react-router-dom";
 import guy from "../../imgs/Reference_1.png";
 import Burger from "./burger/burger";
+import Menu from "./menu/menu";
 
 const NavBar = (props) => {
   const user = useRecoilValue(UserInfo);
+  const [open, setOpen] = useState(false);
   const { push } = useHistory();
   const logout = () => {
     localStorage.removeItem("token");
@@ -76,7 +78,10 @@ const NavBar = (props) => {
           <Link className="links">Contact</Link>
         </div>
       </div>
-      <Burger />
+      <div className="navLinks">
+        <Burger open={open} setOpen={setOpen} />
+        <Menu open={open} setOpen={setOpen} />
+      </div>
     </nav>
   );
 };
