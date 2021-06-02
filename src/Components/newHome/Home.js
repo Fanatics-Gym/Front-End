@@ -7,8 +7,8 @@ const HomePage = () => {
     <div className="componentCont">
       <div className="footballHomePage">
         <img src={FootBallLogo} />
-        <Link className="homePageLink" to="/footballapply">
-          <button>Sign Up</button>
+        <Link className="button" to="/footballapply">
+          <a>Sign Up</a>
         </Link>
       </div>
     </div>
