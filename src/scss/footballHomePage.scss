@@ -3,15 +3,19 @@
   justify-content: center;
   flex-direction: column;
   margin: 10% 0;
+  z-index: -2;
+  position: relative;
 
   img {
     margin: auto;
   }
 
   .button {
+    margin-top: 100px;
     position: relative;
     display: inline-block;
     margin: 0 auto;
+    z-index: -1;
   }
 
   .button a {
@@ -37,6 +41,10 @@
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
+  }
+  a {
+    text-decoration: none;
+    z-index: 0;
   }
 
   .button a:active {
