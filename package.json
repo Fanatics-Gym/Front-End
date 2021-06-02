@@ -23,7 +23,7 @@
     "recoil": "0.0.13",
     "stripe": "^8.134.0",
     "styled-components": "^4.4.1",
-    "yup": "^0.27.0"
+    "yup": "^0.32.9"
   },
   "scripts": {
     "start": "react-scripts start",
