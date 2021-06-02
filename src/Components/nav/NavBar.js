@@ -4,6 +4,7 @@ import { useRecoilValue } from "recoil";
 import UserInfo from "../../Recoil/atom/userData";
 import { useHistory } from "react-router-dom";
 import guy from "../../imgs/Reference_1.png";
+import Burger from "./burger/burger";
 
 const NavBar = (props) => {
   const user = useRecoilValue(UserInfo);
@@ -75,7 +76,7 @@ const NavBar = (props) => {
           <Link className="links">Contact</Link>
         </div>
       </div>
-      {userDiv()}
+      <Burger />
     </nav>
   );
 };
