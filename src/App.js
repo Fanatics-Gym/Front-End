@@ -29,6 +29,7 @@ import Rules from "./Components/Rules/rules";
 import TeamTable from "./Components/teams/teamsTable";
 import TeamProfile from "./Components/teams/teamProfile";
 import CheckoutGearPage from "./Components/player/checkoutGear";
+import TermsOfCost from "./Components/application/applicationForm/termOfCost";
 
 // const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_KEY);
 function App() {
@@ -69,6 +70,7 @@ function App() {
           <Route path="/teams" component={TeamTable} />
           <Route path="/teamProfile" component={TeamProfile} />
           <Route path="/checkoutGear" component={CheckoutGearPage} />
+          <Route path="/termsOfCost" component={TermsOfCost} />
         </div>
       </Router>
     </div>

@@ -1,0 +1,26 @@
+.termsHeader {
+  display: flex;
+  justify-content: center;
+  div {
+    display: flex;
+    flex-direction: column;
+    h2 {
+      font-size: 2rem;
+      text-decoration: underline;
+    }
+  }
+}
+.termsContent {
+  width: 75%;
+  margin: 5% auto;
+
+  li {
+    font-size: 1.2rem;
+    line-height: 2rem;
+  }
+}
+
+.downloadLink {
+  display: flex;
+  justify-content: center;
+}
