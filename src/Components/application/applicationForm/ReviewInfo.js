@@ -9,69 +9,70 @@ const ReviewInfo = (application) => {
         <h3>Player Info</h3>
         <p>
           <b>Name: </b>
-          {values.first_name} {values.mi}. {values.last_name}
+          {values.info.first_name} {values.info.mi}. {values.info.last_name}
         </p>
         <p>
           <b>Email: </b>
-          {values.email}
+          {values.info.email}
         </p>
         <p>
           <b>Phone Number: </b>({values.phone.toString().slice(0, 3)})-
-          {values.phone.toString().slice(3, 6)}-
-          {values.phone.toString().slice(6)}
+          {values.info.phone.toString().slice(3, 6)}-
+          {values.info.phone.toString().slice(6)}
         </p>
         <p>
           <b>Alt-Phone: </b>({values.Altphone.toString().slice(0, 3)})-
-          {values.Altphone.toString().slice(3, 6)}-
-          {values.Altphone.toString().slice(6)}
+          {values.info.Altphone.toString().slice(3, 6)}-
+          {values.info.Altphone.toString().slice(6)}
         </p>
         <p>
           <b>Date of Birth: </b>
-          {values.DOB}
+          {values.info.DOB}
         </p>
       </section>
       <section>
         <h3>Emergency Info</h3>
         <p>
           <b>Name: </b>
-          {values.Em_First} {values.Em_Last}
+          {values.info.Em_First} {values.info.Em_Last}
         </p>
         <p>
           <b>Relation: </b>
-          {values.relation}
+          {values.info.relation}
         </p>
         <p>
-          <b>Phone Number: </b>({values.em_phone.toString().slice(0, 3)})-
-          {values.em_phone.toString().slice(3, 6)}-
-          {values.em_phone.toString().slice(6)}
+          <b>Phone Number: </b>({values.info.em_phone.toString().slice(0, 3)})-
+          {values.info.em_phone.toString().slice(3, 6)}-
+          {values.info.em_phone.toString().slice(6)}
         </p>
       </section>
       <section>
         <h3>Verification Info</h3>
         <p>
           <b>Drivers license#: </b>
-          {values.Drivers_license}
+          {values.info.Drivers_license}
         </p>
         <p>
           <b>Expiration: </b>
-          {values.DL_Expiration}
+          {values.info.DL_Expiration}
         </p>
         <p>
           <b>Address: </b>
-          {values.address}
+          {values.info.address}
         </p>
         <p>
-          {values.city}, {values.address_state} {values.zip}
+          {values.info.city}, {values.info.address_state} {values.info.zip}
         </p>
       </section>
       <section>
         <h3>Current Residence</h3>
         <p>
           <b>Address: </b>
-          {values.current_address}
+          {values.info.current_address}
         </p>
         <p>
-          {values.current_city}, {values.current_state} {values.current_zip}
+          {values.info.current_city}, {values.info.current_state}{" "}
+          {values.info.current_zip}
         </p>
       </section>
     </div>
