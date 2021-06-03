@@ -1,6 +1,6 @@
 import React from "react";
 import CurrentResidence from "./currentResidenceForm";
-import { states } from "./states";
+import { states } from "../../utils/states";
 
 const DriversLicense = ({ values, handleChange, errors, touched }) => {
   return (

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { states } from "./states";
+import { states } from "../../utils/states";
 
 const CurrentAddress = ({ values, handleChange }) => {
   return (
