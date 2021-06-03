@@ -12,6 +12,20 @@ const PaymentHolderName = ({ values, handleChange, errors, touched }) => {
     <div className="formGroup">
       <input
         placeholder="Card Holder Name"
+        name="paymentInfo.card_holder"
+        value={values}
+        onChange={handleChange}
+      />
+    </div>
+  );
+};
+
+const PaymentNumber = ({ values, handleChange, errors, touched }) => {
+  return (
+    <div className="formGroup">
+      <input
+        placeholder="Credit Card Number"
+        name="paymentInfo.card_number"
         value={values}
         onChange={handleChange}
       />
@@ -21,9 +35,12 @@ const PaymentHolderName = ({ values, handleChange, errors, touched }) => {
 
 const PaymentForm = () => {
   return (
-    <div className="paymentCont">
+    <div className="paymentMethodCont">
       <h3>Payment Method</h3>
-      <PaymentHolderName />
+      <div className="paymentContent">
+        <PaymentHolderName />
+        <PaymentNumber />
+      </div>
     </div>
   );
 };
