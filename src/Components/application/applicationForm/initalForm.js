@@ -12,7 +12,8 @@ import { EmergencySchema, TermsSchema } from "../../../yup/EmergencySchema";
 import { BaseUrl } from "../../Auth/axios";
 import { SubmitApplication } from "../../../Recoil/apiCalls/applicationApiCalls";
 import ReviewInfo from "./ReviewInfo";
-import PaymentForm from "./paymentForm";
+import PaymentDetails from "./paymentDetails";
+import PaymentForm from "./payment";
 
 const FormWrapper = ({ steps, activeStep, setActiveStep }) => {
   const { push } = useHistory();
@@ -85,6 +86,8 @@ const FormWrapper = ({ steps, activeStep, setActiveStep }) => {
               confirmTerms={confirmTerms}
               value={termsState}
             />
+          ) : activeStep === 5 ? (
+            <PaymentDetails />
           ) : (
             <PaymentForm />
           )}

@@ -12,7 +12,8 @@ const ApplicationForm = () => {
     "Emergency Contact",
     "Review",
     "Terms & Conditions",
-    "Payment",
+    "Payment Details",
+    "Payment Method",
   ];
 
   return (

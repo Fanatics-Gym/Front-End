@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const PaymentForm = () => {
+const PaymentDetails = () => {
   return (
     <div className="paymentCont">
       <h3>Payment</h3>
@@ -36,4 +36,4 @@ const PaymentForm = () => {
   );
 };
 
-export default PaymentForm;
+export default PaymentDetails;
