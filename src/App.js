@@ -29,7 +29,7 @@ import Rules from "./Components/Rules/rules";
 import TeamTable from "./Components/teams/teamsTable";
 import TeamProfile from "./Components/teams/teamProfile";
 import CheckoutGearPage from "./Components/player/checkoutGear";
-import TermsOfCost from "./Components/application/applicationForm/termOfCost";
+import TermsOfCost from "./Components/application/applicationForm/payment/termOfCost";
 
 // const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_KEY);
 function App() {

@@ -16,12 +16,12 @@ const ReviewInfo = (application) => {
           {values.info.email}
         </p>
         <p>
-          <b>Phone Number: </b>({values.phone.toString().slice(0, 3)})-
+          <b>Phone Number: </b>({values.info.phone.toString().slice(0, 3)})-
           {values.info.phone.toString().slice(3, 6)}-
           {values.info.phone.toString().slice(6)}
         </p>
         <p>
-          <b>Alt-Phone: </b>({values.Altphone.toString().slice(0, 3)})-
+          <b>Alt-Phone: </b>({values.info.Altphone.toString().slice(0, 3)})-
           {values.info.Altphone.toString().slice(3, 6)}-
           {values.info.Altphone.toString().slice(6)}
         </p>

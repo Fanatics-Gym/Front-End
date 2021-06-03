@@ -1,5 +1,5 @@
 import React from "react";
-import termsPDF from "../../../pdf/Terms_of_Cost.docx.pdf";
+import termsPDF from "../../../../pdf/Terms_of_Cost.docx.pdf";
 
 const TermsOfCost = () => {
   return (

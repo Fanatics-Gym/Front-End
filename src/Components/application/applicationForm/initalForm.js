@@ -12,8 +12,8 @@ import { EmergencySchema, TermsSchema } from "../../../yup/EmergencySchema";
 import { BaseUrl } from "../../Auth/axios";
 import { SubmitApplication } from "../../../Recoil/apiCalls/applicationApiCalls";
 import ReviewInfo from "./ReviewInfo";
-import PaymentDetails from "./paymentDetails";
-import PaymentForm from "./paymentForm";
+import PaymentDetails from "./payment/paymentDetails";
+import PaymentForm from "./payment/paymentForm";
 
 const FormWrapper = ({ steps, activeStep, setActiveStep }) => {
   const { push } = useHistory();
@@ -55,7 +55,6 @@ const FormWrapper = ({ steps, activeStep, setActiveStep }) => {
       billing_country: "",
     },
   };
-  console.log(applicationInfo);
 
   console.log(termsState);
 
@@ -104,7 +103,7 @@ const FormWrapper = ({ steps, activeStep, setActiveStep }) => {
           ) : activeStep === 5 ? (
             <PaymentDetails />
           ) : (
-            <PaymentForm />
+            <PaymentForm {...props} />
           )}
           <Buttons
             steps={steps}
