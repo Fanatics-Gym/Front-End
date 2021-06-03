@@ -51,6 +51,7 @@ const FormWrapper = ({ steps, activeStep, setActiveStep }) => {
       billing_address: "",
       billing_apt: "",
       billing_city: "",
+      billing_state: "",
       billing_zip: "",
       billing_country: "",
     },
