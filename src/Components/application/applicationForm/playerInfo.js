@@ -1,15 +1,16 @@
 import React from "react";
 
 const FirstName = ({ values, errors, touched, handleChange }) => {
+  console.log(values);
   return (
     <div className="firstName">
       <input
         class="firstNLast"
         id="first_name"
-        name="first_name"
+        name="info.first_name"
         placeholder="First"
         autoComplete="First"
-        value={values.first_name}
+        value={values.info.first_name}
         onChange={handleChange}
       />
       <label htmlFor="first_name">
