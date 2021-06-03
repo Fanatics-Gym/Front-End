@@ -55,7 +55,6 @@ const FormWrapper = ({ steps, activeStep, setActiveStep }) => {
       billing_country: "",
     },
   };
-  console.log(applicationInfo);
 
   console.log(termsState);
 
