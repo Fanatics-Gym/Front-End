@@ -18,6 +18,20 @@ export const MultInputCont = styled.div`
   justify-content: space-between;
 `;
 
+export const Select = styled.select`
+  height: 2.3rem;
+  font-size: 1.6rem;
+  background: #f9f9f9;
+  border: none;
+  border-bottom: 1px solid #a1a1a1;
+  padding: 10px;
+  width: 100%;
+
+  ::placeholder {
+    font-size: 16px;
+  }
+`;
+
 export const Input = styled.input`
   height: 2.3rem;
   font-size: 1.6rem;

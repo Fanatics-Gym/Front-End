@@ -6,7 +6,14 @@ import {
   useElements,
   useStripe,
 } from "@stripe/react-stripe-js";
-import { InputCont, Input, PaymentCont, MultInputCont } from "./payment-styles";
+import {
+  InputCont,
+  Input,
+  PaymentCont,
+  MultInputCont,
+  Select,
+} from "./payment-styles";
+import { months, years } from "../../../utils/months";
 
 const PaymentHolderName = ({ values, handleChange, errors, touched }) => {
   return (
@@ -50,13 +57,22 @@ const PaymentCvv = ({ values, handleChange, errors, touched }) => {
 const ExpMonth = ({ values, handleChange, errors, touched }) => {
   return (
     <InputCont width="55%">
-      <Input
+      <Select
         placeholder="Month"
         type="month"
         name="paymentInfo.exp_month"
         value={values.paymentInfo.exp_month}
         onChange={handleChange}
-      />
+      >
+        <option value="" disabled>
+          Month
+        </option>
+        {months.map((month) => (
+          <option key={month.value} value={month.value}>
+            {month.label}
+          </option>
+        ))}
+      </Select>
     </InputCont>
   );
 };
@@ -64,13 +80,22 @@ const ExpMonth = ({ values, handleChange, errors, touched }) => {
 const ExpYear = ({ values, handleChange, errors, touched }) => {
   return (
     <InputCont width="40%">
-      <Input
+      <Select
         placeholder="Year"
         type="year"
         name="paymentInfo.exp_year"
         value={values.paymentInfo.exp_year}
         onChange={handleChange}
-      />
+      >
+        <option value="" disabled>
+          Year
+        </option>
+        {years.map((year) => (
+          <option key={year.value} value={year.value}>
+            {year.label}
+          </option>
+        ))}
+      </Select>
     </InputCont>
   );
 };
