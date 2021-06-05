@@ -202,6 +202,14 @@ const BillingCountry = ({ values, handleChange, errors, touched }) => {
 };
 
 const PaymentForm = ({ values, handleChange, errors, touched }) => {
+  const [current, setCurrent] = useState(false);
+  const changeCurrent = () => {
+    setCurrent(!current);
+    values.paymentInfo.billing_address = values.info.address;
+    values.paymentInfo.current_city = values.info.city;
+    values.paymentInfo.current_zip = values.info.zip;
+    values.paymentInfo.current_state = values.info.address_state;
+  };
   console.log(countries);
   return (
     <PaymentCont>
