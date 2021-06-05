@@ -12,6 +12,7 @@ import {
   PaymentCont,
   MultInputCont,
   Select,
+  Span,
 } from "./payment-styles";
 import { months, years } from "../../../utils/months";
 import { countries, states } from "./../../../utils/states";
@@ -203,14 +204,15 @@ const BillingCountry = ({ values, handleChange, errors, touched }) => {
 
 const PaymentForm = ({ values, handleChange, errors, touched }) => {
   const [current, setCurrent] = useState(false);
+  console.log(values);
   const changeCurrent = () => {
     setCurrent(!current);
     values.paymentInfo.billing_address = values.info.address;
-    values.paymentInfo.current_city = values.info.city;
-    values.paymentInfo.current_zip = values.info.zip;
-    values.paymentInfo.current_state = values.info.address_state;
+    values.paymentInfo.billing_city = values.info.city;
+    values.paymentInfo.billing_zip = values.info.zip;
+    values.paymentInfo.billing_state = values.info.address_state;
   };
-  console.log(countries);
+
   return (
     <PaymentCont>
       <h3>Payment Method</h3>
@@ -226,6 +228,10 @@ const PaymentForm = ({ values, handleChange, errors, touched }) => {
         </MultInputCont>
       </div>
       <h3>Billing Address</h3>
+      <Span>
+        <label>Same As Current Address</label>
+        <input type="checkbox" onClick={changeCurrent} />
+      </Span>
       <div>
         <MultInputCont>
           <BillinAddress values={values} handleChange={handleChange} />

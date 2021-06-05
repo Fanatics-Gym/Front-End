@@ -30,7 +30,7 @@ const MI = ({ values, handleChange }) => {
         name="mi"
         placeholder="M.I."
         autoComplete="Middle"
-        value={values.mi}
+        value={values.info.mi}
         onChange={handleChange}
       />
       <label htmlFor="last_name">M.I</label>
@@ -47,7 +47,7 @@ const LastName = ({ values, errors, touched, handleChange }) => {
         name="last_name"
         placeholder="Last"
         autoComplete="lname"
-        value={values.last_name}
+        value={values.info.last_name}
         onChange={handleChange}
       />
       <label htmlFor="last_name">
@@ -66,7 +66,7 @@ const Email = ({ values, errors, touched, handleChange }) => {
         name="email"
         placeholder="Example@FanaticsGym.com"
         autoComplete="email"
-        value={values.email}
+        value={values.info.email}
         onChange={handleChange}
       />
       <label htmlFor="email">
@@ -86,7 +86,7 @@ const Phone = ({ errors, touched, values, handleChange }) => {
         placeholder="(xxx) xxx-xxxx"
         autoComplete="phone"
         type="number"
-        value={values.phone}
+        value={values.info.phone}
         onChange={handleChange}
       />
       <label htmlFor="phone">
@@ -105,7 +105,7 @@ const DateOfBirth = ({ values, handleChange, errors, touched }) => {
         name="DOB"
         placeholder="Date of Birth"
         type="date"
-        value={values.DOB}
+        value={values.info.DOB}
         onChange={handleChange}
       />
       <label htmlFor="DOB">
@@ -125,7 +125,7 @@ const AltPhone = ({ values, handleChange }) => {
         placeholder="(xxx) xxx-xxxx"
         autoComplete="phone"
         type="number"
-        value={values.Altphone}
+        value={values.info.Altphone}
         onChange={handleChange}
       />
       <label htmlFor="Alt phone">Alt Phone Number</label>

@@ -45,3 +45,7 @@ export const Input = styled.input`
     font-size: 16px;
   }
 `;
+
+export const Span = styled.span`
+  margin: 0 auto 15px auto;
+`;

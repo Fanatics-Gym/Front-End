@@ -9,7 +9,7 @@ const CurrentAddress = ({ values, handleChange }) => {
         name="current_address"
         placeholder="Street"
         onChange={handleChange}
-        value={values.current_address}
+        value={values.info.current_address}
       />
       <label htmlFor="address">Address</label>
       {/* {errors.address && touched.address && <p>{errors.address}</p>} */}
@@ -25,7 +25,7 @@ const CurrentCity = ({ handleChange, values, errors, touched }) => {
         name="current_city"
         placeholder="City"
         onChange={handleChange}
-        value={values.current_city}
+        value={values.info.current_city}
         autoComplete="billing address-level2"
       />
       <label htmlFor="city">City</label>
@@ -42,7 +42,7 @@ const CurrentZip = ({ handleChange, values, errors, touched }) => {
         name="current_zip"
         type="number"
         placeholder="Zip/Postal Code"
-        value={values.current_zip}
+        value={values.info.current_zip}
         onChange={handleChange}
       />
       <label htmlFor="zip">Zip Code</label>
@@ -57,7 +57,7 @@ const CurrentState = ({ values, handleChange, errors, touched }) => {
       <select
         id="current_state"
         name="current_state"
-        value={values.current_state}
+        value={values.info.current_state}
         onChange={handleChange}
       >
         <option value="" disabled>
@@ -79,10 +79,10 @@ const CurrentResidence = ({ value, handleChange, errors, touched }) => {
   const [current, setCurrent] = useState(false);
   const changeCurrent = () => {
     setCurrent(!current);
-    value.info.current_address = value.info.address;
-    value.info.current_city = value.info.city;
-    value.info.current_zip = value.info.zip;
-    value.info.current_state = value.info.address_state;
+    value.info.current_address = value.info.current_address;
+    value.info.current_city = value.info.current_city;
+    value.info.current_zip = value.info.current_zip;
+    value.info.current_state = value.info.current_state;
   };
 
   return (

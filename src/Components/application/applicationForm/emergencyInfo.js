@@ -7,7 +7,7 @@ const EmergencyFirst = ({ values, handleChange, errors, touched }) => {
         id="Em_First"
         name="Em_First"
         placeholder="First"
-        value={values.Em_First}
+        value={values.info.Em_First}
         onChange={handleChange}
       />
       <label htmlFor="firstName">
@@ -25,7 +25,7 @@ const EmergencyLast = ({ values, handleChange, errors, touched }) => {
         id="Em_Last"
         name="Em_Last"
         placeholder="Last"
-        value={values.Em_Last}
+        value={values.info.Em_Last}
         onChange={handleChange}
       />
       <label htmlFor="lastName">
@@ -43,7 +43,7 @@ const EmergencyRelation = ({ values, handleChange, errors, touched }) => {
         id="relation"
         name="relation"
         placeholder="Family/Friend/Etc."
-        value={values.relation}
+        value={values.info.relation}
         onChange={handleChange}
       />
       <label htmlFor="relation">
@@ -62,7 +62,7 @@ const EmergencyPhone = ({ values, handleChange, errors, touched }) => {
         name="em_phone"
         placeholder="(xxx) xxx-xxxx"
         type="number"
-        value={values.em_phone}
+        value={values.info.em_phone}
         onChange={handleChange}
       />
       <label>
