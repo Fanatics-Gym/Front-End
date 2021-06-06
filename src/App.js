@@ -30,8 +30,10 @@ import TeamTable from "./Components/teams/teamsTable";
 import TeamProfile from "./Components/teams/teamProfile";
 import CheckoutGearPage from "./Components/player/checkoutGear";
 import TermsOfCost from "./Components/application/applicationForm/payment/termOfCost";
+import { Elements } from "@stripe/react-stripe-js";
+import { loadStripe } from "@stripe/stripe-js";
 
-// const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_KEY);
+const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_KEY);
 function App() {
   useEffect(() => {
     initGA("UA-159198142-1");
@@ -52,13 +54,14 @@ function App() {
           <Route path="/cart" component={Cart} />
           <Route path="/item" component={ItemPage} />
           <Route path="/football" component={FootballPage} />
-          <Route path="/footballapply" component={ApplicationForm} />
+
           <Route path="/confirmation" component={ConfirmationPage} />
-          {/* <Elements stripe={stripePromise}> */}
-          <Route path="/checkout" component={Checkout} />
-          <Route path="/view-applications" component={ViewApplications} />
-          <Route path="/represent" component={RepresentPage} />
-          {/* </Elements> */}
+          <Elements stripe={stripePromise}>
+            <Route path="/footballapply" component={ApplicationForm} />
+            <Route path="/checkout" component={Checkout} />
+            <Route path="/view-applications" component={ViewApplications} />
+            <Route path="/represent" component={RepresentPage} />
+          </Elements>
           <Route path="/player-profile" component={PlayerProfile} />
           <Route path="/pick-gear" component={PickGear} />
           <Route path="/new-p-signUp/:id" component={SignUp} />

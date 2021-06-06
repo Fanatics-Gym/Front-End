@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import { loadStripe } from "@stripe/stripe-js";
 import {
+  CardCvcElement,
   CardElement,
+  CardExpiryElement,
+  CardNumberElement,
   Elements,
   useElements,
   useStripe,
@@ -12,9 +15,13 @@ import {
   PaymentCont,
   MultInputCont,
   Select,
+  Span,
+  Button,
 } from "./payment-styles";
 import { months, years } from "../../../utils/months";
 import { countries, states } from "./../../../utils/states";
+import { useEffect } from "react";
+import { BaseUrl } from "./../../../Auth/axios";
 
 const PaymentHolderName = ({ values, handleChange, errors, touched }) => {
   return (
@@ -31,8 +38,9 @@ const PaymentHolderName = ({ values, handleChange, errors, touched }) => {
 
 const PaymentNumber = ({ values, handleChange, errors, touched }) => {
   return (
-    <InputCont width="55%">
-      <Input
+    <InputCont width="35%">
+      <CardNumberElement
+        className="paymentInput"
         placeholder="Card Number"
         name="paymentInfo.card_number"
         value={values.paymentInfo.card_number}
@@ -44,8 +52,9 @@ const PaymentNumber = ({ values, handleChange, errors, touched }) => {
 
 const PaymentCvv = ({ values, handleChange, errors, touched }) => {
   return (
-    <InputCont width="40%">
-      <Input
+    <InputCont width="25%">
+      <CardCvcElement
+        className="paymentInput"
         placeholder="CVV"
         name="paymentInfo.card_cvv"
         value={values.paymentInfo.card_cvv}
@@ -57,15 +66,16 @@ const PaymentCvv = ({ values, handleChange, errors, touched }) => {
 
 const ExpMonth = ({ values, handleChange, errors, touched }) => {
   return (
-    <InputCont width="55%">
-      <Select
+    <InputCont width="35%">
+      <CardExpiryElement
+        className="paymentInput"
         placeholder="Month"
         type="month"
         name="paymentInfo.exp_month"
         value={values.paymentInfo.exp_month}
         onChange={handleChange}
-      >
-        <option value="" disabled>
+      />
+      {/* <option value="" disabled>
           Month
         </option>
         {months.map((month) => (
@@ -73,7 +83,7 @@ const ExpMonth = ({ values, handleChange, errors, touched }) => {
             {month.label}
           </option>
         ))}
-      </Select>
+      </Select> */}
     </InputCont>
   );
 };
@@ -202,22 +212,81 @@ const BillingCountry = ({ values, handleChange, errors, touched }) => {
 };
 
 const PaymentForm = ({ values, handleChange, errors, touched }) => {
-  console.log(countries);
+  const [current, setCurrent] = useState(false);
+  const [succeeded, setSucceeded] = useState(false);
+  const [error, setError] = useState(null);
+  const [processing, setProcessing] = useState("");
+  const [disabled, setDisabled] = useState(true);
+  const [clientSecret, setClientSecret] = useState("");
+  const stripe = useStripe();
+  const elements = useElements();
+
+  const handleSubmit = async (ev) => {
+    ev.preventDefault();
+
+    const billingDetails = {
+      name: ev.target.name.value,
+      email: ev.target.email.value,
+      address: {
+        city: ev.target.city.value,
+        state: ev.target.state.value,
+        postal_code: ev.target.zip.value,
+      },
+    };
+
+    BaseUrl()
+      .post(`checkout/gear-and-season`, {
+        card: elements.getElement(CardElement),
+      })
+      .then((data) => {
+        console.log(data);
+        setClientSecret(data.clientSecret);
+      });
+
+    const cardElement = elements.getElement(CardElement);
+
+    const paymentMethod = await stripe.createPaymentMethod({
+      type: "card",
+      card: cardElement,
+      billing_details: billingDetails,
+    });
+
+    console.log(paymentMethod);
+
+    const confirmPayment = await stripe.confirmCardPayment(clientSecret, {
+      payment_method: paymentMethod.paymentMethod.id,
+    });
+  };
+
+  console.log(values);
+
+  const changeCurrent = () => {
+    setCurrent(!current);
+    values.paymentInfo.billing_address = values.info.current_address;
+    values.paymentInfo.billing_city = values.info.current_city;
+    values.paymentInfo.billing_zip = values.info.current_zip;
+    values.paymentInfo.billing_state = values.info.current_state;
+  };
+
   return (
-    <PaymentCont>
+    <PaymentCont id="payment-form" onSubmit={handleSubmit}>
       <h3>Payment Method</h3>
       <div>
         <PaymentHolderName values={values} handleChange={handleChange} />
         <MultInputCont>
           <PaymentNumber values={values} handleChange={handleChange} />
-          <PaymentCvv values={values} handleChange={handleChange} />
+          <PaymentCvv values={values} handleChange={handleChange} />{" "}
+          <ExpMonth values={values} handleChange={handleChange} />
         </MultInputCont>
         <MultInputCont>
-          <ExpMonth values={values} handleChange={handleChange} />
-          <ExpYear values={values} handleChange={handleChange} />
+          {/* <ExpYear values={values} handleChange={handleChange} /> */}
         </MultInputCont>
       </div>
       <h3>Billing Address</h3>
+      <Span>
+        <label>Same As Current Address</label>
+        <input type="checkbox" onClick={changeCurrent} />
+      </Span>
       <div>
         <MultInputCont>
           <BillinAddress values={values} handleChange={handleChange} />
@@ -232,6 +301,27 @@ const PaymentForm = ({ values, handleChange, errors, touched }) => {
           <BillingCountry values={values} handleChange={handleChange} />
         </MultInputCont>
       </div>
+      <Button disabled={processing || disabled || succeeded} id="submit">
+        <span id="button-text">
+          {processing ? (
+            <div className="spinner" id="spinner"></div>
+          ) : (
+            "Pay Now"
+          )}
+        </span>
+      </Button>{" "}
+      {error && (
+        <div className="card-error" role="alert">
+          {error}
+        </div>
+      )}
+      <p className={succeeded ? "result-message" : "result-message hidden"}>
+        Payment succeeded, see the result in your
+        <a href={`https://dashboard.stripe.com/test/payments`}>
+          Stripe dashboard.
+        </a>{" "}
+        Refresh the page to pay again.
+      </p>
     </PaymentCont>
   );
 };

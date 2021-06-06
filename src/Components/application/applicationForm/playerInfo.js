@@ -22,15 +22,16 @@ const FirstName = ({ values, errors, touched, handleChange }) => {
 };
 
 const MI = ({ values, handleChange }) => {
+  console.log(values);
   return (
     <div className="mi">
       <input
         className="middleInt"
         id="mi"
-        name="mi"
+        name="info.mi"
         placeholder="M.I."
         autoComplete="Middle"
-        value={values.mi}
+        value={values.info.mi}
         onChange={handleChange}
       />
       <label htmlFor="last_name">M.I</label>
@@ -44,10 +45,10 @@ const LastName = ({ values, errors, touched, handleChange }) => {
       <input
         class="firstNLast"
         id="last_name"
-        name="last_name"
+        name="info.last_name"
         placeholder="Last"
         autoComplete="lname"
-        value={values.last_name}
+        value={values.info.last_name}
         onChange={handleChange}
       />
       <label htmlFor="last_name">
@@ -63,10 +64,10 @@ const Email = ({ values, errors, touched, handleChange }) => {
     <div className="formGroup">
       <input
         id="Email"
-        name="email"
+        name="info.email"
         placeholder="Example@FanaticsGym.com"
         autoComplete="email"
-        value={values.email}
+        value={values.info.email}
         onChange={handleChange}
       />
       <label htmlFor="email">
@@ -82,11 +83,11 @@ const Phone = ({ errors, touched, values, handleChange }) => {
     <div className="formGroup">
       <input
         id="phone"
-        name="phone"
+        name="info.phone"
         placeholder="(xxx) xxx-xxxx"
         autoComplete="phone"
         type="number"
-        value={values.phone}
+        value={values.info.phone}
         onChange={handleChange}
       />
       <label htmlFor="phone">
@@ -102,10 +103,10 @@ const DateOfBirth = ({ values, handleChange, errors, touched }) => {
     <div className="formGroup">
       <input
         id="DOB"
-        name="DOB"
+        name="info.DOB"
         placeholder="Date of Birth"
         type="date"
-        value={values.DOB}
+        value={values.info.DOB}
         onChange={handleChange}
       />
       <label htmlFor="DOB">
@@ -121,11 +122,11 @@ const AltPhone = ({ values, handleChange }) => {
     <div className="formGroup">
       <input
         id="Altphone"
-        name="Altphone"
+        name="info.Altphone"
         placeholder="(xxx) xxx-xxxx"
         autoComplete="phone"
         type="number"
-        value={values.Altphone}
+        value={values.info.Altphone}
         onChange={handleChange}
       />
       <label htmlFor="Alt phone">Alt Phone Number</label>
