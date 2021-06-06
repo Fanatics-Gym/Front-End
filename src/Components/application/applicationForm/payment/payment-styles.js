@@ -49,3 +49,5 @@ export const Input = styled.input`
 export const Span = styled.span`
   margin: 0 auto 15px auto;
 `;
+
+// export const CardNumber = styled.CardNumberElement``;

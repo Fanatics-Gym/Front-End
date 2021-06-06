@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import { loadStripe } from "@stripe/stripe-js";
 import {
+  CardCvcElement,
   CardElement,
+  CardExpiryElement,
+  CardNumberElement,
   Elements,
   useElements,
   useStripe,
@@ -32,8 +35,9 @@ const PaymentHolderName = ({ values, handleChange, errors, touched }) => {
 
 const PaymentNumber = ({ values, handleChange, errors, touched }) => {
   return (
-    <InputCont width="55%">
-      <Input
+    <InputCont width="35%">
+      <CardNumberElement
+        className="paymentInput"
         placeholder="Card Number"
         name="paymentInfo.card_number"
         value={values.paymentInfo.card_number}
@@ -45,8 +49,9 @@ const PaymentNumber = ({ values, handleChange, errors, touched }) => {
 
 const PaymentCvv = ({ values, handleChange, errors, touched }) => {
   return (
-    <InputCont width="40%">
-      <Input
+    <InputCont width="25%">
+      <CardCvcElement
+        className="paymentInput"
         placeholder="CVV"
         name="paymentInfo.card_cvv"
         value={values.paymentInfo.card_cvv}
@@ -58,15 +63,16 @@ const PaymentCvv = ({ values, handleChange, errors, touched }) => {
 
 const ExpMonth = ({ values, handleChange, errors, touched }) => {
   return (
-    <InputCont width="55%">
-      <Select
+    <InputCont width="35%">
+      <CardExpiryElement
+        className="paymentInput"
         placeholder="Month"
         type="month"
         name="paymentInfo.exp_month"
         value={values.paymentInfo.exp_month}
         onChange={handleChange}
-      >
-        <option value="" disabled>
+      />
+      {/* <option value="" disabled>
           Month
         </option>
         {months.map((month) => (
@@ -74,7 +80,7 @@ const ExpMonth = ({ values, handleChange, errors, touched }) => {
             {month.label}
           </option>
         ))}
-      </Select>
+      </Select> */}
     </InputCont>
   );
 };
@@ -204,6 +210,7 @@ const BillingCountry = ({ values, handleChange, errors, touched }) => {
 
 const PaymentForm = ({ values, handleChange, errors, touched }) => {
   const [current, setCurrent] = useState(false);
+
   console.log(values);
   const changeCurrent = () => {
     setCurrent(!current);
@@ -220,11 +227,11 @@ const PaymentForm = ({ values, handleChange, errors, touched }) => {
         <PaymentHolderName values={values} handleChange={handleChange} />
         <MultInputCont>
           <PaymentNumber values={values} handleChange={handleChange} />
-          <PaymentCvv values={values} handleChange={handleChange} />
+          <PaymentCvv values={values} handleChange={handleChange} />{" "}
+          <ExpMonth values={values} handleChange={handleChange} />
         </MultInputCont>
         <MultInputCont>
-          <ExpMonth values={values} handleChange={handleChange} />
-          <ExpYear values={values} handleChange={handleChange} />
+          {/* <ExpYear values={values} handleChange={handleChange} /> */}
         </MultInputCont>
       </div>
       <h3>Billing Address</h3>
