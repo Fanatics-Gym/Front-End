@@ -5,7 +5,7 @@ const EmergencyFirst = ({ values, handleChange, errors, touched }) => {
     <div className="formGroup">
       <input
         id="Em_First"
-        name="Em_First"
+        name="info.Em_First"
         placeholder="First"
         value={values.info.Em_First}
         onChange={handleChange}
@@ -23,7 +23,7 @@ const EmergencyLast = ({ values, handleChange, errors, touched }) => {
     <div className="formGroup">
       <input
         id="Em_Last"
-        name="Em_Last"
+        name="info.Em_Last"
         placeholder="Last"
         value={values.info.Em_Last}
         onChange={handleChange}
@@ -41,7 +41,7 @@ const EmergencyRelation = ({ values, handleChange, errors, touched }) => {
     <div className="formGroup">
       <input
         id="relation"
-        name="relation"
+        name="info.relation"
         placeholder="Family/Friend/Etc."
         value={values.info.relation}
         onChange={handleChange}
@@ -59,7 +59,7 @@ const EmergencyPhone = ({ values, handleChange, errors, touched }) => {
     <div className="formGroup">
       <input
         id="em_phone"
-        name="em_phone"
+        name="info.em_phone"
         placeholder="(xxx) xxx-xxxx"
         type="number"
         value={values.info.em_phone}

@@ -6,7 +6,7 @@ const CurrentAddress = ({ values, handleChange }) => {
     <div className="formGroup">
       <input
         id="current_address"
-        name="current_address"
+        name="info.current_address"
         placeholder="Street"
         onChange={handleChange}
         value={values.info.current_address}
@@ -22,7 +22,7 @@ const CurrentCity = ({ handleChange, values, errors, touched }) => {
     <div className="formGroup">
       <input
         id="current_city"
-        name="current_city"
+        name="info.current_city"
         placeholder="City"
         onChange={handleChange}
         value={values.info.current_city}
@@ -39,7 +39,7 @@ const CurrentZip = ({ handleChange, values, errors, touched }) => {
     <div className="formGroup">
       <input
         id="current_zip"
-        name="current_zip"
+        name="info.current_zip"
         type="number"
         placeholder="Zip/Postal Code"
         value={values.info.current_zip}
@@ -56,7 +56,7 @@ const CurrentState = ({ values, handleChange, errors, touched }) => {
     <div className="formGroup">
       <select
         id="current_state"
-        name="current_state"
+        name="info.current_state"
         value={values.info.current_state}
         onChange={handleChange}
       >
@@ -79,10 +79,10 @@ const CurrentResidence = ({ value, handleChange, errors, touched }) => {
   const [current, setCurrent] = useState(false);
   const changeCurrent = () => {
     setCurrent(!current);
-    value.info.current_address = value.info.current_address;
-    value.info.current_city = value.info.current_city;
-    value.info.current_zip = value.info.current_zip;
-    value.info.current_state = value.info.current_state;
+    value.info.current_address = value.info.address;
+    value.info.current_city = value.info.city;
+    value.info.current_zip = value.info.zip;
+    value.info.current_state = value.info.address_state;
   };
 
   return (

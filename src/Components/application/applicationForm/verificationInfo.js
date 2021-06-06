@@ -7,11 +7,11 @@ const DriversLicense = ({ values, handleChange, errors, touched }) => {
     <div className="formGroup">
       <input
         id="Drivers_license"
-        name="Drivers_license"
+        name="info.Drivers_license"
         placeholder="Driver's License #"
         autoComplete="DL"
         type="text"
-        value={values.Drivers_license}
+        value={values.info.Drivers_license}
         onChange={handleChange}
       />
       <label htmlFor="Drivers_licese">
@@ -29,11 +29,11 @@ const Expiration = ({ values, handleChange, errors, touched }) => {
     <div className="formGroup">
       <input
         id="DL_Expiration"
-        name="DL_Expiration"
+        name="info.DL_Expiration"
         placeholder="Driver's License Experation"
         autoComplete="email"
         type="date"
-        value={values.DL_Expiration}
+        value={values.info.DL_Expiration}
         onChange={handleChange}
       />
       <label htmlFor="DL_Expiration">
@@ -51,10 +51,10 @@ const AddressInput = ({ handleChange, values, errors, touched }) => {
     <div className="formGroup">
       <input
         id="address"
-        name="address"
+        name="info.address"
         placeholder="Street"
         onChange={handleChange}
-        value={values.address}
+        value={values.info.address}
       />
       <label htmlFor="address">
         Address<b className="inputRequired">*</b>
@@ -69,10 +69,10 @@ const CityInput = ({ handleChange, values, errors, touched }) => {
     <div className="formGroup">
       <input
         id="city"
-        name="city"
+        name="info.city"
         placeholder="City"
         onChange={handleChange}
-        value={values.city}
+        value={values.info.city}
         autoComplete="billing address-level2"
       />
       <label htmlFor="city">
@@ -88,10 +88,10 @@ const AddressState = ({ errors, touched, values, handleChange }) => {
     <div className="formGroup">
       <select
         id="address_state"
-        name="address_state"
+        name="info.address_state"
         value={values}
         onChange={handleChange}
-        value={values.address_state}
+        value={values.info.address_state}
         onChange={handleChange}
       >
         <option value="" disabled>
@@ -116,10 +116,10 @@ const ZipInput = ({ handleChange, values, errors, touched }) => {
     <div className="formGroup">
       <input
         id="zip"
-        name="zip"
+        name="info.zip"
         type="number"
         placeholder="Zip/Postal Code"
-        value={values.zip}
+        value={values.info.zip}
         onChange={handleChange}
       />
       <label htmlFor="zip">

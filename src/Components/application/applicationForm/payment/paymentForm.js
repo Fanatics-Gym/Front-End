@@ -207,10 +207,10 @@ const PaymentForm = ({ values, handleChange, errors, touched }) => {
   console.log(values);
   const changeCurrent = () => {
     setCurrent(!current);
-    values.paymentInfo.billing_address = values.info.address;
-    values.paymentInfo.billing_city = values.info.city;
-    values.paymentInfo.billing_zip = values.info.zip;
-    values.paymentInfo.billing_state = values.info.address_state;
+    values.paymentInfo.billing_address = values.info.current_address;
+    values.paymentInfo.billing_city = values.info.current_city;
+    values.paymentInfo.billing_zip = values.info.current_zip;
+    values.paymentInfo.billing_state = values.info.current_state;
   };
 
   return (

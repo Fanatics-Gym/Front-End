@@ -22,12 +22,13 @@ const FirstName = ({ values, errors, touched, handleChange }) => {
 };
 
 const MI = ({ values, handleChange }) => {
+  console.log(values);
   return (
     <div className="mi">
       <input
         className="middleInt"
         id="mi"
-        name="mi"
+        name="info.mi"
         placeholder="M.I."
         autoComplete="Middle"
         value={values.info.mi}
@@ -44,7 +45,7 @@ const LastName = ({ values, errors, touched, handleChange }) => {
       <input
         class="firstNLast"
         id="last_name"
-        name="last_name"
+        name="info.last_name"
         placeholder="Last"
         autoComplete="lname"
         value={values.info.last_name}
@@ -63,7 +64,7 @@ const Email = ({ values, errors, touched, handleChange }) => {
     <div className="formGroup">
       <input
         id="Email"
-        name="email"
+        name="info.email"
         placeholder="Example@FanaticsGym.com"
         autoComplete="email"
         value={values.info.email}
@@ -82,7 +83,7 @@ const Phone = ({ errors, touched, values, handleChange }) => {
     <div className="formGroup">
       <input
         id="phone"
-        name="phone"
+        name="info.phone"
         placeholder="(xxx) xxx-xxxx"
         autoComplete="phone"
         type="number"
@@ -102,7 +103,7 @@ const DateOfBirth = ({ values, handleChange, errors, touched }) => {
     <div className="formGroup">
       <input
         id="DOB"
-        name="DOB"
+        name="info.DOB"
         placeholder="Date of Birth"
         type="date"
         value={values.info.DOB}
@@ -121,7 +122,7 @@ const AltPhone = ({ values, handleChange }) => {
     <div className="formGroup">
       <input
         id="Altphone"
-        name="Altphone"
+        name="info.Altphone"
         placeholder="(xxx) xxx-xxxx"
         autoComplete="phone"
         type="number"
