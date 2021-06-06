@@ -16,9 +16,12 @@ import {
   MultInputCont,
   Select,
   Span,
+  Button,
 } from "./payment-styles";
 import { months, years } from "../../../utils/months";
 import { countries, states } from "./../../../utils/states";
+import { useEffect } from "react";
+import { BaseUrl } from "./../../../Auth/axios";
 
 const PaymentHolderName = ({ values, handleChange, errors, touched }) => {
   return (
@@ -210,8 +213,53 @@ const BillingCountry = ({ values, handleChange, errors, touched }) => {
 
 const PaymentForm = ({ values, handleChange, errors, touched }) => {
   const [current, setCurrent] = useState(false);
+  const [succeeded, setSucceeded] = useState(false);
+  const [error, setError] = useState(null);
+  const [processing, setProcessing] = useState("");
+  const [disabled, setDisabled] = useState(true);
+  const [clientSecret, setClientSecret] = useState("");
+  const stripe = useStripe();
+  const elements = useElements();
+
+  const handleSubmit = async (ev) => {
+    ev.preventDefault();
+
+    const billingDetails = {
+      name: ev.target.name.value,
+      email: ev.target.email.value,
+      address: {
+        city: ev.target.city.value,
+        state: ev.target.state.value,
+        postal_code: ev.target.zip.value,
+      },
+    };
+
+    BaseUrl()
+      .post(`checkout/gear-and-season`, {
+        card: elements.getElement(CardElement),
+      })
+      .then((data) => {
+        console.log(data);
+        setClientSecret(data.clientSecret);
+      });
+
+    const cardElement = elements.getElement(CardElement);
+
+    const paymentMethod = await stripe.createPaymentMethod({
+      type: "card",
+      card: cardElement,
+      billing_details: billingDetails,
+    });
+
+    console.log(paymentMethod);
+
+    const confirmPayment = await stripe.confirmCardPayment(clientSecret, {
+      payment_method: paymentMethod.paymentMethod.id,
+    });
+  };
 
   console.log(values);
+
   const changeCurrent = () => {
     setCurrent(!current);
     values.paymentInfo.billing_address = values.info.current_address;
@@ -221,7 +269,7 @@ const PaymentForm = ({ values, handleChange, errors, touched }) => {
   };
 
   return (
-    <PaymentCont>
+    <PaymentCont id="payment-form" onSubmit={handleSubmit}>
       <h3>Payment Method</h3>
       <div>
         <PaymentHolderName values={values} handleChange={handleChange} />
@@ -253,6 +301,27 @@ const PaymentForm = ({ values, handleChange, errors, touched }) => {
           <BillingCountry values={values} handleChange={handleChange} />
         </MultInputCont>
       </div>
+      <Button disabled={processing || disabled || succeeded} id="submit">
+        <span id="button-text">
+          {processing ? (
+            <div className="spinner" id="spinner"></div>
+          ) : (
+            "Pay Now"
+          )}
+        </span>
+      </Button>{" "}
+      {error && (
+        <div className="card-error" role="alert">
+          {error}
+        </div>
+      )}
+      <p className={succeeded ? "result-message" : "result-message hidden"}>
+        Payment succeeded, see the result in your
+        <a href={`https://dashboard.stripe.com/test/payments`}>
+          Stripe dashboard.
+        </a>{" "}
+        Refresh the page to pay again.
+      </p>
     </PaymentCont>
   );
 };

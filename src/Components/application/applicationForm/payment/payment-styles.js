@@ -50,4 +50,8 @@ export const Span = styled.span`
   margin: 0 auto 15px auto;
 `;
 
+export const Button = styled.button`
+  width: 250px;
+  margin: auto;
+`;
 // export const CardNumber = styled.CardNumberElement``;
