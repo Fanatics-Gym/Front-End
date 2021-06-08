@@ -211,54 +211,65 @@ const BillingCountry = ({ values, handleChange, errors, touched }) => {
   );
 };
 
-const PaymentForm = ({ values, handleChange, errors, touched }) => {
+const PaymentForm = ({ values, handleChange }) => {
   const [current, setCurrent] = useState(false);
-  const [succeeded, setSucceeded] = useState(false);
-  const [error, setError] = useState(null);
-  const [processing, setProcessing] = useState("");
-  const [disabled, setDisabled] = useState(true);
-  const [clientSecret, setClientSecret] = useState("");
+  const [isProcessing, setProcessingTo] = useState(false);
+  const [checkoutError, setCheckoutError] = useState();
+
   const stripe = useStripe();
   const elements = useElements();
 
-  const handleSubmit = async (ev) => {
-    ev.preventDefault();
-
-    const billingDetails = {
-      name: ev.target.name.value,
-      email: ev.target.email.value,
-      address: {
-        city: ev.target.city.value,
-        state: ev.target.state.value,
-        postal_code: ev.target.zip.value,
-      },
-    };
-
-    BaseUrl()
-      .post(`checkout/gear-and-season`, {
-        card: elements.getElement(CardElement),
-      })
-      .then((data) => {
-        console.log(data);
-        setClientSecret(data.clientSecret);
-      });
-
-    const cardElement = elements.getElement(CardElement);
-
-    const paymentMethod = await stripe.createPaymentMethod({
-      type: "card",
-      card: cardElement,
-      billing_details: billingDetails,
-    });
-
-    console.log(paymentMethod);
-
-    const confirmPayment = await stripe.confirmCardPayment(clientSecret, {
-      payment_method: paymentMethod.paymentMethod.id,
-    });
+  const handleCardDetailsChange = (ev) => {
+    ev.error ? setCheckoutError(ev.error.message) : setCheckoutError();
   };
 
-  console.log(values);
+  const handleSubmit = async (ev) => {
+    console.log("hit");
+    ev.preventDefault();
+
+    // const billingDetails = {
+    //   name: ev.target.name.value,
+    //   address: {
+    //     city: ev.target.city.value,
+    //     line1: ev.target.address.value,
+    //     state: ev.target.state.value,
+    //     postal_code: ev.target.zip.value,
+    //   },
+    // };
+
+    setProcessingTo(true);
+
+    const { data: clientSecret } = await BaseUrl().post(
+      "checkout/gear-and-season",
+      {
+        amount: 2000,
+      }
+    );
+    const cardElement = elements.getElement(CardNumberElement);
+    console.log(clientSecret);
+    console.log(cardElement);
+    const paymentMethodReq = await stripe.createPaymentMethod({
+      type: "card",
+      card: cardElement,
+      // billing_details: billingDetails,
+    });
+
+    if (paymentMethodReq.error) {
+      setCheckoutError(paymentMethodReq.error.message);
+      setProcessingTo(false);
+      return;
+    }
+
+    const { error } = await stripe.confirmCardPayment(clientSecret, {
+      payment_method: paymentMethodReq.paymentMethod.id,
+    });
+
+    if (error) {
+      setCheckoutError(error.message);
+      setProcessingTo(false);
+      return;
+    }
+  };
 
   const changeCurrent = () => {
     setCurrent(!current);
@@ -267,6 +278,8 @@ const PaymentForm = ({ values, handleChange, errors, touched }) => {
     values.paymentInfo.billing_zip = values.info.current_zip;
     values.paymentInfo.billing_state = values.info.current_state;
   };
+
+  console.log(values);
 
   return (
     <PaymentCont id="payment-form" onSubmit={handleSubmit}>
@@ -301,27 +314,13 @@ const PaymentForm = ({ values, handleChange, errors, touched }) => {
           <BillingCountry values={values} handleChange={handleChange} />
         </MultInputCont>
       </div>
-      <Button disabled={processing || disabled || succeeded} id="submit">
-        <span id="button-text">
-          {processing ? (
-            <div className="spinner" id="spinner"></div>
-          ) : (
-            "Pay Now"
-          )}
-        </span>
+      <Button disabled={isProcessing || !stripe} id="submit">
+        {isProcessing ? (
+          <div className="spinner" id="spinner"></div>
+        ) : (
+          "Pay Now $1500"
+        )}
       </Button>{" "}
-      {error && (
-        <div className="card-error" role="alert">
-          {error}
-        </div>
-      )}
-      <p className={succeeded ? "result-message" : "result-message hidden"}>
-        Payment succeeded, see the result in your
-        <a href={`https://dashboard.stripe.com/test/payments`}>
-          Stripe dashboard.
-        </a>{" "}
-        Refresh the page to pay again.
-      </p>
     </PaymentCont>
   );
 };
