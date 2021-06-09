@@ -23,16 +23,17 @@
 
   .navLinksLeft {
     margin: auto 0;
+    width: 30%;
   }
   .navLinks {
     display: flex;
     justify-content: flex-end;
-    padding: 15px;
-    margin: auto 0;
+    width: 30%;
+    margin: auto 15px;
   }
 }
 .links {
-  margin: 0 5%;
+  margin: 0 3%;
   text-decoration: none;
   color: white;
 
@@ -54,5 +55,20 @@
       bottom: 17px;
       right: 1px;
     }
+  }
+}
+
+.imgCont {
+  width: 35%;
+  display: flex;
+  img {
+    margin: auto;
+    width: 300px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  nav {
+    height: 150px;
   }
 }
