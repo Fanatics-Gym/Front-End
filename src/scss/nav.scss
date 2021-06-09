@@ -13,26 +13,19 @@
     color: white;
   }
 
-  .navLogo {
-    display: flex;
-    justify-content: flex-start;
-    img {
-      width: 100px;
-    }
-  }
-
   .navLinksLeft {
     margin: auto 0;
+    width: 35%;
   }
   .navLinks {
     display: flex;
     justify-content: flex-end;
-    padding: 15px;
-    margin: auto 0;
+    width: 35%;
+    margin: auto 15px;
   }
 }
 .links {
-  margin: 0 5%;
+  margin: 0 3%;
   text-decoration: none;
   color: white;
 
@@ -53,6 +46,33 @@
       position: relative;
       bottom: 17px;
       right: 1px;
+    }
+  }
+}
+
+.imgCont {
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  img {
+    margin: auto;
+    width: 300px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .nav {
+    height: 7%;
+
+    .imgCont {
+      width: 100%;
+      display: flex;
+      justify-content: flex-start;
+      img {
+        margin: 0;
+        width: 150px;
+      }
     }
   }
 }

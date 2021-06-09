@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useRecoilValue } from "recoil";
 import UserInfo from "../../Recoil/atom/userData";
 import { useHistory } from "react-router-dom";
-import guy from "../../imgs/Reference_1.png";
+import guy from "../../imgs/newNav.jpg";
 import Burger from "./burger/burger";
 import Menu from "./menu/menu";
 
@@ -16,31 +16,28 @@ const NavBar = (props) => {
     push("/login");
     window.location.reload();
   };
-
   if (window.screen.width >= 768) {
     return (
       <div className="nav">
-        <div className="navLogo">
-          <Link className="linkHome" to="/">
-            <div className="imgCont">
-              <img src={guy} alt="fanatics logo" />
-            </div>
+        <div className="navLinksLeft">
+          <Link className="links" to="/">
+            Home
           </Link>
-          <div className="navLinksLeft">
-            <Link className="links" to="/">
-              Home
-            </Link>
-            <Link className="links" to="/about">
-              About
-            </Link>
-            <Link className="links" to="/teams">
-              Teams
-            </Link>
-            <Link className="links" to="/rules">
-              Rules
-            </Link>
-            <Link className="links">Contact</Link>
-          </div>
+          <Link className="links" to="/about">
+            About
+          </Link>
+          <Link className="links" to="/teams">
+            Teams
+          </Link>
+          <Link className="links" to="/rules">
+            Rules
+          </Link>
+          <Link className="links">Contact</Link>
+        </div>
+        <div className="imgCont">
+          <Link className="linkHome" to="/">
+            <img src={guy} alt="fanatics logo" />
+          </Link>
         </div>
         <div className="navLinks">
           <Link className="links" to="/login">
@@ -52,11 +49,9 @@ const NavBar = (props) => {
   } else {
     return (
       <div className="nav">
-        <div className="navLogo">
+        <div className="imgCont">
           <Link className="linkHome" to="/">
-            <div className="imgCont">
-              <img src={guy} alt="fanatics logo" />
-            </div>
+            <img src={guy} alt="fanatics logo" />
           </Link>
         </div>
         <div className="navLinks">
