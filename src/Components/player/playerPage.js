@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import falcons from "../../imgs/teamLogo.png";
+import team from "../../imgs/washington_football_team_2020-pres-1.png";
 
 const PlayerPage = () => {
   return (
@@ -22,6 +24,22 @@ const PlayerPage = () => {
             </Link>
             <Link className="playerOption">My Schedule</Link>
           </div>
+        </div>
+        <div className="playerDashTeamCont">
+          <div className="playerTeamAndLogoCont">
+            <h2>Falcons</h2>
+            <img src={falcons} />
+          </div>
+          <div className="playerNextGame">
+            <h3>Next Game</h3>
+            <div>
+              <img src={falcons} />
+              <img src={team} />
+            </div>
+          </div>
+        </div>
+        <div className="playerDashStats">
+          <div>New</div>
         </div>
       </div>
     </div>

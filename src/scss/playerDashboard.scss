@@ -1,6 +1,7 @@
 .playerDashboardCont {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   .playerOptionsCont {
     display: flex;
     flex-direction: column;
@@ -19,5 +20,25 @@
         margin: 5px;
       }
     }
+  }
+
+  .playerDashTeamCont {
+    margin: 5%;
+    .playerTeamAndLogoCont {
+      display: flex;
+      justify-content: row;
+      h2 {
+        margin: auto 0;
+      }
+    }
+
+    .playerNextGame {
+    }
+    img {
+      width: 150px;
+    }
+  }
+
+  .playerDashStats {
   }
 }
