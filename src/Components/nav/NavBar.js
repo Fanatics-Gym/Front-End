@@ -49,11 +49,9 @@ const NavBar = (props) => {
   } else {
     return (
       <div className="nav">
-        <div className="navLogo">
+        <div className="imgCont">
           <Link className="linkHome" to="/">
-            <div className="imgCont">
-              <img src={guy} alt="fanatics logo" />
-            </div>
+            <img src={guy} alt="fanatics logo" />
           </Link>
         </div>
         <div className="navLinks">
