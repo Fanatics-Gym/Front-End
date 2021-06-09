@@ -23,16 +23,29 @@
   }
 
   .playerDashTeamCont {
-    margin: 5%;
+    display: flex;
+    flex-direction: column;
+    width: 35%;
+    margin: 5% auto;
     .playerTeamAndLogoCont {
       display: flex;
       justify-content: row;
+      margin: 0 auto;
       h2 {
         margin: auto 0;
       }
     }
 
     .playerNextGame {
+      margin: 5% auto;
+      text-align: center;
+      .vsCont {
+        margin: auto 0;
+        display: flex;
+        img {
+          padding: 15px;
+        }
+      }
     }
     img {
       width: 150px;
