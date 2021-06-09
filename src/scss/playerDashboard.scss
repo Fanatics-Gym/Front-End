@@ -1,0 +1,23 @@
+.playerDashboardCont {
+  display: flex;
+  flex-direction: row;
+  .playerOptionsCont {
+    display: flex;
+    flex-direction: column;
+
+    .playerMenu {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+
+      .playerOption {
+        background-color: lightslategray;
+        border: black solid 1px;
+        text-decoration: none;
+        color: black;
+        padding: 2px 0;
+        margin: 5px;
+      }
+    }
+  }
+}

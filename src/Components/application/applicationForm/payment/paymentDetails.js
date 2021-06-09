@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const PaymentDetails = () => {
   return (
     <div className="paymentCont">
-      <h3>Payment</h3>
+      <h3 classname="paymentHeader">Payment</h3>
       <div className="paymentInfoCont">
         <div className="paymentInfo">
           <h4>Season {"&"} Gear</h4>
