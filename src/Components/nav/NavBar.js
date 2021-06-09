@@ -34,11 +34,11 @@ const NavBar = (props) => {
           </Link>
           <Link className="links">Contact</Link>
         </div>
-        <Link className="linkHome" to="/">
-          <div className="imgCont">
+        <div className="imgCont">
+          <Link className="linkHome" to="/">
             <img src={guy} alt="fanatics logo" />
-          </div>
-        </Link>
+          </Link>
+        </div>
         <div className="navLinks">
           <Link className="links" to="/login">
             Login

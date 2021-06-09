@@ -29,7 +29,7 @@
     display: flex;
     justify-content: flex-end;
     width: 30%;
-    margin: auto 15px;
+    margin: auto 0;
   }
 }
 .links {
@@ -59,8 +59,10 @@
 }
 
 .imgCont {
-  width: 35%;
+  width: 30%;
   display: flex;
+  justify-content: center;
+  margin: auto;
   img {
     margin: auto;
     width: 300px;
@@ -68,7 +70,7 @@
 }
 
 @media screen and (max-width: 768px) {
-  nav {
-    height: 150px;
+  .nav {
+    height: 7%;
   }
 }
