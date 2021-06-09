@@ -15,12 +15,12 @@
 
   .navLinksLeft {
     margin: auto 0;
-    width: 30%;
+    width: 35%;
   }
   .navLinks {
     display: flex;
     justify-content: flex-end;
-    width: 30%;
+    width: 35%;
     margin: auto 15px;
   }
 }
@@ -66,8 +66,9 @@
     height: 7%;
 
     .imgCont {
+      width: 100%;
       display: flex;
-      justify-content: flex-end;
+      justify-content: flex-start;
       img {
         margin: 0;
         width: 150px;
