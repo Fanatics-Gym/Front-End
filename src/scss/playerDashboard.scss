@@ -5,7 +5,7 @@
   .playerOptionsCont {
     display: flex;
     flex-direction: column;
-
+    width: 30%;
     .playerMenu {
       display: flex;
       flex-direction: column;
@@ -17,22 +17,36 @@
         text-decoration: none;
         color: black;
         padding: 2px 0;
+        width: 185px;
         margin: 5px;
       }
     }
   }
 
   .playerDashTeamCont {
-    margin: 5%;
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    margin: 5% auto;
     .playerTeamAndLogoCont {
       display: flex;
       justify-content: row;
+      margin: 0 auto;
       h2 {
         margin: auto 0;
       }
     }
 
     .playerNextGame {
+      margin: 5% auto;
+      text-align: center;
+      .vsCont {
+        margin: auto 0;
+        display: flex;
+        img {
+          padding: 15px;
+        }
+      }
     }
     img {
       width: 150px;
@@ -40,5 +54,6 @@
   }
 
   .playerDashStats {
+    width: 30%;
   }
 }

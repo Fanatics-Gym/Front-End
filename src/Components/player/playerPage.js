@@ -32,15 +32,13 @@ const PlayerPage = () => {
           </div>
           <div className="playerNextGame">
             <h3>Next Game</h3>
-            <div>
-              <img src={falcons} />
+            <div className="vsCont">
+              <img src={falcons} /> <h3>Vs</h3>
               <img src={team} />
             </div>
           </div>
         </div>
-        <div className="playerDashStats">
-          <div>New</div>
-        </div>
+        <div className="playerDashStats"></div>
       </div>
     </div>
   );
