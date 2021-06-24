@@ -5,7 +5,7 @@
   .playerOptionsCont {
     display: flex;
     flex-direction: column;
-
+    width: 30%;
     .playerMenu {
       display: flex;
       flex-direction: column;
@@ -17,6 +17,7 @@
         text-decoration: none;
         color: black;
         padding: 2px 0;
+        width: 185px;
         margin: 5px;
       }
     }
@@ -25,7 +26,7 @@
   .playerDashTeamCont {
     display: flex;
     flex-direction: column;
-    width: 35%;
+    width: 30%;
     margin: 5% auto;
     .playerTeamAndLogoCont {
       display: flex;
@@ -53,5 +54,6 @@
   }
 
   .playerDashStats {
+    width: 30%;
   }
 }

@@ -38,9 +38,7 @@ const PlayerPage = () => {
             </div>
           </div>
         </div>
-        <div className="playerDashStats">
-          <div>New</div>
-        </div>
+        <div className="playerDashStats"></div>
       </div>
     </div>
   );

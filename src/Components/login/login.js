@@ -32,7 +32,6 @@ const LoginForm = (props) => {
         if (type === "Admin") {
           props.history.push("/admin");
         } else if (type === "Player") {
-          console.log("hit");
           props.history.push("/player");
         }
       })
