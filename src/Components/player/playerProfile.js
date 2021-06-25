@@ -5,7 +5,8 @@ import NoImg from "../../imgs/download.png";
 
 const PlayerProfile = () => {
   const userData = useRecoilValue(UserInfo);
-  const info = userData.userInfo;
+  const info = userData;
+  console.log(info);
   return (
     <div className="componentCont">
       <div className="pageHeader">
@@ -25,11 +26,19 @@ const PlayerProfile = () => {
             <div>
               <p>
                 <b>Name: </b>
-                {info.first_name} {info.last_name}
+                {info.userInfo.first_name} {info.userInfo.last_name}
               </p>
               <p>
-                <b>Email: </b>
-                {info.email}
+                <b>Height: </b>
+                {info.profileInfo.height}
+              </p>
+              <p>
+                <b>Weight: </b>
+                {info.profileInfo.weight}
+              </p>
+              <p>
+                <b>Bio: </b>
+                {info.profileInfo.bio}
               </p>
             </div>
           </div>
