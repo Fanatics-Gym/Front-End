@@ -5,7 +5,8 @@ import NoImg from "../../imgs/download.png";
 
 const PlayerProfile = () => {
   const userData = useRecoilValue(UserInfo);
-  const info = userData.userInfo;
+  const info = userData;
+  console.log(info);
   return (
     <div className="componentCont">
       <div className="pageHeader">
@@ -15,21 +16,45 @@ const PlayerProfile = () => {
         <section className="playerInfoSection">
           <h3>Player Contact</h3>
           <div className="playerContactCont">
-            <div>
-              {info.img !== undefined ? (
-                <img src={info.img} alt="user img" />
-              ) : (
-                <img src={NoImg} alt="no img" />
-              )}
+            <div className="playerInfoCont">
+              <div>
+                {info.img !== undefined ? (
+                  <img src={info.img} alt="user img" />
+                ) : (
+                  <img src={NoImg} alt="no img" />
+                )}
+              </div>
+              <div>
+                <p>
+                  <b>Name: </b>
+                  {info.userInfo.first_name} {info.userInfo.last_name}
+                </p>
+                <p>
+                  <b>Height: </b>
+                  {info.profileInfo.height}
+                </p>
+                <p>
+                  <b>Weight: </b>
+                  {info.profileInfo.weight} LBS
+                </p>
+                <p>
+                  <b>Team: </b>
+                  {info.profileInfo.team ? info.profileInfo.team : "None"}
+                </p>
+              </div>
             </div>
             <div>
               <p>
-                <b>Name: </b>
-                {info.first_name} {info.last_name}
+                <b>Company: </b>
+                {info.profileInfo.company}
               </p>
               <p>
-                <b>Email: </b>
-                {info.email}
+                <b>Website: </b>
+                {info.profileInfo.website}
+              </p>
+              <p>
+                <b>Bio: </b>
+                {info.profileInfo.bio}
               </p>
             </div>
           </div>
@@ -39,19 +64,19 @@ const PlayerProfile = () => {
           <div>
             <p>
               <b>Tackles: </b>
-              {info.tackles}
+              {info.userInfo.tackles}
             </p>
             <p>
               <b>Interceptions: </b>
-              {info.Interceptions}
+              {info.userInfo.Interceptions}
             </p>
             <p>
               <b>Catches: </b>
-              {info.fumbles}
+              {info.userInfo.fumbles}
             </p>
             <p>
               <b>Touchdownes: </b>
-              {info.touchdowns}
+              {info.userInfo.touchdowns}
             </p>
           </div>
         </section>

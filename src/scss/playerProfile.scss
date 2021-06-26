@@ -18,9 +18,14 @@
 
     .playerContactCont {
       display: flex;
-      flex-flow: row wrap;
+      flex-flow: column wrap;
       justify-content: space-between;
       padding: 3%;
+
+      .playerInfoCont {
+        display: flex;
+        justify-content: space-between;
+      }
     }
   }
 }
