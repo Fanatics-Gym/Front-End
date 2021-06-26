@@ -48,19 +48,19 @@ const PlayerProfile = () => {
           <div>
             <p>
               <b>Tackles: </b>
-              {info.tackles}
+              {info.userInfo.tackles}
             </p>
             <p>
               <b>Interceptions: </b>
-              {info.Interceptions}
+              {info.userInfo.Interceptions}
             </p>
             <p>
               <b>Catches: </b>
-              {info.fumbles}
+              {info.userInfo.fumbles}
             </p>
             <p>
               <b>Touchdownes: </b>
-              {info.touchdowns}
+              {info.userInfo.touchdowns}
             </p>
           </div>
         </section>
