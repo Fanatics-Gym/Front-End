@@ -16,36 +16,34 @@ const PlayerProfile = () => {
         <section className="playerInfoSection">
           <h3>Player Contact</h3>
           <div className="playerContactCont">
-            <div>
-              {info.img !== undefined ? (
-                <img src={info.img} alt="user img" />
-              ) : (
-                <img src={NoImg} alt="no img" />
-              )}
+            <div className="playerInfoCont">
+              <div>
+                {info.img !== undefined ? (
+                  <img src={info.img} alt="user img" />
+                ) : (
+                  <img src={NoImg} alt="no img" />
+                )}
+              </div>
+              <div>
+                <p>
+                  <b>Name: </b>
+                  {info.userInfo.first_name} {info.userInfo.last_name}
+                </p>
+                <p>
+                  <b>Height: </b>
+                  {info.profileInfo.height}
+                </p>
+                <p>
+                  <b>Weight: </b>
+                  {info.profileInfo.weight} LBS
+                </p>
+                <p>
+                  <b>Team: </b>
+                  {info.profileInfo.team ? info.profileInfo.team : "None"}
+                </p>
+              </div>
             </div>
             <div>
-              <p>
-                <b>Name: </b>
-                {info.userInfo.first_name} {info.userInfo.last_name}
-              </p>
-              <p>
-                <b>Height: </b>
-                {info.profileInfo.height}
-              </p>
-              <p>
-                <b>Weight: </b>
-                {info.profileInfo.weight} LBS
-              </p>
-              <p>
-                <b>Team: </b>
-                {info.profileInfo.team ? info.profileInfo.team : "None"}
-              </p>
-            </div>
-            <div>
-              <p>
-                <b>Bio: </b>
-                {info.profileInfo.bio}
-              </p>
               <p>
                 <b>Company: </b>
                 {info.profileInfo.company}
@@ -53,6 +51,10 @@ const PlayerProfile = () => {
               <p>
                 <b>Website: </b>
                 {info.profileInfo.website}
+              </p>
+              <p>
+                <b>Bio: </b>
+                {info.profileInfo.bio}
               </p>
             </div>
           </div>
