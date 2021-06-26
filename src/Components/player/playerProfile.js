@@ -34,11 +34,25 @@ const PlayerProfile = () => {
               </p>
               <p>
                 <b>Weight: </b>
-                {info.profileInfo.weight}
+                {info.profileInfo.weight} LBS
               </p>
+              <p>
+                <b>Team: </b>
+                {info.profileInfo.team ? info.profileInfo.team : "None"}
+              </p>
+            </div>
+            <div>
               <p>
                 <b>Bio: </b>
                 {info.profileInfo.bio}
+              </p>
+              <p>
+                <b>Company: </b>
+                {info.profileInfo.company}
+              </p>
+              <p>
+                <b>Website: </b>
+                {info.profileInfo.website}
               </p>
             </div>
           </div>
