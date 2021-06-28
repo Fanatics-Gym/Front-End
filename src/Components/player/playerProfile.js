@@ -6,14 +6,11 @@ import NoImg from "../../imgs/download.png";
 const PlayerProfile = () => {
   const userData = useRecoilValue(UserInfo);
   const [edit, setEdit] = useState(false);
-
+  const info = userData;
   const editInfo = () => {
     setEdit(!edit);
   };
 
-  console.log(edit);
-  const info = userData;
-  console.log(info);
   return (
     <div className="componentCont">
       <div className="pageHeader">
