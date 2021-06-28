@@ -27,5 +27,21 @@
         justify-content: space-between;
       }
     }
+
+    .playerInititalInfo {
+      display: flex;
+      justify-content: space-between;
+
+      h4 {
+        margin-top: 0;
+        margin-left: 100px;
+        height: auto;
+      }
+
+      h4:hover {
+        text-decoration: underline;
+        cursor: pointer;
+      }
+    }
   }
 }
