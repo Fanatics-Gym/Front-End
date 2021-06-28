@@ -1,10 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import { useRecoilValue } from "recoil";
 import UserInfo from "../../Recoil/atom/userData";
 import NoImg from "../../imgs/download.png";
 
 const PlayerProfile = () => {
   const userData = useRecoilValue(UserInfo);
+  const [edit, setEdit] = useState(false);
+
+  const editInfo = () => {
+    setEdit(!edit);
+  };
+
+  console.log(edit);
   const info = userData;
   console.log(info);
   return (
@@ -31,11 +38,20 @@ const PlayerProfile = () => {
                   </p>
                   <p>
                     <b>Height: </b>
-                    {info.profileInfo.height}
+                    {edit ? (
+                      <input value={info.profileInfo.height} />
+                    ) : (
+                      info.profileInfo.height
+                    )}
                   </p>
                   <p>
                     <b>Weight: </b>
-                    {info.profileInfo.weight} LBS
+                    {edit ? (
+                      <input value={info.profileInfo.weight} />
+                    ) : (
+                      info.profileInfo.weight
+                    )}{" "}
+                    LBS
                   </p>
                   <p>
                     <b>Team: </b>
@@ -43,22 +59,34 @@ const PlayerProfile = () => {
                   </p>
                 </div>
                 <div>
-                  <h4>(edit)</h4>
+                  <h4 onClick={editInfo}>(edit)</h4>
                 </div>
               </div>
             </div>
             <div>
               <p>
                 <b>Company: </b>
-                {info.profileInfo.company}
+                {edit ? (
+                  <input value={info.profileInfo.company} />
+                ) : (
+                  info.profileInfo.company
+                )}
               </p>
               <p>
                 <b>Website: </b>
-                {info.profileInfo.website}
+                {edit ? (
+                  <input value={info.profileInfo.height} />
+                ) : (
+                  info.profileInfo.website
+                )}
               </p>
               <p>
                 <b>Bio: </b>
-                {info.profileInfo.bio}
+                {edit ? (
+                  <textarea value={info.profileInfo.bio} />
+                ) : (
+                  info.profileInfo.bio
+                )}
               </p>
             </div>
           </div>
