@@ -14,7 +14,6 @@ const PlayerProfile = () => {
       </div>
       <div className="playerInfoCont">
         <section className="playerInfoSection">
-          <h3>Player Contact</h3>
           <div className="playerContactCont">
             <div className="playerInfoCont">
               <div>
@@ -24,23 +23,28 @@ const PlayerProfile = () => {
                   <img src={NoImg} alt="no img" />
                 )}
               </div>
-              <div>
-                <p>
-                  <b>Name: </b>
-                  {info.userInfo.first_name} {info.userInfo.last_name}
-                </p>
-                <p>
-                  <b>Height: </b>
-                  {info.profileInfo.height}
-                </p>
-                <p>
-                  <b>Weight: </b>
-                  {info.profileInfo.weight} LBS
-                </p>
-                <p>
-                  <b>Team: </b>
-                  {info.profileInfo.team ? info.profileInfo.team : "None"}
-                </p>
+              <div className="playerInititalInfo">
+                <div>
+                  <p>
+                    <b>Name: </b>
+                    {info.userInfo.first_name} {info.userInfo.last_name}
+                  </p>
+                  <p>
+                    <b>Height: </b>
+                    {info.profileInfo.height}
+                  </p>
+                  <p>
+                    <b>Weight: </b>
+                    {info.profileInfo.weight} LBS
+                  </p>
+                  <p>
+                    <b>Team: </b>
+                    {info.profileInfo.team ? info.profileInfo.team : "None"}
+                  </p>
+                </div>
+                <div>
+                  <h4>(edit)</h4>
+                </div>
               </div>
             </div>
             <div>
