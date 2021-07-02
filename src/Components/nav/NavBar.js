@@ -9,6 +9,7 @@ import Menu from "./menu/menu";
 
 const NavBar = (props) => {
   const user = useRecoilValue(UserInfo);
+  console.log(user);
   const [open, setOpen] = useState(false);
   const { push } = useHistory();
   const logout = () => {
@@ -39,11 +40,22 @@ const NavBar = (props) => {
             <img src={guy} alt="fanatics logo" />
           </Link>
         </div>
-        <div className="navLinks">
-          <Link className="links" to="/login">
-            Login
-          </Link>
-        </div>
+        {user.userInfo ? (
+          <div className="navLinks">
+            <Link className="links" to="/player">
+              Dashboard
+            </Link>
+            <Link className="links" to="/login" onClick={logout}>
+              Logout
+            </Link>
+          </div>
+        ) : (
+          <div className="navLinks">
+            <Link className="links" to="/login">
+              Login
+            </Link>
+          </div>
+        )}
       </div>
     );
   } else {
