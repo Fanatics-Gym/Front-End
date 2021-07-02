@@ -1,16 +1,21 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useRecoilValue } from "recoil";
 import falcons from "../../imgs/teamLogo.png";
 import team from "../../imgs/washington_football_team_2020-pres-1.png";
+import UserInfo from "../../Recoil/atom/userData";
 
 const PlayerPage = () => {
+  const user = useRecoilValue(UserInfo);
   return (
     <div className="componentCont">
       <div className="playerDashboardCont">
         <div className="playerOptionsCont">
           <div className="pageHeader">
             <h3>Welcome,</h3>
-            <h2>Player Name</h2>
+            <h2>
+              {user.userInfo.first_name} {user.userInfo.last_name}
+            </h2>
           </div>
           <div className="playerMenu">
             <Link className="playerOption" to="/player-profile">
