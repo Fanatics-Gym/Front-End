@@ -24,7 +24,7 @@ const PlayerPage = () => {
             <Link className="playerOption" to="/pick-gear">
               Pick Gear
             </Link>
-            <Link className="playerOption" to="/pick-gear">
+            <Link className="playerOption" to="/team/:id">
               My Team
             </Link>
             <Link className="playerOption">My Schedule</Link>
