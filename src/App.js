@@ -74,6 +74,7 @@ function App() {
           <Route path="/teamProfile" component={TeamProfile} />
           <Route path="/checkoutGear" component={CheckoutGearPage} />
           <Route path="/termsOfCost" component={TermsOfCost} />
+          <Route path="/team/:id" component={TeamProfile} />
         </div>
       </Router>
     </div>
