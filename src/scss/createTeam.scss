@@ -1,0 +1,20 @@
+.createTeamCont {
+  display: flex;
+  flex-direction: column;
+  border: black solid 2px;
+  width: 45%;
+  height: 45vh;
+  margin: auto;
+
+  div {
+    display: flex;
+    margin: auto;
+    justify-content: space-between;
+    width: 250px;
+  }
+
+  button {
+    margin: auto;
+    width: 25%;
+  }
+}

@@ -32,6 +32,7 @@ import CheckoutGearPage from "./Components/player/checkoutGear";
 import TermsOfCost from "./Components/application/applicationForm/payment/termOfCost";
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
+import CreateTeam from "./Components/teams/createTeam";
 
 const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_KEY);
 function App() {
@@ -62,6 +63,7 @@ function App() {
             <Route path="/view-applications" component={ViewApplications} />
             <Route path="/represent" component={RepresentPage} />
           </Elements>
+          <Route path="/team-create" component={CreateTeam} />
           <Route path="/player-profile" component={PlayerProfile} />
           <Route path="/pick-gear" component={PickGear} />
           <Route path="/new-p-signUp/:id" component={SignUp} />
